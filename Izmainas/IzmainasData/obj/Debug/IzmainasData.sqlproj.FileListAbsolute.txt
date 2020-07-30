@@ -1,0 +1,10 @@
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\bin\Debug\IzmainasData.dacpac
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\bin\Debug\IzmainasData.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\bin\Debug\IzmainasData.pdb
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\IzmainasData.sqlprojAssemblyReference.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\Model.xml
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\refactor.xml
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\postdeploy.sql
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\predeploy.sql
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\IzmainasData.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\IzmainasData.pdb

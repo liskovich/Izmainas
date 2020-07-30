@@ -14,5 +14,6 @@ namespace Izmainas.Domain
         public string ClassNumber { get; set; }
         public string ClassLetter { get; set; }
         public string Lessons { get; set; }
+        public DateTime Date { get; set; }
     }
 }

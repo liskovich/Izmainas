@@ -1,4 +1,6 @@
-﻿using Izmainas.Services;
+﻿using Izmainas.Data;
+using Izmainas.Data.DataAccess;
+using Izmainas.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -13,6 +15,9 @@ namespace Izmainas.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IRecordService, RecordService>();
+
+            services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+            services.AddTransient<IRecordData, RecordData>();
         }
     }
 }

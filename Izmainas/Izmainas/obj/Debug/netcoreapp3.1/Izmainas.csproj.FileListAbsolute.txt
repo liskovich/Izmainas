@@ -25,9 +25,7 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\ne
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.csproj.CoreCompileInputs.cache
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.pdb
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.genruntimeconfig.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Dapper.dll
