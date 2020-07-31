@@ -6,11 +6,11 @@ namespace Izmainas.Data.DataAccess
 {
     public interface IRecordData
     {
-        void DeleteNotification(string Id);
-        void EditNotification(Record record);
-        List<Record> GetRecordByDate(DateTime Date);
-        List<Record> GetRecordById(string Id);
-        List<Record> GetRecords();
-        void SaveNotification(Record record);
+        void DeleteRecord(string Id);
+        void EditRecord(DbRecord record);
+        List<DbRecord> GetRecordByDate(DateTime Date);
+        List<DbRecord> GetRecordById(string Id);
+        List<DbRecord> GetRecords();
+        void SaveRecord(DbRecord record);
     }
 }

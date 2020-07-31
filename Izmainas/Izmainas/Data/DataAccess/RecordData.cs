@@ -15,35 +15,35 @@ namespace Izmainas.Data.DataAccess
             _sql = sql;
         }
 
-        public List<Record> GetRecords()
+        public List<DbRecord> GetRecords()
         {
-            var output = _sql.LoadData<Record, dynamic>("dbo.spRecords_GetAll", new { }, "IzmainasData");
+            var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecords_GetAll", new { }, "IzmainasData");
             return output;
         }
 
-        public List<Record> GetRecordById(string Id)
+        public List<DbRecord> GetRecordById(string Id)
         {
-            var output = _sql.LoadData<Record, dynamic>("dbo.spRecords_GetById", new { Id }, "IzmainasData");
+            var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecords_GetById", new { Id }, "IzmainasData");
             return output;
         }
 
-        public List<Record> GetRecordByDate(DateTime Date)
+        public List<DbRecord> GetRecordByDate(DateTime Date)
         {
-            var output = _sql.LoadData<Record, dynamic>("dbo.spRecords_GetByDate", new { Date }, "IzmainasData");
+            var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecords_GetByDate", new { Date }, "IzmainasData");
             return output;
         }
 
-        public void SaveNotification(Record record)
+        public void SaveRecord(DbRecord record)
         {
             _sql.SaveData("dbo.spRecords_Insert", record, "IzmainasData");
         }
 
-        public void EditNotification(Record record)
+        public void EditRecord(DbRecord record)
         {
             _sql.SaveData("dbo.spRecords_Edit", record, "IzmainasData");
         }
 
-        public void DeleteNotification(string Id)
+        public void DeleteRecord(string Id)
         {
             _sql.SaveData("dbo.spRecords_Delete", new { Id }, "IzmainasData");
         }

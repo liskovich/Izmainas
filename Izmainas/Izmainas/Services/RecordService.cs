@@ -1,4 +1,5 @@
-﻿using Izmainas.Domain;
+﻿using Izmainas.Data.DataAccess;
+using Izmainas.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,29 +9,186 @@ namespace Izmainas.Services
 {
     public class RecordService : IRecordService
     {
-        public Task<bool> CreateRecordAsync(Record record)
+        private readonly IRecordData _recordData;
+
+        public RecordService(IRecordData recordData)
         {
-            throw new NotImplementedException();
+            _recordData = recordData;
         }
 
-        public Task<bool> DeleteRecordAsync(Guid recordId)
+        public bool CreateRecord(Record record)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var saveRecord = new DbRecord
+                {
+                    Id = record.Id.ToString(),
+                    Teacher = record.Teacher,
+                    Room = record.Room,
+                    Note = record.Note,
+                    ClassNumber = record.ClassNumber,
+                    ClassLetter = record.ClassLetter,
+                    Lessons = record.Lessons,
+                    Date = record.Date
+                };
+
+                _recordData.SaveRecord(saveRecord);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public Task<Record> GetRecordByIdAsync(Guid recordId)
+        public bool DeleteRecord(Guid recordId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var deleteId = recordId.ToString();
+                var existing = _recordData.GetRecordById(deleteId).FirstOrDefault();
+                if (existing == null)
+                {
+                    return false;
+                }
+
+                _recordData.DeleteRecord(deleteId);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public Task<List<Record>> GetRecordsAsync()
+        public List<Record> GetRecordByDate(DateTime recordDate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var found = _recordData.GetRecordByDate(recordDate);
+                if (found == null)
+                {
+                    return null;
+                }
+
+                var records = new List<Record>();
+                foreach (var r in found)
+                {
+                    var record = new Record
+                    {
+                        Id = Guid.Parse(r.Id),
+                        Teacher = r.Teacher,
+                        Room = r.Room,
+                        Note = r.Note,
+                        ClassNumber = r.ClassNumber,
+                        ClassLetter = r.ClassLetter,
+                        Lessons = r.Lessons,
+                        Date = r.Date
+                    };
+                    records.Add(record);
+                }
+                return records;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<bool> UpdateRecordAsync(Record record)
+        public Record GetRecordById(Guid recordId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var findId = recordId.ToString();
+                var found = _recordData.GetRecordById(findId).FirstOrDefault();
+                if(found == null)
+                {
+                    return null;
+                }
+
+                var record = new Record
+                {
+                    Id = recordId,
+                    Teacher = found.Teacher,
+                    Room = found.Room,
+                    Note = found.Note,
+                    ClassNumber = found.ClassNumber,
+                    ClassLetter = found.ClassLetter,
+                    Lessons = found.Lessons,
+                    Date = found.Date
+                };
+                return record;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public List<Record> GetRecords()
+        {
+            try
+            {
+                var found = _recordData.GetRecords();
+                if(found == null)
+                {
+                    return null;
+                }
+
+                var records = new List<Record>();
+                foreach (var r in found)
+                {
+                    var record = new Record
+                    {
+                        Id = Guid.Parse(r.Id),
+                        Teacher = r.Teacher,
+                        Room = r.Room,
+                        Note = r.Note,
+                        ClassNumber = r.ClassNumber,
+                        ClassLetter = r.ClassLetter,
+                        Lessons = r.Lessons,
+                        Date = r.Date
+                    };
+                    records.Add(record);
+                }
+                return records;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public bool UpdateRecord(Record record)
+        {
+            try
+            {
+                var updateId = record.Id.ToString();
+                var existing = _recordData.GetRecordById(updateId).FirstOrDefault();
+                if (existing == null)
+                {
+                    return false;
+                }
+
+                var editRecord = new DbRecord
+                {
+                    Id = updateId,
+                    Teacher = record.Teacher,
+                    Room = record.Room,
+                    Note = record.Note,
+                    ClassNumber = record.ClassNumber,
+                    ClassLetter = record.ClassLetter,
+                    Lessons = record.Lessons,
+                    Date = record.Date
+                };
+
+                _recordData.EditRecord(editRecord);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

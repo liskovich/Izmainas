@@ -8,10 +8,11 @@ namespace Izmainas.Services
 {
     public interface IRecordService
     {
-        Task<List<Record>> GetRecordsAsync();
-        Task<Record> GetRecordByIdAsync(Guid recordId);
-        Task<bool> CreateRecordAsync(Record record);
-        Task<bool> UpdateRecordAsync(Record record);
-        Task<bool> DeleteRecordAsync(Guid recordId);
+        List<Record> GetRecords();
+        Record GetRecordById(Guid recordId);
+        List<Record> GetRecordByDate(DateTime recordDate);
+        bool CreateRecord(Record record);
+        bool UpdateRecord(Record record);
+        bool DeleteRecord(Guid recordId);
     }
 }
