@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using IzmainasAdmin.Data;
+using IzmainasAdmin.Services;
 using IzmainasAdmin.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -24,11 +26,13 @@ namespace IzmainasAdmin
 
         protected override void Configure()
         {
-            _container.Instance(_container);
+            _container.Instance(_container)
+                .PerRequest<IRecordService, RecordService>();
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
-                .Singleton<IEventAggregator, EventAggregator>();
+                .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<IApiHelper, ApiHelper>();
 
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)
