@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="IzmainasAdmin.Views.RecordsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IzmainasAdmin.Views"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <Grid Margin="20">
+            <ListBox Height="350"
+                     x:Name="Records">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Id}"/>
+                            <TextBlock Text="{Binding Teacher}"/>
+                            <TextBlock Text="{Binding Room}"/>
+                            <TextBlock Text="{Binding Note}"/>
+                            <TextBlock Text="{Binding ClassNumber}"/>
+                            <TextBlock Text="{Binding ClassLetter}"/>
+                            <TextBlock Text="{Binding Lessons}"/>
+                            <TextBlock Text="{Binding Date}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </StackPanel>
+</UserControl>

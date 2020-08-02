@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0"
+              Background="LightGray">
+            
+        </Grid>
+        <Grid Grid.Column="1">
+            <ContentControl x:Name="ActiveItem"/>
+        </Grid>
     </Grid>
 </Window>

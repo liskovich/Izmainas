@@ -12,10 +12,7 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Deb
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.pdb
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.genruntimeconfig.cache
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Caliburn.Micro.Platform.Core.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Caliburn.Micro.Platform.dll
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\System.Windows.Interactivity.dll
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Caliburn.Micro.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\ShellView.g.cs
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin_MarkupCompile.lref
@@ -24,3 +21,11 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Deb
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.g.resources
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.csproj.CopyComplete
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\RecordsView.g.cs
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\IzmainasAdmin.dll.config
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Caliburn.Micro.Core.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\RecordsView.baml

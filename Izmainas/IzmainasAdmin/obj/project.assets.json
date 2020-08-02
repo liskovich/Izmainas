@@ -2,29 +2,31 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Caliburn.Micro/3.2.0": {
+      "Caliburn.Micro/4.0.135-beta": {
         "type": "package",
         "dependencies": {
-          "Caliburn.Micro.Core": "[3.2.0]"
+          "Caliburn.Micro.Core": "4.0.135-beta",
+          "Microsoft.WindowsDesktop.App": "3.0.0-preview7-27912-14",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.3"
         },
         "compile": {
-          "lib/net45/Caliburn.Micro.Platform.Core.dll": {},
-          "lib/net45/Caliburn.Micro.Platform.dll": {},
-          "lib/net45/System.Windows.Interactivity.dll": {}
+          "lib/netcoreapp3.0/Caliburn.Micro.Platform.dll": {}
         },
         "runtime": {
-          "lib/net45/Caliburn.Micro.Platform.Core.dll": {},
-          "lib/net45/Caliburn.Micro.Platform.dll": {},
-          "lib/net45/System.Windows.Interactivity.dll": {}
+          "lib/netcoreapp3.0/Caliburn.Micro.Platform.dll": {}
         }
       },
-      "Caliburn.Micro.Core/3.2.0": {
+      "Caliburn.Micro.Core/4.0.135-beta": {
         "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Runtime.Serialization.Primitives": "4.3.0"
+        },
         "compile": {
-          "lib/net45/Caliburn.Micro.dll": {}
+          "lib/netstandard1.1/Caliburn.Micro.Core.dll": {}
         },
         "runtime": {
-          "lib/net45/Caliburn.Micro.dll": {}
+          "lib/netstandard1.1/Caliburn.Micro.Core.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
@@ -95,6 +97,68 @@
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
+      },
+      "Microsoft.WindowsDesktop.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp3.0/Accessibility.dll": {},
+          "ref/netcoreapp3.0/Microsoft.Win32.Registry.dll": {},
+          "ref/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {},
+          "ref/netcoreapp3.0/PresentationCore.dll": {},
+          "ref/netcoreapp3.0/PresentationFramework.Aero.dll": {},
+          "ref/netcoreapp3.0/PresentationFramework.Aero2.dll": {},
+          "ref/netcoreapp3.0/PresentationFramework.AeroLite.dll": {},
+          "ref/netcoreapp3.0/PresentationFramework.Classic.dll": {},
+          "ref/netcoreapp3.0/PresentationFramework.Luna.dll": {},
+          "ref/netcoreapp3.0/PresentationFramework.Royale.dll": {},
+          "ref/netcoreapp3.0/PresentationFramework.dll": {},
+          "ref/netcoreapp3.0/ReachFramework.dll": {},
+          "ref/netcoreapp3.0/System.CodeDom.dll": {},
+          "ref/netcoreapp3.0/System.Configuration.ConfigurationManager.dll": {},
+          "ref/netcoreapp3.0/System.Design.dll": {},
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {},
+          "ref/netcoreapp3.0/System.Drawing.Design.dll": {},
+          "ref/netcoreapp3.0/System.Drawing.dll": {},
+          "ref/netcoreapp3.0/System.IO.Packaging.dll": {},
+          "ref/netcoreapp3.0/System.Printing.dll": {},
+          "ref/netcoreapp3.0/System.Resources.Extensions.dll": {},
+          "ref/netcoreapp3.0/System.Security.AccessControl.dll": {},
+          "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {},
+          "ref/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {},
+          "ref/netcoreapp3.0/System.Security.Cryptography.ProtectedData.dll": {},
+          "ref/netcoreapp3.0/System.Security.Cryptography.Xml.dll": {},
+          "ref/netcoreapp3.0/System.Security.Permissions.dll": {},
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {},
+          "ref/netcoreapp3.0/System.Windows.Controls.Ribbon.dll": {},
+          "ref/netcoreapp3.0/System.Windows.Extensions.dll": {},
+          "ref/netcoreapp3.0/System.Windows.Forms.Design.Editors.dll": {},
+          "ref/netcoreapp3.0/System.Windows.Forms.Design.dll": {},
+          "ref/netcoreapp3.0/System.Windows.Forms.dll": {},
+          "ref/netcoreapp3.0/System.Windows.Input.Manipulations.dll": {},
+          "ref/netcoreapp3.0/System.Windows.Presentation.dll": {},
+          "ref/netcoreapp3.0/System.Xaml.dll": {},
+          "ref/netcoreapp3.0/UIAutomationClient.dll": {},
+          "ref/netcoreapp3.0/UIAutomationClientSideProviders.dll": {},
+          "ref/netcoreapp3.0/UIAutomationProvider.dll": {},
+          "ref/netcoreapp3.0/UIAutomationTypes.dll": {},
+          "ref/netcoreapp3.0/WindowsBase.dll": {},
+          "ref/netcoreapp3.0/WindowsFormsIntegration.dll": {}
+        },
+        "build": {
+          "build/netcoreapp3.0/_._": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "NETStandard.Library/1.6.1": {
         "type": "package",
@@ -1470,88 +1534,60 @@
     }
   },
   "libraries": {
-    "Caliburn.Micro/3.2.0": {
-      "sha512": "GILmeguZra44K77M0QFcLR+Xjp/3Vl6IkWs5aOQOYmxoqiO9YuGyK7/2Aha6jKR6LtR03yv3TVg8rkqeBDNZAA==",
+    "Caliburn.Micro/4.0.135-beta": {
+      "sha512": "P3gmOEPKBK+jMuHsasS4nnAiaB4Kz+7kiCOjNM26d5CjhbnB1gs/MzL6aC91KhCoH/m5dUkUuuD/pwN75dpPMw==",
       "type": "package",
-      "path": "caliburn.micro/3.2.0",
+      "path": "caliburn.micro/4.0.135-beta",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
-        "caliburn.micro.3.2.0.nupkg.sha512",
+        "caliburn.micro.4.0.135-beta.nupkg.sha512",
         "caliburn.micro.nuspec",
-        "lib/MonoAndroid10/Caliburn.Micro.Platform.Core.dll",
-        "lib/MonoAndroid10/Caliburn.Micro.Platform.Core.xml",
-        "lib/MonoAndroid10/Caliburn.Micro.Platform.dll",
-        "lib/MonoAndroid10/Caliburn.Micro.Platform.xml",
-        "lib/MonoTouch10/Caliburn.Micro.Platform.Core.dll",
-        "lib/MonoTouch10/Caliburn.Micro.Platform.Core.dll.mdb",
-        "lib/MonoTouch10/Caliburn.Micro.Platform.Core.xml",
-        "lib/MonoTouch10/Caliburn.Micro.Platform.dll",
-        "lib/MonoTouch10/Caliburn.Micro.Platform.xml",
-        "lib/MonoTouch10/Caliburn.Micro.dll.mdb",
-        "lib/Xamarin.iOS10/Caliburn.Micro.Platform.Core.dll",
-        "lib/Xamarin.iOS10/Caliburn.Micro.Platform.Core.dll.mdb",
-        "lib/Xamarin.iOS10/Caliburn.Micro.Platform.Core.xml",
-        "lib/Xamarin.iOS10/Caliburn.Micro.Platform.dll",
-        "lib/Xamarin.iOS10/Caliburn.Micro.Platform.xml",
-        "lib/Xamarin.iOS10/Caliburn.Micro.dll.mdb",
-        "lib/net40/Caliburn.Micro.Platform.dll",
-        "lib/net40/Caliburn.Micro.Platform.xml",
-        "lib/net40/System.Windows.Interactivity.dll",
-        "lib/net40/System.Windows.Interactivity.xml",
-        "lib/net45/Caliburn.Micro.Platform.Core.dll",
-        "lib/net45/Caliburn.Micro.Platform.Core.xml",
+        "lib/monoandroid80/Caliburn.Micro.Platform.dll",
+        "lib/monoandroid80/Caliburn.Micro.Platform.pdb",
+        "lib/monoandroid80/Caliburn.Micro.Platform.xml",
         "lib/net45/Caliburn.Micro.Platform.dll",
+        "lib/net45/Caliburn.Micro.Platform.pdb",
         "lib/net45/Caliburn.Micro.Platform.xml",
-        "lib/net45/System.Windows.Interactivity.dll",
-        "lib/sl5/Caliburn.Micro.Platform.dll",
-        "lib/sl5/Caliburn.Micro.Platform.xml",
-        "lib/sl5/System.Windows.Interactivity.dll",
-        "lib/uap10.0/Caliburn.Micro.Platform.Core.dll",
-        "lib/uap10.0/Caliburn.Micro.Platform.Core.xml",
-        "lib/uap10.0/Caliburn.Micro.Platform.UWP.XML",
-        "lib/uap10.0/Caliburn.Micro.Platform.UWP.dll",
-        "lib/uap10.0/Caliburn.Micro.Platform.UWP.pri",
-        "lib/uap10.0/Caliburn.Micro.Platform.UWP/Properties/Caliburn.Micro.Platform.UWP.rd.xml",
-        "lib/win81/Caliburn.Micro.Platform.Core.dll",
-        "lib/win81/Caliburn.Micro.Platform.Core.xml",
-        "lib/win81/Caliburn.Micro.Platform.XML",
-        "lib/win81/Caliburn.Micro.Platform.dll",
-        "lib/win81/Caliburn.Micro.Platform.pri",
-        "lib/win81/Microsoft.Xaml.Interactions.dll",
-        "lib/win81/Microsoft.Xaml.Interactivity.dll",
-        "lib/wp8/Caliburn.Micro.Platform.Core.dll",
-        "lib/wp8/Caliburn.Micro.Platform.Core.xml",
-        "lib/wp8/Caliburn.Micro.Platform.dll",
-        "lib/wp8/Caliburn.Micro.Platform.xml",
-        "lib/wp8/System.Windows.Interactivity.dll",
-        "lib/wpa81/Caliburn.Micro.Platform.Core.dll",
-        "lib/wpa81/Caliburn.Micro.Platform.Core.xml",
-        "lib/wpa81/Caliburn.Micro.Platform.dll",
-        "lib/wpa81/Caliburn.Micro.Platform.pri",
-        "lib/wpa81/Caliburn.Micro.Platform.xml",
-        "lib/wpa81/Microsoft.Xaml.Interactions.dll",
-        "lib/wpa81/Microsoft.Xaml.Interactivity.dll"
+        "lib/netcoreapp3.0/Caliburn.Micro.Platform.dll",
+        "lib/netcoreapp3.0/Caliburn.Micro.Platform.pdb",
+        "lib/netcoreapp3.0/Caliburn.Micro.Platform.xml",
+        "lib/netstandard2.0/Caliburn.Micro.Platform.dll",
+        "lib/netstandard2.0/Caliburn.Micro.Platform.pdb",
+        "lib/netstandard2.0/Caliburn.Micro.Platform.xml",
+        "lib/uap10.0.16299/Caliburn.Micro.Platform.dll",
+        "lib/uap10.0.16299/Caliburn.Micro.Platform.pdb",
+        "lib/uap10.0.16299/Caliburn.Micro.Platform.pri",
+        "lib/uap10.0.16299/Caliburn.Micro.Platform.xml",
+        "lib/uap10.0.16299/Caliburn.Micro.Platform/Properties/Caliburn.Micro.Platform.rd.xml",
+        "lib/xamarinios10/Caliburn.Micro.Platform.dll",
+        "lib/xamarinios10/Caliburn.Micro.Platform.pdb",
+        "lib/xamarinios10/Caliburn.Micro.Platform.xml"
       ]
     },
-    "Caliburn.Micro.Core/3.2.0": {
-      "sha512": "jmpC4OSvejrrIlcSmlzFjtyOmHQBrKgqJ9hy/LeWGoytct0e2b+TVgzWHTtvkzBF6TWWYlWCNErF10O6hNoL0g==",
+    "Caliburn.Micro.Core/4.0.135-beta": {
+      "sha512": "DB3+KAoJk+yNdczwDcVH5TWJPk2fwiQIA6sEAhBymYBpTTiNg1VHhIYrqzGtdAlOnLCmoP/61zm2VVjUhdj2Ew==",
       "type": "package",
-      "path": "caliburn.micro.core/3.2.0",
+      "path": "caliburn.micro.core/4.0.135-beta",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
-        "caliburn.micro.core.3.2.0.nupkg.sha512",
+        "caliburn.micro.core.4.0.135-beta.nupkg.sha512",
         "caliburn.micro.core.nuspec",
-        "lib/net40/Caliburn.Micro.XML",
-        "lib/net40/Caliburn.Micro.dll",
-        "lib/net45/Caliburn.Micro.dll",
-        "lib/net45/Caliburn.Micro.xml",
-        "lib/portable-net45+win8+wp8+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10+uap10.0/Caliburn.Micro.XML",
-        "lib/portable-net45+win8+wp8+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10+uap10.0/Caliburn.Micro.dll",
-        "lib/portable-net45+win8+wp8+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10+uap10.0/Caliburn.Micro.dll.mdb",
-        "lib/sl5/Caliburn.Micro.XML",
-        "lib/sl5/Caliburn.Micro.dll"
+        "lib/monoandroid80/Caliburn.Micro.Core.dll",
+        "lib/monoandroid80/Caliburn.Micro.Core.pdb",
+        "lib/monoandroid80/Caliburn.Micro.Core.xml",
+        "lib/net45/Caliburn.Micro.Core.dll",
+        "lib/net45/Caliburn.Micro.Core.pdb",
+        "lib/net45/Caliburn.Micro.Core.xml",
+        "lib/netstandard1.1/Caliburn.Micro.Core.dll",
+        "lib/netstandard1.1/Caliburn.Micro.Core.pdb",
+        "lib/netstandard1.1/Caliburn.Micro.Core.xml",
+        "lib/uap10.0.16299/Caliburn.Micro.Core.dll",
+        "lib/uap10.0.16299/Caliburn.Micro.Core.pdb",
+        "lib/uap10.0.16299/Caliburn.Micro.Core.pri",
+        "lib/uap10.0.16299/Caliburn.Micro.Core.xml",
+        "lib/xamarinios10/Caliburn.Micro.Core.dll",
+        "lib/xamarinios10/Caliburn.Micro.Core.pdb",
+        "lib/xamarinios10/Caliburn.Micro.Core.xml"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
@@ -1695,6 +1731,117 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "Microsoft.WindowsDesktop.App/3.0.0-preview7-27912-14": {
+      "sha512": "gnSw8zis6fldX6KAUw4R22Z2LW2IH0TK/WeuagrIcAls0AvT6iTCIKYB50VfQ4Gi7vLtJr1nxCJxXpckPR8UMQ==",
+      "type": "package",
+      "path": "microsoft.windowsdesktop.app/3.0.0-preview7-27912-14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "Microsoft.WindowsDesktop.App.versions.txt",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netcoreapp3.0/Microsoft.WindowsDesktop.App.PlatformManifest.txt",
+        "build/netcoreapp3.0/Microsoft.WindowsDesktop.App.props",
+        "data/FrameworkList.xml",
+        "microsoft.windowsdesktop.app.3.0.0-preview7-27912-14.nupkg.sha512",
+        "microsoft.windowsdesktop.app.nuspec",
+        "ref/netcoreapp3.0/Accessibility.dll",
+        "ref/netcoreapp3.0/Accessibility.xml",
+        "ref/netcoreapp3.0/Microsoft.Win32.Registry.dll",
+        "ref/netcoreapp3.0/Microsoft.Win32.Registry.xml",
+        "ref/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
+        "ref/netcoreapp3.0/PresentationCore.dll",
+        "ref/netcoreapp3.0/PresentationCore.xml",
+        "ref/netcoreapp3.0/PresentationFramework.Aero.dll",
+        "ref/netcoreapp3.0/PresentationFramework.Aero.xml",
+        "ref/netcoreapp3.0/PresentationFramework.Aero2.dll",
+        "ref/netcoreapp3.0/PresentationFramework.Aero2.xml",
+        "ref/netcoreapp3.0/PresentationFramework.AeroLite.dll",
+        "ref/netcoreapp3.0/PresentationFramework.AeroLite.xml",
+        "ref/netcoreapp3.0/PresentationFramework.Classic.dll",
+        "ref/netcoreapp3.0/PresentationFramework.Classic.xml",
+        "ref/netcoreapp3.0/PresentationFramework.Luna.dll",
+        "ref/netcoreapp3.0/PresentationFramework.Luna.xml",
+        "ref/netcoreapp3.0/PresentationFramework.Royale.dll",
+        "ref/netcoreapp3.0/PresentationFramework.Royale.xml",
+        "ref/netcoreapp3.0/PresentationFramework.dll",
+        "ref/netcoreapp3.0/PresentationFramework.xml",
+        "ref/netcoreapp3.0/ReachFramework.dll",
+        "ref/netcoreapp3.0/ReachFramework.xml",
+        "ref/netcoreapp3.0/System.CodeDom.dll",
+        "ref/netcoreapp3.0/System.CodeDom.xml",
+        "ref/netcoreapp3.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netcoreapp3.0/System.Configuration.ConfigurationManager.xml",
+        "ref/netcoreapp3.0/System.Design.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Design.dll",
+        "ref/netcoreapp3.0/System.Drawing.dll",
+        "ref/netcoreapp3.0/System.IO.Packaging.dll",
+        "ref/netcoreapp3.0/System.IO.Packaging.xml",
+        "ref/netcoreapp3.0/System.Printing.dll",
+        "ref/netcoreapp3.0/System.Printing.xml",
+        "ref/netcoreapp3.0/System.Resources.Extensions.dll",
+        "ref/netcoreapp3.0/System.Security.AccessControl.dll",
+        "ref/netcoreapp3.0/System.Security.AccessControl.xml",
+        "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll",
+        "ref/netcoreapp3.0/System.Security.Cryptography.Cng.xml",
+        "ref/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll",
+        "ref/netcoreapp3.0/System.Security.Cryptography.Pkcs.xml",
+        "ref/netcoreapp3.0/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netcoreapp3.0/System.Security.Cryptography.ProtectedData.xml",
+        "ref/netcoreapp3.0/System.Security.Cryptography.Xml.dll",
+        "ref/netcoreapp3.0/System.Security.Cryptography.Xml.xml",
+        "ref/netcoreapp3.0/System.Security.Permissions.dll",
+        "ref/netcoreapp3.0/System.Security.Permissions.xml",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.dll",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.xml",
+        "ref/netcoreapp3.0/System.Windows.Controls.Ribbon.dll",
+        "ref/netcoreapp3.0/System.Windows.Controls.Ribbon.xml",
+        "ref/netcoreapp3.0/System.Windows.Extensions.dll",
+        "ref/netcoreapp3.0/System.Windows.Forms.Design.Editors.dll",
+        "ref/netcoreapp3.0/System.Windows.Forms.Design.Editors.xml",
+        "ref/netcoreapp3.0/System.Windows.Forms.Design.dll",
+        "ref/netcoreapp3.0/System.Windows.Forms.Design.xml",
+        "ref/netcoreapp3.0/System.Windows.Forms.dll",
+        "ref/netcoreapp3.0/System.Windows.Forms.xml",
+        "ref/netcoreapp3.0/System.Windows.Input.Manipulations.dll",
+        "ref/netcoreapp3.0/System.Windows.Input.Manipulations.xml",
+        "ref/netcoreapp3.0/System.Windows.Presentation.dll",
+        "ref/netcoreapp3.0/System.Windows.Presentation.xml",
+        "ref/netcoreapp3.0/System.Xaml.dll",
+        "ref/netcoreapp3.0/System.Xaml.xml",
+        "ref/netcoreapp3.0/UIAutomationClient.dll",
+        "ref/netcoreapp3.0/UIAutomationClient.xml",
+        "ref/netcoreapp3.0/UIAutomationClientSideProviders.dll",
+        "ref/netcoreapp3.0/UIAutomationClientSideProviders.xml",
+        "ref/netcoreapp3.0/UIAutomationProvider.dll",
+        "ref/netcoreapp3.0/UIAutomationProvider.xml",
+        "ref/netcoreapp3.0/UIAutomationTypes.dll",
+        "ref/netcoreapp3.0/UIAutomationTypes.xml",
+        "ref/netcoreapp3.0/WindowsBase.dll",
+        "ref/netcoreapp3.0/WindowsFormsIntegration.dll",
+        "ref/netcoreapp3.0/WindowsFormsIntegration.xml",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.3": {
+      "sha512": "Nj5tRPkKQpIFg7HcXzV1P/1CLk1NtkoJLE0IMKCHZfKMiBWdy6TssdOUT2OHw8L4eKP65lG+OElNR3xdaeW+gQ==",
+      "type": "package",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.Xaml.Behaviors.dll",
+        "lib/net45/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net45/Microsoft.Xaml.Behaviors.xml",
+        "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll",
+        "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.pdb",
+        "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.xml",
+        "microsoft.xaml.behaviors.wpf.1.1.3.nupkg.sha512",
+        "microsoft.xaml.behaviors.wpf.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -5334,7 +5481,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Caliburn.Micro >= 3.2.0",
+      "Caliburn.Micro >= 4.0.135-beta",
       "Microsoft.AspNet.WebApi.Client >= 5.2.7"
     ]
   },
@@ -5385,7 +5532,7 @@
         "dependencies": {
           "Caliburn.Micro": {
             "target": "Package",
-            "version": "[3.2.0, )"
+            "version": "[4.0.135-beta, )"
           },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
@@ -5413,27 +5560,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Caliburn.Micro 3.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Caliburn.Micro",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Caliburn.Micro.Core 3.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Caliburn.Micro.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }
