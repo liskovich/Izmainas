@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hs9EpGBFnUrZ9cRCG4ab2V7FV38FhF+/BB92kdeHAdmK48Tj2ZZgjlIhb6leDVKfKd2urShvwUEzyNd05oNnqg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Documents\\VS_Projects_Rico\\Izmainas\\Izmainas\\AngularClient\\AngularClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.typescript.msbuild\\3.9.7\\microsoft.typescript.msbuild.3.9.7.nupkg.sha512"
+  ],
+  "logs": []
+}

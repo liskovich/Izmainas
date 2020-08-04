@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Izmainas", "Izmainas\Izmain
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IzmainasData", "IzmainasData\IzmainasData.sqlproj", "{F4509A3A-E3CC-43EA-A09D-EB74F88017F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IzmainasAdmin", "IzmainasAdmin\IzmainasAdmin.csproj", "{39C5C760-BF73-4680-850A-03ECCA794F90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IzmainasAdmin", "IzmainasAdmin\IzmainasAdmin.csproj", "{39C5C760-BF73-4680-850A-03ECCA794F90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularClient", "AngularClient\AngularClient.csproj", "{03D0458A-DCFF-473F-B6D6-67948DD7AED3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{39C5C760-BF73-4680-850A-03ECCA794F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39C5C760-BF73-4680-850A-03ECCA794F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39C5C760-BF73-4680-850A-03ECCA794F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D0458A-DCFF-473F-B6D6-67948DD7AED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D0458A-DCFF-473F-B6D6-67948DD7AED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D0458A-DCFF-473F-B6D6-67948DD7AED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D0458A-DCFF-473F-B6D6-67948DD7AED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

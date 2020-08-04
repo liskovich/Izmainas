@@ -1,0 +1,17 @@
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\angular.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\e2e\tsconfig.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\package-lock.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\package.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\tsconfig.app.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\tsconfig.base.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\tsconfig.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\tsconfig.spec.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Izmainas\tslint.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\bin\Debug\netcoreapp3.1\AngularClient.exe
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\AngularClient.csprojAssemblyReference.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\AngularClient.AssemblyInfoInputs.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\AngularClient.AssemblyInfo.cs
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\AngularClient.RazorTargetAssemblyInfo.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\staticwebassets\AngularClient.StaticWebAssets.Manifest.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\staticwebassets\AngularClient.StaticWebAssets.xml

@@ -58,6 +58,15 @@ namespace Izmainas
             app.UseStaticFiles();
 
             app.UseRouting();
+            
+            app.UseCors(config => 
+            {
+                config
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin()
+                .WithExposedHeaders("X-Metadata");
+            });
 
             app.UseAuthorization();
 
