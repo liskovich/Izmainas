@@ -1,12 +1,44 @@
-<div class="row">
-  <div class="shadow-lg col-sm-4 p-3">
-    <div class="card">
-      <img class="propImg" src="assets/images/house_default.png">
-      <div class="card-body p-2">
-        <h1>{{Property.Name}}</h1>
-        <h2>{{Property.Type}}</h2>
-        <h2>{{Property.Price}}</h2>
-      </div>
-    </div>
+<div class="card h-100">
+  <div class="card-header bg-center">
+    <h4 class="card-title mt-3">{{record.classNumber + ". " + record.classLetter}}</h4>
   </div>
+  <!--mb-2-->
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item mt-3">
+      <div class="note-container align-text-top">
+        <h6 class="card-subtitle mb-2 text-muted">Piezīme</h6>
+        <p class="card-text mb-2">{{record.note}}</p>
+      </div>
+    </li>
+    <li class="list-group-item mt-2">
+      <div class="row">
+        <div class="col-sm-3 align-self-center">
+          <h6 class="card-subtitle text-muted">Telpa</h6>
+        </div>
+        <div class="align-self-center">
+          <p class="card-text">{{record.room}}</p>
+        </div>
+      </div>
+    </li>
+    <li class="list-group-item mt-2">
+      <div class="row">
+        <div class="col-sm-3 align-self-center">
+          <h6 class="card-subtitle text-muted">Skolotājs/a</h6>
+        </div>
+        <div class="align-self-center">
+          <p class="card-text">{{record.teacher}}</p>
+        </div>
+      </div>
+    </li>
+    <li class="list-group-item mt-2">
+      <div class="row">
+        <div class="col-sm-3 align-self-center">
+          <h6 class="card-subtitle text-muted">Stunda/as</h6>
+        </div>
+        <div class="align-self-center">
+          <p class="card-text">{{record.lessons}}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>

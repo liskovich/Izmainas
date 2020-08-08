@@ -1,0 +1,20 @@
+.navbar {
+  height: 70px;
+}
+
+.bg-primary {
+  background: rgb(13,4,161);
+  background: linear-gradient(90deg, rgba(13,4,161,1) 0%, rgba(52,52,223,1) 48%, rgba(0,155,255,1) 100%);
+}
+
+/*
+.navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+  background-color: #B05800;
+  width: 100px;
+  height: 70px;
+}
+*/

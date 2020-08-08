@@ -3,11 +3,11 @@ import { RecordServiceService } from 'src/app/services/recordService.service';
 import { IRecord } from '../IRecord.interface';
 
 @Component({
-  selector: 'app-record-list',
-  templateUrl: './record-list.component.html',
-  styleUrls: ['./record-list.component.css']
+  selector: 'app-next-record-list',
+  templateUrl: './next-record-list.component.html',
+  styleUrls: ['./next-record-list.component.css']
 })
-export class RecordListComponent implements OnInit {
+export class NextRecordListComponent implements OnInit {
 
   records: Array<IRecord>;
 

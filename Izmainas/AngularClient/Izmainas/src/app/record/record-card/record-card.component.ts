@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import { IRecord } from '../IRecord.interface';
 
 @Component({
   selector: 'app-record-card',
@@ -6,10 +7,5 @@ import {Component} from "@angular/core";
   styleUrls: ['record-card.component.css']
 })
 export class RecordCardComponent {
-  Property: any = {
-    "Id": 1,
-    "Type": "House",
-    "Name": "Private house",
-    "Price": 12000
-  }
+  @Input() record : IRecord
 }
