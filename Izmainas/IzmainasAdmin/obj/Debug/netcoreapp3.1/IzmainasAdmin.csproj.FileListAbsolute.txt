@@ -29,3 +29,5 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Deb
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\RecordsView.baml
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\NewRecordView.g.cs
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\NewRecordView.baml

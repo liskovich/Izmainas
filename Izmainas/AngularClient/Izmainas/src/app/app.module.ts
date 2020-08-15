@@ -13,7 +13,7 @@ import { NextRecordListComponent } from './record/next-record-list/next-record-l
 
 const appRoutes: Routes = [
   { path: '', component: RecordListComponent },
-  { path: 'next-record-list', component: NextRecordListComponent }
+  { path: 'rit', component: NextRecordListComponent } //next-record-list
 ]
 
 @NgModule({

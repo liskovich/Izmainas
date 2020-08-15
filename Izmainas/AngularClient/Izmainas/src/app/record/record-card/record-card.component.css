@@ -11,13 +11,3 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
-/* problem with text in note section */
-li {
-  display: table;
-}
-
-.note-container {
-  vertical-align: middle;
-  display: table-cell;
-}

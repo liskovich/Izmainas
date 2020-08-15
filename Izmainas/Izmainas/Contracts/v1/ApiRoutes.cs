@@ -19,6 +19,9 @@ namespace Izmainas.Contracts.v1
             public const string Update = Base + "/records/{recordId}";
             public const string Delete = Base + "/records/{recordId}";
             public const string Date = Base + "/records/dates/{recordDate}";
+
+            public const string Today = Base + "/records/today";
+            public const string Tomorrow = Base + "/records/tomorrow";
         }
     }
 }

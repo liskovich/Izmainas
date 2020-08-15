@@ -1,0 +1,13 @@
+.date {
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: normal;
+  transition: all .2s ease-out;
+}
+
+.date:hover {
+  transform: scale(1.03, 1.03);
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 100ms;
+}

@@ -20,6 +20,8 @@ namespace Izmainas.Controllers.v1
             _recordService = recordService;
         }
 
+        #region Production Actions
+
         [HttpGet(ApiRoutes.Records.GetAll)]
         public IActionResult GetAll()
         {
@@ -108,5 +110,25 @@ namespace Izmainas.Controllers.v1
         {
             return Ok(_recordService.GetRecordByDate(recordDate));
         }
+
+        #endregion
+
+        #region Test/Development Actions
+
+        [HttpGet(ApiRoutes.Records.Today)]
+        public IActionResult GetToday()
+        {
+            var today = DateTime.Today;
+            return Ok(_recordService.GetRecordByDate(today));
+        }
+
+        [HttpGet(ApiRoutes.Records.Tomorrow)]
+        public IActionResult GetTomorrow()
+        {
+            var tomorrow = DateTime.Today.AddDays(1);
+            return Ok(_recordService.GetRecordByDate(tomorrow));
+        }
+
+        #endregion
     }
 }

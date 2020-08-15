@@ -7,25 +7,60 @@
              mc:Ignorable="d" 
              Background="White"
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <Grid Margin="20">
-            <ListBox Height="350"
-                     x:Name="Records">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Id}"/>
-                            <TextBlock Text="{Binding Teacher}"/>
-                            <TextBlock Text="{Binding Room}"/>
-                            <TextBlock Text="{Binding Note}"/>
-                            <TextBlock Text="{Binding ClassNumber}"/>
-                            <TextBlock Text="{Binding ClassLetter}"/>
-                            <TextBlock Text="{Binding Lessons}"/>
-                            <TextBlock Text="{Binding Date}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="Records"
+                 Grid.Row="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Id}"/>
+                        <TextBlock Text="{Binding Teacher}"/>
+                        <TextBlock Text="{Binding Room}"/>
+                        <TextBlock Text="{Binding Note}"/>
+                        <TextBlock Text="{Binding ClassNumber}"/>
+                        <TextBlock Text="{Binding ClassLetter}"/>
+                        <TextBlock Text="{Binding Lessons}"/>
+                        <TextBlock Text="{Binding Date}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row="1"
+              Margin="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="700"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                    Content="Jauns..."
+                    Margin="0 0 5 0"
+                    MaxWidth="200"
+                    x:Name="AddNew"/>
+                <Button Grid.Column="1"
+                    Content="Rediģēt..."
+                    Margin="5 0 5 0"
+                    MaxWidth="200"/>
+                <Button Grid.Column="2"
+                    Content="Dzēst"
+                    Margin="5 0 5 0"
+                    MaxWidth="200"/>
+                <Button Grid.Column="3"
+                    Content="Atsvaidzināt"
+                    Margin="5 0 0 0"
+                    MaxWidth="200"/>
+            </Grid>
         </Grid>
-    </StackPanel>
+    </Grid>
 </UserControl>
