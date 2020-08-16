@@ -1,134 +1,70 @@
 ﻿using Caliburn.Micro;
-using IzmainasAdmin.Commands;
 using IzmainasAdmin.Models;
 using IzmainasAdmin.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace IzmainasAdmin.ViewModels
 {
-    public class NewRecordViewModel : Screen, INotifyPropertyChanged
+    public class EditRecordViewModel : Screen
     {
         private readonly IRecordService _recordService;
-        private readonly IWindowManager _windowManager;
+        private readonly Record _record;
 
         private string _teacher;
         private string _room;
         private string _note;
-        private string _lessons;
-        private DateTime _date;
         private string _selectedNumber;
         private string _selectedLetter;
+        private string _lessons;
+        private DateTime _date;
 
-        //
-        public ICommand Command { get; set; }
-        //
-
-        public NewRecordViewModel(IRecordService recordService, IWindowManager windowManager)
+        public EditRecordViewModel(IRecordService recordService, Record record)
         {
             _recordService = recordService;
-            _windowManager = windowManager;
+            _record = record;
 
-            Date = DateTime.Today;
-            SelectedNumber = "-";
-            SelectedLetter = "-";
-
-            //
-            Command = new RelayCommand(executemethod, canexecutemethod);
-            LessonList = new List<string>();
-            //
+            Teacher = record.Teacher;
+            Room = record.Room;
+            Note = record.Note;
+            SelectedNumber = record.ClassNumber;
+            SelectedLetter = record.ClassLetter;
+            Lessons = record.Lessons;
+            Date = record.Date;
         }
-
-        //
-
-        private bool canexecutemethod(object parameter)
-        {
-            return true;
-        }
-
-        private void executemethod(object parameter)
-        {
-            var values = (object[])parameter;
-            string name = (string)values[0];
-            bool check = (bool)values[1];
-            if (check)
-            {
-                LessonList.Add(name);
-            }
-            else
-            {
-                LessonList.Remove(name);
-            }
-
-            var rawList = new List<int>();
-
-            foreach (string l in LessonList)
-            {
-                int lesson = int.Parse(l);
-                rawList.Add(lesson);
-            }
-
-            rawList.Sort();
-
-            Lessons = "";
-            foreach (int item in rawList)
-            {
-                string l = item.ToString();
-                Lessons += l;
-                Lessons += "., ";
-                
-            }
-        }
-
-        private List<string> _lessonList;
-
-        public List<string> LessonList
-        {
-            get { return _lessonList; }
-            set 
-            { 
-                _lessonList = value;
-                NotifyOfPropertyChange(() => LessonList);
-                NotifyOfPropertyChange(() => Lessons);
-            }
-        }
-
-        //
 
         public string Teacher
         {
             get { return _teacher; }
-            set 
-            { 
+            set
+            {
                 _teacher = value;
                 NotifyOfPropertyChange(() => Teacher);
-                NotifyOfPropertyChange(() => CanAddRecord);
+                NotifyOfPropertyChange(() => CanEditRecord);
             }
         }
 
         public string Room
         {
             get { return _room; }
-            set 
-            { 
+            set
+            {
                 _room = value;
                 NotifyOfPropertyChange(() => Room);
-                NotifyOfPropertyChange(() => CanAddRecord);
+                NotifyOfPropertyChange(() => CanEditRecord);
             }
         }
 
         public string Note
         {
             get { return _note; }
-            set 
-            { 
+            set
+            {
                 _note = value;
                 NotifyOfPropertyChange(() => Note);
-                NotifyOfPropertyChange(() => CanAddRecord);
+                NotifyOfPropertyChange(() => CanEditRecord);
             }
         }
 
@@ -146,11 +82,11 @@ namespace IzmainasAdmin.ViewModels
         public string SelectedNumber
         {
             get { return _selectedNumber; }
-            set 
-            { 
+            set
+            {
                 _selectedNumber = value;
                 NotifyOfPropertyChange(() => SelectedNumber);
-                NotifyOfPropertyChange(() => CanAddRecord);
+                NotifyOfPropertyChange(() => CanEditRecord);
             }
         }
 
@@ -168,11 +104,11 @@ namespace IzmainasAdmin.ViewModels
         public string SelectedLetter
         {
             get { return _selectedLetter; }
-            set 
-            { 
+            set
+            {
                 _selectedLetter = value;
                 NotifyOfPropertyChange(() => SelectedLetter);
-                NotifyOfPropertyChange(() => CanAddRecord);
+                NotifyOfPropertyChange(() => CanEditRecord);
             }
         }
 
@@ -180,21 +116,21 @@ namespace IzmainasAdmin.ViewModels
         {
             get { return _lessons; }
             set
-            { 
+            {
                 _lessons = value;
                 NotifyOfPropertyChange(() => Lessons);
-                NotifyOfPropertyChange(() => CanAddRecord);
+                NotifyOfPropertyChange(() => CanEditRecord);
             }
         }
 
         public DateTime Date
         {
             get { return _date; }
-            set 
-            { 
+            set
+            {
                 _date = value;
                 NotifyOfPropertyChange(() => Date);
-                NotifyOfPropertyChange(() => CanAddRecord);
+                NotifyOfPropertyChange(() => CanEditRecord);
             }
         }
 
@@ -209,7 +145,18 @@ namespace IzmainasAdmin.ViewModels
             Date = DateTime.Today;
         }
 
-        public bool CanAddRecord
+        public void Return()
+        {
+            Teacher = _record.Teacher;
+            Room = _record.Room;
+            Note = _record.Note;
+            SelectedNumber = _record.ClassNumber;
+            SelectedLetter = _record.ClassLetter;
+            Lessons = _record.Lessons;
+            Date = _record.Date;
+        }
+
+        public bool CanEditRecord
         {
             get
             {
@@ -227,23 +174,22 @@ namespace IzmainasAdmin.ViewModels
             }
         }
 
-        public async Task AddRecord()
+        public async Task EditRecord()
         {
             try
             {
-                Lessons = Lessons.Substring(0, Lessons.Length - 2);
-
-                var record = new CreateRecord
+                var record = new Record
                 {
+                    Id = _record.Id,
                     Teacher = Teacher,
                     Room = Room,
                     Note = Note,
                     ClassNumber = SelectedNumber,
-                    ClassLetter = SelectedLetter,
+                    ClassLetter = _selectedLetter,
                     Lessons = Lessons,
                     Date = Date
                 };
-                await _recordService.PostRecord(record);
+                await _recordService.EditRecord(record);
                 ResetFields();
             }
             catch (Exception ex)

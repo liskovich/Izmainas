@@ -101,9 +101,9 @@ namespace IzmainasAdmin.Services
             }
         }
 
-        public async Task DeleteRecord(Record record)
+        public async Task DeleteRecord(Guid recordId) //Record record
         {
-            var selectedId = record.Id;
+            var selectedId = recordId;
             using (HttpResponseMessage response = await _apiHelper.ApiClient.DeleteAsync($"api/v1/records/{selectedId}"))
             {
                 if (response.IsSuccessStatusCode)
