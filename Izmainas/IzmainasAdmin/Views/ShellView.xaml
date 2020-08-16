@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IzmainasAdmin.Views"
         mc:Ignorable="d"
-        Title="ShellView" Height="600" Width="1000"
+        Title="Stundu Izmaiņas - Admin" Height="600" Width="1000"
         MinHeight="600" MinWidth="1000">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="Gray" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="0" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Grid Background="Blue" Width="10" HorizontalAlignment="Left"/>
+                                <!--<Path x:Name="PathIcon" Width="15" Height="25" Stretch="Fill" Fill="#4C87B3" HorizontalAlignment="Left" Margin="17,0,0,0" Data="F1 M 30.0833,22.1667L 50.6665,37.6043L 50.6665,38.7918L 30.0833,53.8333L 30.0833,22.1667 Z "/>-->
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E59400" />
+                                <Setter Property="Foreground" Value="White" />
+                                <!--<Setter TargetName="PathIcon" Property="Fill" Value="Black" />-->
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="OrangeRed" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -15,7 +52,17 @@
 
         <Grid Grid.Column="0"
               Background="LightGray">
-            
+            <StackPanel>
+                <Grid Height="150">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                            <GradientStop Color="Blue" Offset="0" />
+                            <GradientStop Color="DeepSkyBlue" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+                <Button Content="test" Height="40"/>
+            </StackPanel>
         </Grid>
         <Grid Grid.Column="1">
             <ContentControl x:Name="ActiveItem"/>

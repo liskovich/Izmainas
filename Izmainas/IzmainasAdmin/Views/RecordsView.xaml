@@ -7,16 +7,167 @@
              mc:Ignorable="d" 
              Background="White"
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <AlternationConverter x:Key="BackgroundConverter">
+            <SolidColorBrush Color="#19f39611" />
+            <SolidColorBrush Color="#19000000" />
+        </AlternationConverter>
+
+        <Style x:Key="Style2" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="Border" 
+                                Padding="5" 
+                                SnapsToDevicePixels="True" 
+                                CornerRadius="5" 
+                                BorderThickness="1"
+                                Background="#f5f5fa"
+                                Margin="15"
+                                BorderBrush="Gray">
+                            <!--Background="{TemplateBinding Background}"-->
+                            <ContentPresenter />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                            <!--
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </Trigger>-->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--
+        <Style x:Key="Style1" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource Style2}">
+            <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self},
+                 Path=(ItemsControl.AlternationIndex),
+                 Converter={StaticResource BackgroundConverter}}"/>
+        </Style>
+        -->
+    </UserControl.Resources>
+    
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <ListBox x:Name="Records"
-                 Grid.Row="0">
+                 Grid.Row="0"
+                 SelectedItem="{Binding SelectedRecord}"
+                 BorderThickness="0"
+                 AlternationCount="2"
+                 ItemContainerStyle="{StaticResource Style2}"
+                 ScrollViewer.CanContentScroll="False">
             <ListBox.ItemTemplate>
                 <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Background="Blue"
+                              Grid.Column="0"/>
+                        <StackPanel Grid.Column="1">
+                            <Grid Margin="10 10 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Skolotājs/a"
+                                           Grid.Column="0"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Teacher}"
+                                           Grid.Column="1"/>
+                            </Grid>
+                            <Separator Margin="0 0 0 10"/>
+                            <Grid Margin="10 0 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Telpa"
+                                           Grid.Column="0"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Room}"
+                                           Grid.Column="1"/>
+                            </Grid>
+                            <Separator Margin="0 0 0 10"/>
+                            <Grid Margin="10 0 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Piezīme"
+                                           Grid.Column="0"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Note}"
+                                           Grid.Column="1"
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Left"
+                                           Width="500"
+                                           MaxWidth="800"
+                                           Background="Transparent"/>
+                                
+                            </Grid>
+                            
+                            <!--<Border BorderBrush="Gray" 
+                                    BorderThickness="0.5"
+                                    Margin="0 0 0 10"/>-->
+                            
+                            <Separator Margin="0 0 0 10"/>
+                            <Grid Margin="10 0 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Klase"
+                                           Grid.Column="0"
+                                           FontWeight="Bold"/>
+                                <StackPanel Orientation="Horizontal"
+                                            Grid.Column="1">
+                                    <TextBlock Text="{Binding ClassNumber}"/>
+                                    <TextBlock Text=". "/>
+                                    <TextBlock Text="{Binding ClassLetter}"/>
+                                </StackPanel>
+                            </Grid>
+                            <Separator Margin="0 0 0 10"/>
+                            <Grid Margin="10 0 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Stunda/as"
+                                           Grid.Column="0"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Lessons}"
+                                           Grid.Column="1"/>
+                            </Grid>
+                            <Separator Margin="0 0 0 10"/>
+                            <Grid Margin="10 0 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Datums"
+                                           Grid.Column="0"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Date, StringFormat=D, ConverterCulture=lv}"
+                                           Grid.Column="1"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                    <!--
                     <StackPanel Orientation="Vertical">
+                        
                         <TextBlock Text="{Binding Id}"/>
                         <TextBlock Text="{Binding Teacher}"/>
                         <TextBlock Text="{Binding Room}"/>
@@ -25,7 +176,10 @@
                         <TextBlock Text="{Binding ClassLetter}"/>
                         <TextBlock Text="{Binding Lessons}"/>
                         <TextBlock Text="{Binding Date}"/>
+                        
+                        
                     </StackPanel>
+                    -->
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -44,22 +198,25 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0"
-                    Content="Jauns..."
-                    Margin="0 0 5 0"
-                    MaxWidth="200"
-                    x:Name="AddNew"/>
+                        Content="Jauns..."
+                        Margin="0 0 5 0"
+                        MaxWidth="200"
+                        x:Name="AddNew"/>
                 <Button Grid.Column="1"
-                    Content="Rediģēt..."
-                    Margin="5 0 5 0"
-                    MaxWidth="200"/>
+                        Content="Rediģēt..."
+                        Margin="5 0 5 0"
+                        MaxWidth="200"
+                        x:Name="Edit"/>
                 <Button Grid.Column="2"
-                    Content="Dzēst"
-                    Margin="5 0 5 0"
-                    MaxWidth="200"/>
+                        Content="Dzēst"
+                        Margin="5 0 5 0"
+                        MaxWidth="200"
+                        x:Name="Delete"/>
                 <Button Grid.Column="3"
-                    Content="Atsvaidzināt"
-                    Margin="5 0 0 0"
-                    MaxWidth="200"/>
+                        Content="Atsvaidzināt"
+                        Margin="5 0 0 0"
+                        MaxWidth="200"
+                        x:Name="Reload"/>
             </Grid>
         </Grid>
     </Grid>

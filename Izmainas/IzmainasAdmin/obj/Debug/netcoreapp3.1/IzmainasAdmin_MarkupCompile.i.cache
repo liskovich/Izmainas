@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\App.xaml
-31194697982
+4253954703
 
-17-1219895852
+21-1265611207
 2051471419584
-Views\NewRecordView.xaml;Views\RecordsView.xaml;Views\ShellView.xaml;
+Views\EditRecordView.xaml;Views\NewRecordView.xaml;Views\RecordsView.xaml;Views\ShellView.xaml;
 
-True
+False
 

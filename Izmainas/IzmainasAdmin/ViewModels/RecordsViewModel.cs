@@ -17,13 +17,16 @@ namespace IzmainasAdmin.ViewModels
         private readonly IWindowManager _windowManager;
 
         private readonly NewRecordViewModel _newRecordView;
+        //private readonly EditRecordViewModel _editRecordView;
         private BindingList<Record> _records;
+        private Record _selectedRecord;
 
-        public RecordsViewModel(IRecordService recordService, IWindowManager windowManager, NewRecordViewModel newRecordView)
+        public RecordsViewModel(IRecordService recordService, IWindowManager windowManager, NewRecordViewModel newRecordView) //EditRecordViewModel editRecordView//
         {
             _recordService = recordService;
             _windowManager = windowManager;
             _newRecordView = newRecordView;
+            //_editRecordView = editRecordView;
         }
 
         protected override async void OnViewLoaded(object view)
@@ -93,14 +96,95 @@ namespace IzmainasAdmin.ViewModels
             }
         }
 
+        public Record SelectedRecord
+        {
+            get { return  _selectedRecord; }
+            set 
+            { 
+                _selectedRecord = value;
+                NotifyOfPropertyChange(() => SelectedRecord);
+                NotifyOfPropertyChange(() => CanEdit);
+                NotifyOfPropertyChange(() => CanDelete);
+            }
+        }
+
         public async Task AddNew()
         {
-            dynamic settings = new ExpandoObject();
-            settings.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            settings.ResizeMode = ResizeMode.NoResize;
-            settings.Title = "Jauns Ieraksts";
+            try
+            {
+                dynamic settings = new ExpandoObject();
+                settings.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                settings.ResizeMode = ResizeMode.NoResize;
+                settings.Title = "Jauns";
 
-            await _windowManager.ShowDialogAsync(_newRecordView, null, settings);
+                await _windowManager.ShowDialogAsync(_newRecordView, null, settings);
+                await LoadRecords();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public bool CanEdit
+        {
+            get
+            {
+                bool output = false;
+                if (SelectedRecord != null)
+                {
+                    output = true;
+                }
+                return output;
+            }
+        }
+
+        public async Task Edit()
+        {
+            try
+            {
+                dynamic settings = new ExpandoObject();
+                settings.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                settings.ResizeMode = ResizeMode.NoResize;
+                settings.Title = "Rediģēt";
+
+                await _windowManager.ShowDialogAsync(new EditRecordViewModel(_recordService, SelectedRecord), null, settings);
+                await LoadRecords();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public bool CanDelete
+        {
+            get
+            {
+                bool output = false;
+                if (SelectedRecord != null)
+                {
+                    output = true;
+                }
+                return output;
+            }
+        }
+
+        public async Task Delete()
+        {
+            try
+            {
+                await _recordService.DeleteRecord(SelectedRecord.Id);
+                await LoadRecords();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task Reload()
+        {
             try
             {
                 await LoadRecords();

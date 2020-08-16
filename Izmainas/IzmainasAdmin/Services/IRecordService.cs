@@ -7,7 +7,7 @@ namespace IzmainasAdmin.Services
 {
     public interface IRecordService
     {
-        Task DeleteRecord(Record record);
+        Task DeleteRecord(Guid recordId);
         Task EditRecord(Record record);
         Task<List<Record>> GetAll();
         Task<List<Record>> GetByDate(DateTime recordDate);

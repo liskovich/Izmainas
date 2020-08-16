@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\EditRecordView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NewRecordView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,6 +21,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\EditRecordView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NewRecordView.xaml">
       <SubType>Designer</SubType>
     </Page>
