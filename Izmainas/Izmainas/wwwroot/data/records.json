@@ -1,0 +1,52 @@
+[
+  {
+    "Id": "test",
+    "Teacher": "karmena",
+    "Room": "23",
+    "Note": "eksāmens par trigonometriskajām funkcijām un vienādojumiem",
+    "ClassNumber": "11.",
+    "ClassLetter": "D",
+    "Lessons": "3,4",
+    "Date": "today"
+  },
+  {
+    "Id": "test",
+    "Teacher": "janis",
+    "Room": "4",
+    "Note": "stundas nenotiek, ekskursija",
+    "ClassNumber": "8.",
+    "ClassLetter": "C",
+    "Lessons": "visas",
+    "Date": "today"
+  },
+  {
+    "Id": "test",
+    "Teacher": "peteris",
+    "Room": "157",
+    "Note": "olimpiāde fizikā",
+    "ClassNumber": "12.",
+    "ClassLetter": "-",
+    "Lessons": "7",
+    "Date": "today"
+  },
+  {
+    "Id": "test",
+    "Teacher": "karlis",
+    "Room": "76",
+    "Note": "stundas aizvietos skolotaja marija",
+    "ClassNumber": "7.",
+    "ClassLetter": "A",
+    "Lessons": "5,7",
+    "Date": "today"
+  },
+  {
+    "Id": "test",
+    "Teacher": "layla",
+    "Room": "9",
+    "Note": "kontroldarbs par seno romu un testu analīze",
+    "ClassNumber": "10.",
+    "ClassLetter": "C",
+    "Lessons": "8",
+    "Date": "today"
+  }
+]
