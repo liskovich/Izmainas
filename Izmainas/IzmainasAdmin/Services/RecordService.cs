@@ -116,5 +116,22 @@ namespace IzmainasAdmin.Services
                 }
             }
         }
+
+        /*
+        public async Task PublishRecords()
+        {
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync($"api/v1/records/transfer", new { }))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    // log successful post
+                }
+                else
+                {
+                    //throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+        */
     }
 }

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:IzmainasAdmin.Views"
              mc:Ignorable="d" 
              Background="White"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800">
 
     <UserControl.Resources>
         <AlternationConverter x:Key="BackgroundConverter">
@@ -57,11 +57,15 @@
     
     <Grid Margin="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
+        <TextBlock Text="Visi Ieraksti"
+                   FontSize="20"
+                   VerticalAlignment="Center"/>
         <ListBox x:Name="Records"
-                 Grid.Row="0"
+                 Grid.Row="1"
                  SelectedItem="{Binding SelectedRecord}"
                  BorderThickness="0"
                  AlternationCount="2"
@@ -183,7 +187,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Grid Grid.Row="1"
+        <Grid Grid.Row="2"
               Margin="15">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -197,19 +201,20 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <!--
                 <Button Grid.Column="0"
                         Content="Jauns..."
                         Margin="0 0 5 0"
                         MaxWidth="200"
-                        x:Name="AddNew"/>
-                <Button Grid.Column="1"
+                        x:Name="AddNew"/>-->
+                <Button Grid.Column="0"
                         Content="Rediģēt..."
-                        Margin="5 0 5 0"
+                        Margin="0 0 5 0"
                         MaxWidth="200"
                         x:Name="Edit"/>
-                <Button Grid.Column="2"
+                <Button Grid.Column="1"
                         Content="Dzēst"
-                        Margin="5 0 5 0"
+                        Margin="5 0 0 0"
                         MaxWidth="200"
                         x:Name="Delete"/>
                 <Button Grid.Column="3"

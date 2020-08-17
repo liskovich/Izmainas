@@ -15,3 +15,4 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Deb
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\AngularClient.RazorTargetAssemblyInfo.cache
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\staticwebassets\AngularClient.StaticWebAssets.Manifest.cache
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\staticwebassets\AngularClient.StaticWebAssets.xml
+C:\Users\sk\source\repos\Izmainas\Izmainas\AngularClient\obj\Debug\netcoreapp3.1\AngularClient.csprojAssemblyReference.cache

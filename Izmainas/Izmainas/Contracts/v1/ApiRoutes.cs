@@ -23,5 +23,15 @@ namespace Izmainas.Contracts.v1
             public const string Today = Base + "/records/today";
             public const string Tomorrow = Base + "/records/tomorrow";
         }
+
+        public static class TempRecords
+        {
+            public const string GetAll = Base + "/temprecords";
+            public const string Get = Base + "/temprecords/{recordId}";
+            public const string Create = Base + "/temprecords";
+            public const string Update = Base + "/temprecords/{recordId}";
+            public const string Delete = Base + "/temprecords/{recordId}";
+            public const string Transfer = Base + "/temprecords/transfer";
+        }
     }
 }

@@ -12,5 +12,6 @@ namespace Izmainas.Data.DataAccess
         List<DbRecord> GetRecordById(string Id);
         List<DbRecord> GetRecords();
         void SaveRecord(DbRecord record);
+        //void PublishRecords();
     }
 }

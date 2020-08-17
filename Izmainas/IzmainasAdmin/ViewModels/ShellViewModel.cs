@@ -11,12 +11,17 @@ namespace IzmainasAdmin.ViewModels
     {
         public ShellViewModel()
         {
-            ActivateItemAsync(IoC.Get<RecordsViewModel>(), new CancellationToken());
+            ActivateItemAsync(IoC.Get<PublishViewModel>(), new CancellationToken());
         }
 
         public async Task ViewAll()
         {
             await ActivateItemAsync(IoC.Get<RecordsViewModel>(), new CancellationToken());
+        }
+
+        public async Task PublishList()
+        {
+            await ActivateItemAsync(IoC.Get<PublishViewModel>(), new CancellationToken());
         }
     }
 }

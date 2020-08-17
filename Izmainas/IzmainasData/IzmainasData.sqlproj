@@ -69,6 +69,13 @@
     <Build Include="dbo\Stored Procedures\spRecords_Edit.sql" />
     <Build Include="dbo\Stored Procedures\spRecords_Delete.sql" />
     <Build Include="dbo\Stored Procedures\spRecords_GetByDate.sql" />
+    <Build Include="dbo\Tables\RecordsTemp.sql" />
+    <Build Include="dbo\Stored Procedures\trRecordsTemp_TransferToRecords.sql" />
+    <Build Include="dbo\Stored Procedures\spRecordsTemp_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spRecordsTemp_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spRecordsTemp_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\spRecordsTemp_Edit.sql" />
+    <Build Include="dbo\Stored Procedures\spRecordsTemp_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocatios\IzmainasData.publish.xml" />

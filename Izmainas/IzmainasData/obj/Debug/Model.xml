@@ -1,0 +1,1683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="IzmainasData.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\SK\SOURCE\REPOS\IZMAINAS\IZMAINAS\IZMAINASDATA\OBJ\DEBUG\IZMAINASDATA.DLL" />
+			<Metadata Name="AssemblyName" Value="IzmainasData" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasData\obj\Debug\IzmainasData.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[RecordsTemp].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[RecordsTemp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Records].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Records]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="4" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[Teacher]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[Room]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[Note]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[ClassNumber]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[ClassLetter]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[Lessons]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Records].[Date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[RecordsTemp]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[Teacher]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[Room]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[Note]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[ClassNumber]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[ClassLetter]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[Lessons]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[RecordsTemp].[Date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecords_Delete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	DELETE FROM dbo.Records WHERE Id = @Id;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Delete].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Delete].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="136" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecords_Delete]&#xD;&#xA;&#x9;@Id NVARCHAR(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecords_Edit]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	UPDATE dbo.Records
+	SET Teacher = @Teacher, Room = @Room, Note = @Note, ClassNumber = @ClassNumber, ClassLetter = @ClassLetter,
+	Lessons = @Lessons, [Date] = @Date WHERE Id = @Id;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Edit].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@Teacher]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@Room]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@Note]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@ClassNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@ClassLetter]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@Lessons]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Edit].[@Date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="451" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecords_Edit]&#xD;&#xA;&#x9;@Id NVARCHAR(50),&#xD;&#xA;&#x9;@Teacher NVARCHAR(100),&#xD;&#xA;&#x9;@Room NVARCHAR(100),&#xD;&#xA;&#x9;@Note NVARCHAR(MAX),&#xD;&#xA;&#x9;@ClassNumber NVARCHAR(50),&#xD;&#xA;&#x9;@ClassLetter NVARCHAR(50),&#xD;&#xA;&#x9;@Lessons NVARCHAR(100),&#xD;&#xA;&#x9;@Date DATETIME2&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecords_GetAll]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	SELECT [Id], [Teacher], [Room], [Note], [ClassNumber], [ClassLetter], [Lessons], [Date] FROM dbo.Records;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="183" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecords_GetAll]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecords_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	SELECT [Id], [Teacher], [Room], [Note], [ClassNumber], [ClassLetter], [Lessons], [Date] FROM dbo.Records WHERE Id = @Id;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_GetById].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_GetById].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="218" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecords_GetById]&#xD;&#xA;&#x9;@Id NVARCHAR(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecords_GetToday]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	SELECT [Id], [Teacher], [Room], [Note], [ClassNumber], [ClassLetter], [Lessons], [Date] FROM dbo.Records WHERE [Date] = @Date;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_GetToday].[@Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_GetToday].[@Date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="224" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecords_GetToday]&#xD;&#xA;&#x9;@Date DATETIME2&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecords_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO dbo.Records(Id, Teacher, Room, Note, ClassNumber, ClassLetter, Lessons, [Date])
+	VALUES(@Id, @Teacher, @Room, @Note, @ClassNumber, @ClassLetter, @Lessons, @Date);
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecords_Insert].[@Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@Teacher]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@Room]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@Note]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@ClassNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@ClassLetter]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@Lessons]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecords_Insert].[@Date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="447" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecords_Insert]&#xD;&#xA;&#x9;@Id NVARCHAR(50),&#xD;&#xA;&#x9;@Teacher NVARCHAR(100),&#xD;&#xA;&#x9;@Room NVARCHAR(100),&#xD;&#xA;&#x9;@Note NVARCHAR(MAX),&#xD;&#xA;&#x9;@ClassNumber NVARCHAR(50),&#xD;&#xA;&#x9;@ClassLetter NVARCHAR(50),&#xD;&#xA;&#x9;@Lessons NVARCHAR(100),&#xD;&#xA;&#x9;@Date DATETIME2&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecordsTemp_Delete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	DELETE FROM dbo.RecordsTemp WHERE Id = @Id;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[RecordsTemp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Delete].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Delete].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="144" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecordsTemp_Delete]&#xD;&#xA;&#x9;@Id NVARCHAR(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecordsTemp_Edit]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	UPDATE dbo.RecordsTemp
+	SET Teacher = @Teacher, Room = @Room, Note = @Note, ClassNumber = @ClassNumber, ClassLetter = @ClassLetter,
+	Lessons = @Lessons, [Date] = @Date WHERE Id = @Id;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[RecordsTemp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Edit].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@Teacher]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@Room]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@Note]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@ClassNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@ClassLetter]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@Lessons]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Edit].[@Date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="459" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecordsTemp_Edit]&#xD;&#xA;&#x9;@Id NVARCHAR(50),&#xD;&#xA;&#x9;@Teacher NVARCHAR(100),&#xD;&#xA;&#x9;@Room NVARCHAR(100),&#xD;&#xA;&#x9;@Note NVARCHAR(MAX),&#xD;&#xA;&#x9;@ClassNumber NVARCHAR(50),&#xD;&#xA;&#x9;@ClassLetter NVARCHAR(50),&#xD;&#xA;&#x9;@Lessons NVARCHAR(100),&#xD;&#xA;&#x9;@Date DATETIME2&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecordsTemp_GetAll]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	SELECT [Id], [Teacher], [Room], [Note], [ClassNumber], [ClassLetter], [Lessons], [Date] FROM dbo.RecordsTemp;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[RecordsTemp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="191" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecordsTemp_GetAll]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecordsTemp_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	SELECT [Id], [Teacher], [Room], [Note], [ClassNumber], [ClassLetter], [Lessons], [Date] FROM dbo.RecordsTemp WHERE Id = @Id;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[RecordsTemp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_GetById].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_GetById].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="226" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecordsTemp_GetById]&#xD;&#xA;&#x9;@Id NVARCHAR(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRecordsTemp_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO dbo.RecordsTemp (Id, Teacher, Room, Note, ClassNumber, ClassLetter, Lessons, [Date])
+	VALUES(@Id, @Teacher, @Room, @Note, @ClassNumber, @ClassLetter, @Lessons, @Date);
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[RecordsTemp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRecordsTemp_Insert].[@Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@Teacher]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@Room]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@Note]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@ClassNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@ClassLetter]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@Lessons]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRecordsTemp_Insert].[@Date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="456" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRecordsTemp_Insert]&#xD;&#xA;&#x9;@Id NVARCHAR(50),&#xD;&#xA;&#x9;@Teacher NVARCHAR(100),&#xD;&#xA;&#x9;@Room NVARCHAR(100),&#xD;&#xA;&#x9;@Note NVARCHAR(MAX),&#xD;&#xA;&#x9;@ClassNumber NVARCHAR(50),&#xD;&#xA;&#x9;@ClassLetter NVARCHAR(50),&#xD;&#xA;&#x9;@Lessons NVARCHAR(100),&#xD;&#xA;&#x9;@Date DATETIME2&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[trRecordsTemp_TransferToRecords]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	--BEGIN TRANSACTION;
+	INSERT INTO dbo.Records (Id, Teacher, Room, Note, ClassNumber, ClassLetter, Lessons, [Date])
+	SELECT [Id], [Teacher], [Room], [Note], [ClassNumber], [ClassLetter], [Lessons], [Date] FROM dbo.RecordsTemp;
+	
+	DELETE FROM dbo.RecordsTemp;
+	--COMMIT;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Records]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Records].[Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Teacher]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Room]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Note]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[ClassLetter]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Lessons]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RecordsTemp].[Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="366" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[trRecordsTemp_TransferToRecords]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+	</Model>
+</DataSchemaModel>
