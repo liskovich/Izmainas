@@ -23,7 +23,7 @@
                         <Border Name="Border" 
                                 Padding="5" 
                                 SnapsToDevicePixels="True" 
-                                CornerRadius="5" 
+                                CornerRadius="0" 
                                 BorderThickness="1"
                                 Background="#f5f5fa"
                                 Margin="15"
@@ -46,6 +46,46 @@
             </Setter>
         </Style>
 
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Foreground" Value="Gray" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="0" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Grid Background="Blue" Width="10" HorizontalAlignment="Left"/>
+                                <!--<Path x:Name="PathIcon" Width="15" Height="25" Stretch="Fill" Fill="#4C87B3" HorizontalAlignment="Left" Margin="17,0,0,0" Data="F1 M 30.0833,22.1667L 50.6665,37.6043L 50.6665,38.7918L 30.0833,53.8333L 30.0833,22.1667 Z "/>-->
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#66a1ff" />
+                                <!--#E59400-->
+                                <Setter Property="Foreground" Value="White" />
+                                <!--<Setter TargetName="PathIcon" Property="Fill" Value="Black" />-->
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="Gray" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="Gray" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
         <!--
         <Style x:Key="Style1" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource Style2}">
             <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self},
@@ -57,13 +97,15 @@
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Jaunākie Ieraksti"
-                   FontSize="20"
-                   VerticalAlignment="Center"/>
+                   FontSize="25"
+                   VerticalAlignment="Center"
+                   Foreground="Gray"
+                   HorizontalAlignment="Center"/>
         <ListBox x:Name="PublishList"
                  Grid.Row="1"
                  SelectedItem="{Binding SelectedRecord}"
@@ -200,12 +242,11 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0"
+                <Button Grid.Column="1"
                         Content="Publicēt"
-                        Margin="0 0 5 0"
+                        Margin="5 0 5 0"
                         MaxWidth="200"
-                        x:Name="Publish"
-                        FontWeight="Bold"/>
+                        x:Name="Publish"/>
                 <Button Grid.Column="2"
                         Content="Rediģēt..."
                         Margin="5 0 5 0"
@@ -213,15 +254,14 @@
                         x:Name="Edit"/>
                 <Button Grid.Column="3"
                         Content="Dzēst"
-                        Margin="5 0 5 0"
-                        MaxWidth="200"
-                        x:Name="Delete"/>
-                <Button Grid.Column="1"
-                        Content="Jauns..."
                         Margin="5 0 0 0"
                         MaxWidth="200"
-                        x:Name="AddNew"
-                        FontWeight="Bold"/>
+                        x:Name="Delete"/>
+                <Button Grid.Column="0"
+                        Content="Jauns..."
+                        Margin="0 0 5 0"
+                        MaxWidth="200"
+                        x:Name="AddNew"/>
             </Grid>
         </Grid>
     </Grid>

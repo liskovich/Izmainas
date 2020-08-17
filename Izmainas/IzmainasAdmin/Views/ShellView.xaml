@@ -10,7 +10,7 @@
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Background" Value="LightGray" />
             <Setter Property="Foreground" Value="Gray" />
             <Setter Property="FontSize" Value="20" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -28,13 +28,19 @@
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#E59400" />
+                                <Setter Property="Background" Value="#66a1ff" /> 
+                                <!--#E59400-->
                                 <Setter Property="Foreground" Value="White" />
                                 <!--<Setter TargetName="PathIcon" Property="Fill" Value="Black" />-->
                             </Trigger>
 
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="OrangeRed" />
+                                <Setter Property="Background" Value="Gray" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="Gray" />
                                 <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -60,9 +66,20 @@
                             <GradientStop Color="DeepSkyBlue" Offset="1" />
                         </LinearGradientBrush>
                     </Grid.Background>
+                    <TextBlock Text="Izvēlne"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               FontSize="30"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"
+                               Margin="0 0 0 20"/>
                 </Grid>
-                <Button Content="Jaunākie" Height="40" x:Name="PublishList"/>
-                <Button Content="Saraksts" Height="40" x:Name="ViewAll"/>
+                <Button Content="Jaunākie" 
+                        Height="40" 
+                        x:Name="PublishList"/>
+                <Button Content="Saraksts" 
+                        Height="40" 
+                        x:Name="ViewAll"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1">

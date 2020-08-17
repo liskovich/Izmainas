@@ -15,7 +15,8 @@ namespace IzmainasAdmin.ViewModels
 
         private readonly Record _record;
 
-        private System.Action<Record> _saveChanges;
+        //private System.Action<Record> _saveChanges;
+        private Func<Record, Task> _saveChanges;
 
         private string _teacher;
         private string _room;
@@ -25,7 +26,7 @@ namespace IzmainasAdmin.ViewModels
         private string _lessons;
         private DateTime _date;
 
-        public EditRecordViewModel(Record record, System.Action<Record> saveChanges, IRecordTempService recordTempService = null, IRecordService recordService = null)
+        public EditRecordViewModel(Record record, Func<Record, Task> saveChanges, IRecordTempService recordTempService = null, IRecordService recordService = null)
         {
             _record = record;
             _recordTempService = recordTempService;
@@ -181,8 +182,9 @@ namespace IzmainasAdmin.ViewModels
             }
         }
 
-        public async Task EditRecord()
+        public async Task EditRecord() //async Task
         {
+            /*
             try
             {
                 var record = new Record
@@ -203,6 +205,17 @@ namespace IzmainasAdmin.ViewModels
             {
                 Console.WriteLine(ex.Message);
             }
+            */
+
+            _record.Teacher = Teacher;
+            _record.Room = Room;
+            _record.Note = Note;
+            _record.ClassNumber = SelectedNumber;
+            _record.ClassLetter = SelectedLetter;
+            _record.Lessons = Lessons;
+            _record.Date = Date;
+            await _saveChanges(_record);
+            ResetFields();
         }
 
         

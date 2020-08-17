@@ -70,3 +70,5 @@ C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.genruntimeconfig.cache
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\PublishView.g.cs
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\PublishView.baml
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\PublishView.g.cs
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\PublishView.baml

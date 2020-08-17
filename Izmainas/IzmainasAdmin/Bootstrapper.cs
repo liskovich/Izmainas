@@ -27,7 +27,8 @@ namespace IzmainasAdmin
         protected override void Configure()
         {
             _container.Instance(_container)
-                .PerRequest<IRecordService, RecordService>();
+                .PerRequest<IRecordService, RecordService>()
+                .PerRequest<IRecordTempService, RecordTempService>();
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
