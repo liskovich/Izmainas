@@ -14,5 +14,6 @@ namespace Izmainas.Services
         bool CreateRecord(Record record);
         bool UpdateRecord(Record record);
         bool DeleteRecord(Guid recordId);
+        //bool TransferChanges();
     }
 }

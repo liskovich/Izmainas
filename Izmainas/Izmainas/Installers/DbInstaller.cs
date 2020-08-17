@@ -15,9 +15,11 @@ namespace Izmainas.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IRecordService, RecordService>();
+            services.AddScoped<IRecordTempService, RecordTempService>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IRecordData, RecordData>();
+            services.AddTransient<IRecordTempData, RecordTempData>();
         }
     }
 }

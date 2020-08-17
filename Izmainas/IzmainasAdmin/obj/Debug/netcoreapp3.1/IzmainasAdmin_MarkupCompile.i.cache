@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\
 IzmainasAdmin
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasAdmin\App.xaml
-4253954703
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\App.xaml
+51452146937
 
-21-1265611207
-2051471419584
-Views\EditRecordView.xaml;Views\NewRecordView.xaml;Views\RecordsView.xaml;Views\ShellView.xaml;
+231355170657
+2051726122408
+Views\EditRecordView.xaml;Views\NewRecordView.xaml;Views\PublishView.xaml;Views\RecordsView.xaml;Views\ShellView.xaml;
 
 False
 

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//using System.Web.Http;
 
 namespace Izmainas.Controllers.v1
 {
@@ -32,7 +33,7 @@ namespace Izmainas.Controllers.v1
         public IActionResult Get([FromRoute] Guid recordId)
         {
             var record = _recordService.GetRecordById(recordId);
-            if(record == null)
+            if (record == null)
             {
                 return NotFound();
             }
@@ -55,7 +56,7 @@ namespace Izmainas.Controllers.v1
             };
 
             var created = _recordService.CreateRecord(record);
-            if(created == false)
+            if (created == false)
             {
                 return NotFound();
             }
@@ -71,7 +72,7 @@ namespace Izmainas.Controllers.v1
         public IActionResult Update([FromRoute] Guid recordId, [FromBody] UpdateRecordRequest request)
         {
             var record = _recordService.GetRecordById(recordId);
-            if(record == null)
+            if (record == null)
             {
                 return NotFound();
             }
@@ -85,7 +86,7 @@ namespace Izmainas.Controllers.v1
             record.Date = request.Date;
 
             var updated = _recordService.UpdateRecord(record);
-            if(updated == false)
+            if (updated == false)
             {
                 return NotFound();
             }
@@ -97,7 +98,7 @@ namespace Izmainas.Controllers.v1
         public IActionResult Delete([FromRoute] Guid recordId)
         {
             var deleted = _recordService.DeleteRecord(recordId);
-            if(deleted == false)
+            if (deleted == false)
             {
                 return NotFound();
             }
@@ -110,6 +111,19 @@ namespace Izmainas.Controllers.v1
         {
             return Ok(_recordService.GetRecordByDate(recordDate));
         }
+
+        /*
+        [HttpPost(ApiRoutes.Records.Transfer)]
+        public IActionResult PublishRecords()
+        {
+            var transfered = _recordService.TransferChanges();
+            if(transfered == false)
+            {
+                return NotFound();
+            }
+
+            return Ok();
+        }*/
 
         #endregion
 

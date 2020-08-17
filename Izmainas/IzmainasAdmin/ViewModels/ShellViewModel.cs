@@ -18,5 +18,15 @@ namespace IzmainasAdmin.ViewModels
         {
             await ActivateItemAsync(IoC.Get<RecordsViewModel>(), new CancellationToken());
         }
+
+        public async Task MainList()
+        {
+            await ActivateItemAsync(IoC.Get<RecordsViewModel>(), new CancellationToken());
+        }
+
+        public async Task PublishList()
+        {
+            await ActivateItemAsync(IoC.Get<PublishViewModel>(), new CancellationToken());
+        }
     }
 }

@@ -61,7 +61,8 @@
                         </LinearGradientBrush>
                     </Grid.Background>
                 </Grid>
-                <Button Content="test" Height="40"/>
+                <Button Content="Saraksts" Height="40" x:Name="MainList"/>
+                <Button Content="Publicēt" Height="40" x:Name="PublishList"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1">
