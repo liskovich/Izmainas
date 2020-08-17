@@ -148,7 +148,7 @@ namespace IzmainasAdmin.ViewModels
                 settings.ResizeMode = ResizeMode.NoResize;
                 settings.Title = "Rediģēt";
 
-                await _windowManager.ShowDialogAsync(new EditRecordViewModel(_recordService, SelectedRecord), null, settings);
+                await _windowManager.ShowDialogAsync(new EditRecordViewModel(SelectedRecord, ), null, settings);
                 await LoadRecords();
             }
             catch (Exception ex)
@@ -156,7 +156,31 @@ namespace IzmainasAdmin.ViewModels
                 Console.WriteLine(ex.Message);
             }
         }
-
+        //
+        public async Task SaveEditChanges(Record r)
+        {
+            try
+            {
+                var record = new Record
+                {
+                    Id = r.Id,
+                    Teacher = r.Teacher,
+                    Room = r.Room,
+                    Note = r.Note,
+                    ClassNumber = r.ClassNumber,
+                    ClassLetter = r.ClassLetter,
+                    Lessons = r.Lessons,
+                    Date = r.Date
+                };
+                await _recordService.EditRecord(record);
+                //ResetFields();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        //
         public bool CanDelete
         {
             get

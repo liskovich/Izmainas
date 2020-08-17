@@ -11,7 +11,11 @@ namespace IzmainasAdmin.ViewModels
     public class EditRecordViewModel : Screen
     {
         private readonly IRecordService _recordService;
+        private readonly IRecordTempService _recordTempService;
+
         private readonly Record _record;
+
+        private System.Action<Record> _saveChanges;
 
         private string _teacher;
         private string _room;
@@ -21,10 +25,13 @@ namespace IzmainasAdmin.ViewModels
         private string _lessons;
         private DateTime _date;
 
-        public EditRecordViewModel(IRecordService recordService, Record record)
+        public EditRecordViewModel(Record record, System.Action<Record> saveChanges, IRecordTempService recordTempService = null, IRecordService recordService = null)
         {
-            _recordService = recordService;
             _record = record;
+            _recordTempService = recordTempService;
+            _recordService = recordService;
+
+            _saveChanges = saveChanges;
 
             Teacher = record.Teacher;
             Room = record.Room;
@@ -189,7 +196,7 @@ namespace IzmainasAdmin.ViewModels
                     Lessons = Lessons,
                     Date = Date
                 };
-                await _recordService.EditRecord(record);
+                await _recordTempService.EditRecord(record);
                 ResetFields();
             }
             catch (Exception ex)
@@ -197,5 +204,7 @@ namespace IzmainasAdmin.ViewModels
                 Console.WriteLine(ex.Message);
             }
         }
+
+        
     }
 }

@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace IzmainasAdmin.Services
 {
-    public class RecordService : IRecordService
+    public class RecordTempService : IRecordTempService
     {
         private readonly IApiHelper _apiHelper;
 
-        public RecordService(IApiHelper apiHelper)
+        public RecordTempService(IApiHelper apiHelper)
         {
             _apiHelper = apiHelper;
         }
 
         public async Task<List<Record>> GetAll()
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync("api/v1/records"))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync("api/v1/temprecords"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -37,7 +37,7 @@ namespace IzmainasAdmin.Services
 
         public async Task<Record> GetById(Guid recordId)
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync($"api/v1/records/{recordId}"))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync($"api/v1/temprecords/{recordId}"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -53,26 +53,9 @@ namespace IzmainasAdmin.Services
             }
         }
 
-        public async Task<List<Record>> GetByDate(DateTime recordDate)
-        {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync($"api/v1/records/dates/{recordDate}"))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    var result = await response.Content.ReadAsAsync<List<Record>>();
-                    return result;
-                }
-                else
-                {
-                    //throw new Exception(response.ReasonPhrase);
-                    return null;
-                }
-            }
-        }
-
         public async Task PostRecord(CreateRecord record)
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync("api/v1/records", record))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync("api/v1/temprecords", record))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -88,7 +71,7 @@ namespace IzmainasAdmin.Services
         public async Task EditRecord(Record record)
         {
             var selectedId = record.Id;
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.PutAsJsonAsync($"api/v1/records/{selectedId}", record))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.PutAsJsonAsync($"api/v1/temprecords/{selectedId}", record))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -104,7 +87,7 @@ namespace IzmainasAdmin.Services
         public async Task DeleteRecord(Guid recordId) //Record record
         {
             var selectedId = recordId;
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.DeleteAsync($"api/v1/records/{selectedId}"))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.DeleteAsync($"api/v1/temprecords/{selectedId}"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -117,10 +100,9 @@ namespace IzmainasAdmin.Services
             }
         }
 
-        /*
         public async Task PublishRecords()
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync($"api/v1/records/transfer", new { }))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync($"api/v1/temprecords/transfer", new { }))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -132,6 +114,5 @@ namespace IzmainasAdmin.Services
                 }
             }
         }
-        */
     }
 }
