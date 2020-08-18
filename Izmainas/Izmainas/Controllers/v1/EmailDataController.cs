@@ -57,7 +57,7 @@ namespace Izmainas.Controllers.v1
             }
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
-            var locationUri = baseUrl + "/" + ApiRoutes.EmailData.Get.Replace("{emailId}", emailModel.Id.ToString());
+            var locationUri = baseUrl + "/" + ApiRoutes.EmailData.Get.Replace("{modelId}", emailModel.Id.ToString());
 
             var response = new EmailModelResponse { Id = emailModel.Id };
             return Created(locationUri, response);

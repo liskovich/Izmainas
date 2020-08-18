@@ -47,7 +47,7 @@ namespace Izmainas.Contracts.v1
         public static class EmailData
         {
             public const string GetAll = Base + "/emailmodels";
-            public const string Get = Base + "/emailmodels/{emailId}";
+            public const string Get = Base + "/emailmodels/{modelId}";
             public const string Email = Base + "/emailmodels/emails/{email}";
             public const string Create = Base + "/emailmodels";
             public const string Delete = Base + "/emailmodels/emails/{email}";
