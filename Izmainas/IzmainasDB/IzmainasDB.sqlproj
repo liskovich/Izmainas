@@ -76,6 +76,12 @@
     <Build Include="dbo\Stored Procedures\spRecordsTemp_GetById.sql" />
     <Build Include="dbo\Stored Procedures\spRecordsTemp_Insert.sql" />
     <Build Include="dbo\Stored Procedures\trRecordsTemp_TransferToRecords.sql" />
+    <Build Include="dbo\Tables\Emails.sql" />
+    <Build Include="dbo\Stored Procedures\spEmails_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spEmails_GetByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\spEmails_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\spEmails_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spEmails_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocations\IzmainasDB.publish.xml" />

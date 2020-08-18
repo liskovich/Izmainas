@@ -3,3 +3,7 @@ C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.dll
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.pdb
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.dll
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.pdb
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\Model.xml
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\refactor.xml
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\postdeploy.sql
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\predeploy.sql

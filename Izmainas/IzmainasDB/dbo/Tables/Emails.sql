@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Emails]
+(
+	[Id] NVARCHAR(50) NOT NULL PRIMARY KEY,
+	[Email] NVARCHAR(200) NULL,
+	[CreatedDate] DATETIME2 NULL
+)
