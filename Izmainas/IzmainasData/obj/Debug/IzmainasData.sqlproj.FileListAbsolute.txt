@@ -3,7 +3,6 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\bin\Debu
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\bin\Debug\IzmainasData.pdb
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\IzmainasData.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\IzmainasData.pdb
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasData\obj\Debug\IzmainasData.sqlprojAssemblyReference.cache
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasData\bin\Debug\IzmainasData.dacpac
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasData\bin\Debug\IzmainasData.dll
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasData\bin\Debug\IzmainasData.pdb

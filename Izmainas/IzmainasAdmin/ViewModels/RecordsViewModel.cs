@@ -108,6 +108,7 @@ namespace IzmainasAdmin.ViewModels
             }
         }
 
+        /*
         public async Task AddNew()
         {
             try
@@ -124,7 +125,7 @@ namespace IzmainasAdmin.ViewModels
             {
                 Console.WriteLine(ex.Message);
             }
-        }
+        }*/
 
         public bool CanEdit
         {
@@ -148,7 +149,7 @@ namespace IzmainasAdmin.ViewModels
                 settings.ResizeMode = ResizeMode.NoResize;
                 settings.Title = "Rediģēt";
 
-                await _windowManager.ShowDialogAsync(new EditRecordViewModel(SelectedRecord, ), null, settings);
+                await _windowManager.ShowDialogAsync(new EditRecordViewModel(SelectedRecord, SaveEditChanges), null, settings);
                 await LoadRecords();
             }
             catch (Exception ex)

@@ -30,6 +30,20 @@ namespace IzmainasAdmin.Services
                 else
                 {
                     //throw new Exception(response.ReasonPhrase);
+                    //var failed = new List<Record>
+                    //{
+                    //    new Record
+                    //    {
+                    //        Id = Guid.NewGuid(),
+                    //        Teacher = "",
+                    //        Room = "",
+                    //        Note = "",
+                    //        ClassNumber = "",
+                    //        ClassLetter = "",
+                    //        Lessons = "",
+                    //        Date = DateTime.Today
+                    //    }
+                    //};
                     return null;
                 }
             }

@@ -13,7 +13,8 @@ namespace IzmainasAdmin.ViewModels
 {
     public class NewRecordViewModel : Screen, INotifyPropertyChanged
     {
-        private readonly IRecordService _recordService;
+        //private readonly IRecordService _recordService;
+        private readonly IRecordTempService _recordTempService;
         private readonly IWindowManager _windowManager;
 
         private string _teacher;
@@ -28,9 +29,9 @@ namespace IzmainasAdmin.ViewModels
         public ICommand Command { get; set; }
         //
 
-        public NewRecordViewModel(IRecordService recordService, IWindowManager windowManager)
+        public NewRecordViewModel(IRecordTempService recordTempService, IWindowManager windowManager)
         {
-            _recordService = recordService;
+            _recordTempService = recordTempService;
             _windowManager = windowManager;
 
             Date = DateTime.Today;
@@ -243,7 +244,7 @@ namespace IzmainasAdmin.ViewModels
                     Lessons = Lessons,
                     Date = Date
                 };
-                await _recordService.PostRecord(record);
+                await _recordTempService.PostRecord(record);
                 ResetFields();
             }
             catch (Exception ex)
