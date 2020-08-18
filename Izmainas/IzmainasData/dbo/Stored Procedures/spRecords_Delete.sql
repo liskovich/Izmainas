@@ -1,7 +1,0 @@
-﻿CREATE PROCEDURE [dbo].[spRecords_Delete]
-	@Id NVARCHAR(50)
-AS
-BEGIN
-	SET NOCOUNT ON;
-	DELETE FROM dbo.Records WHERE Id = @Id;
-END
