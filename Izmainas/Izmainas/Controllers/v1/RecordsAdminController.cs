@@ -12,24 +12,24 @@ using System.Threading.Tasks;
 
 namespace Izmainas.Controllers.v1
 {
-    public class RecordsController : Controller
+    public class RecordsAdminController : Controller
     {
         private readonly IRecordService _recordService;
 
-        public RecordsController(IRecordService recordService)
+        public RecordsAdminController(IRecordService recordService)
         {
             _recordService = recordService;
         }
 
         #region Production Actions
 
-        [HttpGet(ApiRoutes.Records.GetAll)]
+        [HttpGet(ApiRoutes.AdminRecords.GetAll)]
         public IActionResult GetAll()
         {
             return Ok(_recordService.GetRecords());
         }
 
-        [HttpGet(ApiRoutes.Records.Get)]
+        [HttpGet(ApiRoutes.AdminRecords.Get)]
         public IActionResult Get([FromRoute] Guid recordId)
         {
             var record = _recordService.GetRecordById(recordId);
@@ -40,7 +40,7 @@ namespace Izmainas.Controllers.v1
             return Ok(record);
         }
 
-        [HttpPost(ApiRoutes.Records.Create)]
+        [HttpPost(ApiRoutes.AdminRecords.Create)]
         public IActionResult Create([FromBody] CreateRecordRequest request)
         {
             var record = new Record
@@ -62,13 +62,13 @@ namespace Izmainas.Controllers.v1
             }
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
-            var locationUri = baseUrl + "/" + ApiRoutes.Records.Get.Replace("{recordId}", record.Id.ToString());
+            var locationUri = baseUrl + "/" + ApiRoutes.AdminRecords.Get.Replace("{recordId}", record.Id.ToString());
 
             var response = new RecordResponse { Id = record.Id };
             return Created(locationUri, response);
         }
 
-        [HttpPut(ApiRoutes.Records.Update)]
+        [HttpPut(ApiRoutes.AdminRecords.Update)]
         public IActionResult Update([FromRoute] Guid recordId, [FromBody] UpdateRecordRequest request)
         {
             var record = _recordService.GetRecordById(recordId);
@@ -94,7 +94,7 @@ namespace Izmainas.Controllers.v1
             return Ok(record);
         }
 
-        [HttpDelete(ApiRoutes.Records.Delete)]
+        [HttpDelete(ApiRoutes.AdminRecords.Delete)]
         public IActionResult Delete([FromRoute] Guid recordId)
         {
             var deleted = _recordService.DeleteRecord(recordId);
@@ -106,7 +106,7 @@ namespace Izmainas.Controllers.v1
             return NoContent();
         }
 
-        [HttpGet(ApiRoutes.Records.Date)]
+        [HttpGet(ApiRoutes.AdminRecords.Date)]
         public IActionResult GetByDate([FromRoute] DateTime recordDate)
         {
             return Ok(_recordService.GetRecordByDate(recordDate));
@@ -129,7 +129,7 @@ namespace Izmainas.Controllers.v1
 
         #region Test/Development Actions
 
-        [HttpGet(ApiRoutes.Records.Today)]
+        [HttpGet(ApiRoutes.AdminRecords.Today)]
         public IActionResult GetToday()
         {
             var today = DateTime.Today;
@@ -137,7 +137,7 @@ namespace Izmainas.Controllers.v1
             return Ok(test);
         }
 
-        [HttpGet(ApiRoutes.Records.Tomorrow)]
+        [HttpGet(ApiRoutes.AdminRecords.Tomorrow)]
         public IActionResult GetTomorrow()
         {
             var tomorrow = DateTime.Today.AddDays(1);

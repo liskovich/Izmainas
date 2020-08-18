@@ -1,0 +1,5 @@
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.dacpac
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.dll
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.pdb
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.dll
+C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.pdb

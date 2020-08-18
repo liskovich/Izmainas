@@ -10,10 +10,10 @@ import { environment } from '../../environments/environment';
 })
 export class RecordServiceService {
 
-  private controllerEndpoint = `records`;
-  private dateEnpoint = `records/dates/`;
-  private todayEndpoint = `records/today`;
-  private tomorrowEndpoint = `records/tomorrow`;
+  private controllerEndpoint = `client/records`;
+  private dateEnpoint = `client/records/dates/`;
+  private todayEndpoint = `client/records/today`;
+  private tomorrowEndpoint = `client/records/tomorrow`;
 
   constructor(private http:HttpClient) { }
 

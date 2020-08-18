@@ -20,7 +20,7 @@ namespace IzmainasAdmin.Services
 
         public async Task<List<Record>> GetAll()
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync("api/v1/records"))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync("api/v1/admin/records"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -37,7 +37,7 @@ namespace IzmainasAdmin.Services
 
         public async Task<Record> GetById(Guid recordId)
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync($"api/v1/records/{recordId}"))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync($"api/v1/admin/records/{recordId}"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -55,7 +55,7 @@ namespace IzmainasAdmin.Services
 
         public async Task<List<Record>> GetByDate(DateTime recordDate)
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync($"api/v1/records/dates/{recordDate}"))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.GetAsync($"api/v1/admin/records/dates/{recordDate}"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -72,7 +72,7 @@ namespace IzmainasAdmin.Services
 
         public async Task PostRecord(CreateRecord record)
         {
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync("api/v1/records", record))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync("api/v1/admin/records", record))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -88,7 +88,7 @@ namespace IzmainasAdmin.Services
         public async Task EditRecord(Record record)
         {
             var selectedId = record.Id;
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.PutAsJsonAsync($"api/v1/records/{selectedId}", record))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.PutAsJsonAsync($"api/v1/admin/records/{selectedId}", record))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -104,7 +104,7 @@ namespace IzmainasAdmin.Services
         public async Task DeleteRecord(Guid recordId) //Record record
         {
             var selectedId = recordId;
-            using (HttpResponseMessage response = await _apiHelper.ApiClient.DeleteAsync($"api/v1/records/{selectedId}"))
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.DeleteAsync($"api/v1/admin/records/{selectedId}"))
             {
                 if (response.IsSuccessStatusCode)
                 {
