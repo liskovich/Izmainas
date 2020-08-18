@@ -11,17 +11,27 @@ namespace Izmainas.Contracts.v1
         public const string Version = "v1";
         public const string Base = Root + "/" + Version;
 
-        public static class Records
+        public static class AdminRecords
         {
-            public const string GetAll = Base + "/records";
-            public const string Get = Base + "/records/{recordId}";
-            public const string Create = Base + "/records";
-            public const string Update = Base + "/records/{recordId}";
-            public const string Delete = Base + "/records/{recordId}";
-            public const string Date = Base + "/records/dates/{recordDate}";
+            public const string GetAll = Base + "/admin/records";
+            public const string Get = Base + "/admin/records/{recordId}";
+            public const string Create = Base + "/admin/records";
+            public const string Update = Base + "/admin/records/{recordId}";
+            public const string Delete = Base + "/admin/records/{recordId}";
+            public const string Date = Base + "/admin/records/dates/{recordDate}";
 
-            public const string Today = Base + "/records/today";
-            public const string Tomorrow = Base + "/records/tomorrow";
+            public const string Today = Base + "/admin/records/today";
+            public const string Tomorrow = Base + "/admin/records/tomorrow";
+        }
+
+        public static class ClientRecords
+        {
+            public const string Date = Base + "/client/records/dates/{recordDate}";
+
+            public const string GetAll = Base + "/client/records";
+            public const string Get = Base + "/client/records/{recordId}";
+            public const string Today = Base + "/client/records/today";
+            public const string Tomorrow = Base + "/client/records/tomorrow";
         }
 
         public static class TempRecords

@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Emails] (Table)
+       [dbo].[spEmails_Delete] (Procedure)
+       [dbo].[spEmails_GetAll] (Procedure)
+       [dbo].[spEmails_GetByEmail] (Procedure)
+       [dbo].[spEmails_GetById] (Procedure)
+       [dbo].[spEmails_Insert] (Procedure)
+
+** Supporting actions
