@@ -11,7 +11,7 @@
     "Izmainas": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:5001/index.html",
+      "launchUrl": "https://localhost:5001/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

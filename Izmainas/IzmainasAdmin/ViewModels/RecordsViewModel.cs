@@ -34,7 +34,8 @@ namespace IzmainasAdmin.ViewModels
             base.OnViewLoaded(view);
             try
             {
-                await LoadRecords(); 
+                await LoadRecords();
+                await LoadDates(DateTime.Today);
             }
             catch (Exception ex)
             {
@@ -106,6 +107,14 @@ namespace IzmainasAdmin.ViewModels
                 NotifyOfPropertyChange(() => CanEdit);
                 NotifyOfPropertyChange(() => CanDelete);
             }
+        }
+        
+        private BindingList<Record> recordsDate;
+
+        private async Task LoadDates(DateTime date)
+        {
+            var dateList = await _recordService.GetByDate(date);
+            recordsDate = new BindingList<Record>(dateList);
         }
 
         /*

@@ -29,8 +29,8 @@ namespace Izmainas.Data.DataAccess
 
         public List<DbRecord> GetRecordByDate(DateTime Date)
         {
-            var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecords_GetByDate", new { Date }, "IzmainasData");
-            return output;
+            var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecords_GetToday", new { Date }, "IzmainasData");
+            return output; //spRecords_GetByDate
         }
 
         public void SaveRecord(DbRecord record)

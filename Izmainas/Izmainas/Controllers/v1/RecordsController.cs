@@ -133,7 +133,8 @@ namespace Izmainas.Controllers.v1
         public IActionResult GetToday()
         {
             var today = DateTime.Today;
-            return Ok(_recordService.GetRecordByDate(today));
+            var test = _recordService.GetRecordByDate(today);
+            return Ok(test);
         }
 
         [HttpGet(ApiRoutes.Records.Tomorrow)]
