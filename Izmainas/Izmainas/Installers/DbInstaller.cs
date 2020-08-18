@@ -16,10 +16,12 @@ namespace Izmainas.Installers
         {
             services.AddScoped<IRecordService, RecordService>();
             services.AddScoped<IRecordTempService, RecordTempService>();
+            services.AddScoped<IEmailDataService, EmailDataService>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IRecordData, RecordData>();
             services.AddTransient<IRecordTempData, RecordTempData>();
+            services.AddTransient<IEmailData, EmailData>();
         }
     }
 }

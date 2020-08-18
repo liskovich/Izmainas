@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { RecordCardComponent } from './record/record-card/record-card.component';
 import { RecordListComponent } from './record/record-list/record-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { RecordServiceService } from './services/recordService.service';
+import { RecordService } from './services/record.service';
 import { NextRecordListComponent } from './record/next-record-list/next-record-list.component';
 
 const appRoutes: Routes = [
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
       //AppRoutingModule
    ],
    providers: [
-     RecordServiceService
+     RecordService
    ],
    bootstrap: [
       AppComponent

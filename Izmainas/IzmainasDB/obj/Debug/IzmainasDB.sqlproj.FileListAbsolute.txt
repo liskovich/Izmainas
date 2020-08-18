@@ -7,3 +7,12 @@ C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\Model.xml
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\refactor.xml
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\postdeploy.sql
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\predeploy.sql
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.dacpac
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\bin\Debug\IzmainasDB.pdb
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\Model.xml
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\refactor.xml
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\postdeploy.sql
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\predeploy.sql
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.pdb

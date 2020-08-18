@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="IzmainasDB.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\SK\SOURCE\REPOS\IZMAINAS\IZMAINAS\IZMAINASDB\OBJ\DEBUG\IZMAINASDB.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\USER\DOCUMENTS\VS_PROJECTS_RICO\IZMAINAS\IZMAINAS\IZMAINASDB\OBJ\DEBUG\IZMAINASDB.DLL" />
 			<Metadata Name="AssemblyName" Value="IzmainasDB" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -50,7 +50,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Records].[Id]" />
+								<References Name="[dbo].[Emails].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -58,7 +58,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Records]" />
+					<References Name="[dbo].[Emails]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
@@ -88,7 +88,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Emails].[Id]" />
+								<References Name="[dbo].[Records].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -96,7 +96,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Emails]" />
+					<References Name="[dbo].[Records]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
@@ -119,7 +119,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -179,7 +179,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
