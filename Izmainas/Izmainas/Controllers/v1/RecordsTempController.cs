@@ -14,10 +14,14 @@ namespace Izmainas.Controllers.v1
     public class RecordsTempController : Controller
     {
         private readonly IRecordTempService _recordTempService;
+        private readonly IEmailDataService _emailDataService;
+        private readonly IEmailSendingService _emailSendingService;
 
-        public RecordsTempController(IRecordTempService recordTempService)
+        public RecordsTempController(IRecordTempService recordTempService, IEmailDataService emailDataService, IEmailSendingService emailSendingService)
         {
             _recordTempService = recordTempService;
+            _emailDataService = emailDataService;
+            _emailSendingService = emailSendingService;
         }
 
         #region Production Actions
@@ -108,6 +112,21 @@ namespace Izmainas.Controllers.v1
         [HttpPost(ApiRoutes.TempRecords.Transfer)]
         public IActionResult PublishTransfer()
         {
+            var emails = _emailDataService.GetEmailModels();
+            if(emails == null)
+            {
+                return NotFound();
+            }
+
+            var records = _recordTempService.GetTempRecords();
+            if(records == null)
+            {
+                return NotFound();
+            }
+
+            var htmlEmailMessage = _emailSendingService.GenerateHTMLEmail(records);
+            _emailSendingService.SendMail(htmlEmailMessage, "Jaunas stundu izmaiņas", true, emails);
+
             var transfered = _recordTempService.TransferChanges();
             if (transfered == false)
             {

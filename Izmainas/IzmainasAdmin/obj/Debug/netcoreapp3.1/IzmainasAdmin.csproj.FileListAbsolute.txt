@@ -46,7 +46,6 @@ C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\IzmainasAdmin.csprojAssemblyReference.cache
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\EditRecordView.g.cs
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\NewRecordView.g.cs
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasAdmin\obj\Debug\netcoreapp3.1\Views\RecordsView.g.cs
