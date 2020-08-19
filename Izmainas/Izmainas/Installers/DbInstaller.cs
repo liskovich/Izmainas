@@ -17,6 +17,7 @@ namespace Izmainas.Installers
             services.AddScoped<IRecordService, RecordService>();
             services.AddScoped<IRecordTempService, RecordTempService>();
             services.AddScoped<IEmailDataService, EmailDataService>();
+            services.AddScoped<IEmailSendingService, EmailSendingService>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IRecordData, RecordData>();
