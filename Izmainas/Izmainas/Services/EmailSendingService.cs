@@ -60,8 +60,9 @@ namespace Izmainas.Services
                 _smtpClient.Send(mailMessage);
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -72,9 +73,9 @@ namespace Izmainas.Services
 
             rawHtml += @"<!DOCTYPE html>";
             rawHtml += @"<html><head>";
-            rawHtml += @"<title>Stundu Izmaiņas</title>";
+            rawHtml += @"<title>Stundu Izmaiņas Email</title>";
             rawHtml += @"<meta charset='utf-8'>";
-            rawHtml += @"<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z' crossorigin='anonymous'>";
+            rawHtml += @"<style>.card{max-width: 500px;min-width: 300px;border: #dfe8e1 1px solid;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 5px;margin: 20px auto;}.section {padding-bottom: 0px;padding-top: 5x;padding-left: 10px;padding-right: 10px;}hr {height:1px;border-width:0;color:#dfe8e1;background-color:#dfe8e1;}.subt {font-weight: bold;color: gray;}p {max-width: 480px;}</style>";
             rawHtml += @"</head><body>";
 
             rawHtml += @"<div style='text-align:center'>";
@@ -91,10 +92,7 @@ namespace Izmainas.Services
             rawHtml += @"<p style='font-weight:normal; margin:40px auto 20px auto; max-width:500px;'>Plašāka informācija <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapā</a> vai mobīlajā aplikācijā.</p>"; //https://www.google.com
             rawHtml += @"<p style='font-weight:normal; margin:20px auto; max-width:500px;'>Lai atteiktos no e-pasta ziņojumiem, dodieties uz <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapu</a> un sadaļā <b>Noderīgi</b> nospiediet <b>Atteikties no e-pastu ziņojumiem</b></p>";
             rawHtml += @"</div>";
-
-            rawHtml += @"<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>";
-            rawHtml += @"<script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous'></script>";
-            rawHtml += @"<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous'></script>";
+            
             rawHtml += @"</body>";
             rawHtml += @"</html>";
             return rawHtml;
@@ -104,44 +102,24 @@ namespace Izmainas.Services
         {
             string rawHtml = "";
 
-            rawHtml += @"<div style='max-width:500px; margin:10px auto;'>";
-            rawHtml += @"<div class='card h-100 shadow' style='margin: 0px 20px 20px 20px; min-width:300px'>";
-            rawHtml += @"<div class='card-header bg-silver'>";
-            rawHtml += @"<h4 class='card-title mt-3'>" + record.ClassNumber + ". " + record.ClassLetter + "</h4>";
-            rawHtml += @"</div>";
+            rawHtml += "<div class='card'><div class='container'>";
 
-            rawHtml += @"<div class='card-body mt-2'>";
-            rawHtml += @"<div class='note-container'>";
-            rawHtml += @"<h6 class='card-subtitle mb-2 text-muted'>Piezīme</h6>";
-            rawHtml += @"<p class='card-text'>" + record.Note + "</p>";
-            rawHtml += @"</div></div>";
+            rawHtml += "<div class='section' style='height: 50px;'>";
+            rawHtml += "<h1>" + record.ClassNumber + ". " + record.ClassLetter + "</h1>";
+            rawHtml += "</div><hr><div class='section'><p class='subt'>Piezīme</p>";
 
-            rawHtml += @"<ul class='list-group list-group-flush'>";
-            rawHtml += @"<li class='list-group-item mt-2'>";
-            rawHtml += @"<div class='row'>";
-            rawHtml += @"<div class='align-self-center col-sm-3'>";
-            rawHtml += @"<h6 class='card-subtitle text-muted'>Telpa</h6></div>";
-            rawHtml += @"<div class='col-sm-9'>";
-            rawHtml += @"<p class='card-text'>" + record.Room + "</p>";
-            rawHtml += @"</div></div></li>";
+            rawHtml += "<p>" + record.Note + "</p>";
+            rawHtml += "</div><hr><div class='section'><p class='subt'>Telpa</p>";
 
-            rawHtml += @"<li class='list-group-item mt-2'>";
-            rawHtml += @"<div class='row'>";
-            rawHtml += @"<div class='col-sm-3 align-self-center'>";
-            rawHtml += @"<h6 class='card-subtitle text-muted'>Skolotājs/a</h6></div>";
-            rawHtml += @"<div class='col-sm-9'>";
-            rawHtml += @"<p class='card-text'>" + record.Teacher + "</p>";
-            rawHtml += @"</div></div></li>";
+            rawHtml += "<p>" + record.Room + "</p>";
+            rawHtml += "</div><hr><div class='section'><p class='subt'>Skolotājs/a</p>";
 
-            rawHtml += @"<li class='list-group-item mt-2'>";
-            rawHtml += @"<div class='row'>";
-            rawHtml += @"<div class='col-sm-3 align-self-center'>";
-            rawHtml += @"<h6 class='card-subtitle text-muted'>Stunda/as</h6></div>";
-            rawHtml += @"<div class='col-sm-9'>";
-            rawHtml += @"<p class='card-text'>" + record.Lessons + "</p>";
-            rawHtml += @"</div></div></li>";
+            rawHtml += "<p>" + record.Teacher + "</p>";
+            rawHtml += "</div><hr><div class='section'><p class='subt'>Stunda/as</p>";
 
-            rawHtml += @"</ul></div></div>";
+            rawHtml += "<p>" + record.Lessons + "</p>";
+            rawHtml += "</div></div></div>";
+            rawHtml += "</body></html>";
             return rawHtml;
         }
     }

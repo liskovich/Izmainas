@@ -2,7 +2,6 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\ne
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Izmainas.exe
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.csprojAssemblyReference.cache
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.AssemblyInfoInputs.cache
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.AssemblyInfo.cs
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.RazorTargetAssemblyInfo.cache
