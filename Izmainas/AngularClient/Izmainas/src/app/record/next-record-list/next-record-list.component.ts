@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecordServiceService } from 'src/app/services/recordService.service';
+import { RecordService } from 'src/app/services/record.service';
 import { IRecord } from '../IRecord.interface';
 
 @Component({
@@ -12,7 +12,7 @@ export class NextRecordListComponent implements OnInit {
   records: Array<IRecord>;
   presentDate: string;
 
-  constructor(private recordService: RecordServiceService) { }
+  constructor(private recordService: RecordService) { }
 
   ngOnInit(): void {
     /*

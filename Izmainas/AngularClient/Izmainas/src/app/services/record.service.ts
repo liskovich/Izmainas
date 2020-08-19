@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class RecordServiceService {
+export class RecordService {
 
   private controllerEndpoint = `client/records`;
   private dateEnpoint = `client/records/dates/`;
