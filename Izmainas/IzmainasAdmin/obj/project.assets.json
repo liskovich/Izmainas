@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Caliburn.Micro/4.0.136-rc": {
+      "Caliburn.Micro/4.0.135-beta": {
         "type": "package",
         "dependencies": {
-          "Caliburn.Micro.Core": "4.0.136-rc",
+          "Caliburn.Micro.Core": "4.0.135-beta",
           "Microsoft.WindowsDesktop.App": "3.0.0-preview7-27912-14",
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.3"
         },
@@ -16,7 +16,7 @@
           "lib/netcoreapp3.0/Caliburn.Micro.Platform.dll": {}
         }
       },
-      "Caliburn.Micro.Core/4.0.136-rc": {
+      "Caliburn.Micro.Core/4.0.135-beta": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -1534,14 +1534,13 @@
     }
   },
   "libraries": {
-    "Caliburn.Micro/4.0.136-rc": {
-      "sha512": "nY5jQVPPk9g6AWq07Jp1gcOgHpPn5oDcleHI11f1YugkedBezDbAEm1V5ZlAgBdO4kcQaHZOihOr3eLpYGrH3Q==",
+    "Caliburn.Micro/4.0.135-beta": {
+      "sha512": "P3gmOEPKBK+jMuHsasS4nnAiaB4Kz+7kiCOjNM26d5CjhbnB1gs/MzL6aC91KhCoH/m5dUkUuuD/pwN75dpPMw==",
       "type": "package",
-      "path": "caliburn.micro/4.0.136-rc",
+      "path": "caliburn.micro/4.0.135-beta",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
-        "caliburn.micro.4.0.136-rc.nupkg.sha512",
+        "caliburn.micro.4.0.135-beta.nupkg.sha512",
         "caliburn.micro.nuspec",
         "lib/monoandroid80/Caliburn.Micro.Platform.dll",
         "lib/monoandroid80/Caliburn.Micro.Platform.pdb",
@@ -1565,14 +1564,13 @@
         "lib/xamarinios10/Caliburn.Micro.Platform.xml"
       ]
     },
-    "Caliburn.Micro.Core/4.0.136-rc": {
-      "sha512": "RTbCpyk5FOjhmdC+73WBQ/NeLYk9wZqYYdP07wT1G8f2lXLR8xODU+0/ufp9Exx/vKl4Cbngh+S08Cd9KsBaMg==",
+    "Caliburn.Micro.Core/4.0.135-beta": {
+      "sha512": "DB3+KAoJk+yNdczwDcVH5TWJPk2fwiQIA6sEAhBymYBpTTiNg1VHhIYrqzGtdAlOnLCmoP/61zm2VVjUhdj2Ew==",
       "type": "package",
-      "path": "caliburn.micro.core/4.0.136-rc",
+      "path": "caliburn.micro.core/4.0.135-beta",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
-        "caliburn.micro.core.4.0.136-rc.nupkg.sha512",
+        "caliburn.micro.core.4.0.135-beta.nupkg.sha512",
         "caliburn.micro.core.nuspec",
         "lib/monoandroid80/Caliburn.Micro.Core.dll",
         "lib/monoandroid80/Caliburn.Micro.Core.pdb",
@@ -5539,27 +5537,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sk\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sk\\source\\repos\\Izmainas\\Izmainas\\IzmainasAdmin\\IzmainasAdmin.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\VS_Projects_Rico\\Izmainas\\Izmainas\\IzmainasAdmin\\IzmainasAdmin.csproj",
       "projectName": "IzmainasAdmin",
-      "projectPath": "C:\\Users\\sk\\source\\repos\\Izmainas\\Izmainas\\IzmainasAdmin\\IzmainasAdmin.csproj",
-      "packagesPath": "C:\\Users\\sk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sk\\source\\repos\\Izmainas\\Izmainas\\IzmainasAdmin\\obj\\",
+      "projectPath": "C:\\Users\\user\\Documents\\VS_Projects_Rico\\Izmainas\\Izmainas\\IzmainasAdmin\\IzmainasAdmin.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Documents\\VS_Projects_Rico\\Izmainas\\Izmainas\\IzmainasAdmin\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://www.myget.org/F/caliburn-micro-builds/api/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -5605,17 +5611,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "IzmainasAdmin depends on Caliburn.Micro (>= 4.0.135-beta) but Caliburn.Micro 4.0.135-beta was not found. An approximate best match of Caliburn.Micro 4.0.136-rc was resolved.",
-      "libraryId": "Caliburn.Micro",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

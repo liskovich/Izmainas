@@ -9,11 +9,14 @@ import { RecordCardComponent } from './record/record-card/record-card.component'
 import { RecordListComponent } from './record/record-list/record-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RecordService } from './services/record.service';
+import { EmailService } from './services/email.service';
 import { NextRecordListComponent } from './record/next-record-list/next-record-list.component';
+import { EmailServiceComponent } from './email/email-service/email-service.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecordListComponent },
-  { path: 'rit', component: NextRecordListComponent } //next-record-list
+  { path: 'rit', component: NextRecordListComponent }, //next-record-list
+  { path: 'noderigi', component: EmailServiceComponent }
 ]
 
 @NgModule({
@@ -22,7 +25,8 @@ const appRoutes: Routes = [
       RecordCardComponent,
       RecordListComponent,
       NavBarComponent,
-      NextRecordListComponent
+      NextRecordListComponent,
+      EmailServiceComponent
    ],
    imports: [
       BrowserModule,
@@ -31,7 +35,8 @@ const appRoutes: Routes = [
       //AppRoutingModule
    ],
    providers: [
-     RecordService
+      RecordService,
+      EmailService
    ],
    bootstrap: [
       AppComponent

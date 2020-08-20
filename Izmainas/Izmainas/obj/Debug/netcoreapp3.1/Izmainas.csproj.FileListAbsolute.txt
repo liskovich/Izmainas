@@ -77,3 +77,4 @@ C:\Users\sk\source\repos\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\stat
 C:\Users\sk\source\repos\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\staticwebassets\Izmainas.StaticWebAssets.xml
 C:\Users\sk\source\repos\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.genruntimeconfig.cache
 C:\Users\sk\source\repos\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.csprojAssemblyReference.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.csprojAssemblyReference.cache

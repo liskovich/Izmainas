@@ -40,7 +40,7 @@ namespace Izmainas.Data.DataAccess
 
         public void DeleteEmail(string Email)
         {
-            _sql.SaveData("dbo.spEmails_Delete", Email, "IzmainasDB");
+            _sql.SaveData("dbo.spEmails_Delete", new { Email }, "IzmainasDB");
         }
     }
 }

@@ -10,6 +10,8 @@ import { environment } from '../../environments/environment';
 })
 export class EmailService {
 
-  constructor() { }
+  private createEndpoint = `emailmodels`;
+
+  constructor(private http: HttpClient) { }
 
 }

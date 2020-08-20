@@ -17,3 +17,4 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.pdb
 C:\Users\sk\source\repos\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.sqlprojAssemblyReference.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\IzmainasDB\obj\Debug\IzmainasDB.sqlprojAssemblyReference.cache

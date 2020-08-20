@@ -10,6 +10,9 @@ export class NavBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('.navbar-collapse a').click(function(){
+      $(".navbar-collapse").collapse('hide');
+    });
   }
 
 }
