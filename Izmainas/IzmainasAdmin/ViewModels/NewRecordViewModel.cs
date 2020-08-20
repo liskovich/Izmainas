@@ -45,6 +45,11 @@ namespace IzmainasAdmin.ViewModels
         }
 
         //
+        protected override void OnViewLoaded(object view)
+        {
+            base.OnViewLoaded(view);
+            ResetFields();
+        }
 
         private bool canexecutemethod(object parameter)
         {
@@ -208,6 +213,11 @@ namespace IzmainasAdmin.ViewModels
             SelectedLetter = "-";
             Lessons = "";
             Date = DateTime.Today;
+            LessonList.Clear();
+
+            OneChecked = TwoChecked = ThreeChecked = FourChecked =
+                FiveChecked = SixChecked = SevenChecked = EightChecked =
+                NineChecked = TenChecked = ElevenChecked = TwelveChecked = false;
         }
 
         public bool CanAddRecord
@@ -252,5 +262,105 @@ namespace IzmainasAdmin.ViewModels
                 Console.WriteLine(ex.Message);
             }
         }
+
+        #region Checkboxes
+
+        private bool _one;
+
+        public bool OneChecked
+        {
+            get { return _one; }
+            set { _one = value; NotifyOfPropertyChange(() => OneChecked); }
+        }
+
+        private bool _two;
+
+        public bool TwoChecked
+        {
+            get { return _two; }
+            set { _two = value; NotifyOfPropertyChange(() => TwoChecked); }
+        }
+
+        private bool _three;
+
+        public bool ThreeChecked
+        {
+            get { return _three; }
+            set { _three = value; NotifyOfPropertyChange(() => ThreeChecked); }
+        }
+
+        private bool _four;
+
+        public bool FourChecked
+        {
+            get { return _four; }
+            set { _four = value; NotifyOfPropertyChange(() => FourChecked); }
+        }
+
+        private bool _five;
+
+        public bool FiveChecked
+        {
+            get { return _five; }
+            set { _five = value; NotifyOfPropertyChange(() => FiveChecked); }
+        }
+
+        private bool _six;
+
+        public bool SixChecked
+        {
+            get { return _six; }
+            set { _six = value; NotifyOfPropertyChange(() => SixChecked); }
+        }
+
+        private bool _seven;
+
+        public bool SevenChecked
+        {
+            get { return _seven; }
+            set { _seven = value; NotifyOfPropertyChange(() => SevenChecked); }
+        }
+
+        private bool _eight;
+
+        public bool EightChecked
+        {
+            get { return _eight; }
+            set { _eight = value; NotifyOfPropertyChange(() => EightChecked); }
+        }
+
+        private bool _nine;
+
+        public bool NineChecked
+        {
+            get { return _nine; }
+            set { _nine = value; NotifyOfPropertyChange(() => NineChecked); }
+        }
+
+        private bool _ten;
+
+        public bool TenChecked
+        {
+            get { return _ten; }
+            set { _ten = value; NotifyOfPropertyChange(() => TenChecked); }
+        }
+
+        private bool _eleven;
+
+        public bool ElevenChecked
+        {
+            get { return _eleven; }
+            set { _eleven = value; NotifyOfPropertyChange(() => ElevenChecked); }
+        }
+
+        private bool _twelve;
+
+        public bool TwelveChecked
+        {
+            get { return _twelve; }
+            set { _twelve = value; NotifyOfPropertyChange(() => TwelveChecked); }
+        }
+
+        #endregion
     }
 }
