@@ -258,7 +258,8 @@
                                Grid.Column="0"
                                VerticalAlignment="Center"/>
                     <TextBox Grid.Column="1"
-                             x:Name="Teacher"/>
+                             x:Name="Teacher"
+                             Padding="2"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -271,7 +272,8 @@
                                VerticalAlignment="Center"/>
                     <TextBox Grid.Column="1"
                              x:Name="Room"
-                             TextWrapping="Wrap"/>
+                             TextWrapping="Wrap"
+                             Padding="2"/>
                 </Grid>
             </StackPanel>
             <Grid Grid.Row="1">
@@ -283,7 +285,8 @@
                            Grid.Row="0"/>
                 <TextBox Grid.Row="1"
                          x:Name="Note"
-                         Margin="0 5"/>
+                         Margin="0 5"
+                         Padding="2"/>
             </Grid>
             <StackPanel Grid.Row="2">
                 <Grid Margin="0 15 0 7">
@@ -348,132 +351,144 @@
                         <CheckBox Content="1"
                                   Grid.Column="0"
                                   Command="{Binding Command}"
-                                  x:Name="one">
+                                  x:Name="One"
+                                  IsChecked="{Binding OneChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="one" Path="Content"/>
-                                    <Binding ElementName="one" Path="IsChecked"/>
+                                    <Binding ElementName="One" Path="Content"/>
+                                    <Binding ElementName="One" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="2"
                                   Grid.Column="1"
                                   Command="{Binding Command}"
-                                  x:Name="two">
+                                  x:Name="Two"
+                                  IsChecked="{Binding TwoChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="two" Path="Content"/>
-                                    <Binding ElementName="two" Path="IsChecked"/>
+                                    <Binding ElementName="Two" Path="Content"/>
+                                    <Binding ElementName="Two" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="3"
                                   Grid.Column="2"
                                   Command="{Binding Command}"
-                                  x:Name="three">
+                                  x:Name="Three"
+                                  IsChecked="{Binding ThreeChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="three" Path="Content"/>
-                                    <Binding ElementName="three" Path="IsChecked"/>
+                                    <Binding ElementName="Three" Path="Content"/>
+                                    <Binding ElementName="Three" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="4"
                                   Grid.Column="3"
                                   Command="{Binding Command}"
-                                  x:Name="four">
+                                  x:Name="Four"
+                                  IsChecked="{Binding FourChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="four" Path="Content"/>
-                                    <Binding ElementName="four" Path="IsChecked"/>
+                                    <Binding ElementName="Four" Path="Content"/>
+                                    <Binding ElementName="Four" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="5"
                                   Grid.Column="4"
                                   Command="{Binding Command}"
-                                  x:Name="five">
+                                  x:Name="Five"
+                                  IsChecked="{Binding FiveChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="five" Path="Content"/>
-                                    <Binding ElementName="five" Path="IsChecked"/>
+                                    <Binding ElementName="Five" Path="Content"/>
+                                    <Binding ElementName="Five" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="6"
                                   Grid.Column="5"
                                   Command="{Binding Command}"
-                                  x:Name="six">
+                                  x:Name="Six"
+                                  IsChecked="{Binding SixChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="six" Path="Content"/>
-                                    <Binding ElementName="six" Path="IsChecked"/>
+                                    <Binding ElementName="Six" Path="Content"/>
+                                    <Binding ElementName="Six" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="7"
                                   Grid.Column="6"
                                   Command="{Binding Command}"
-                                  x:Name="seven">
+                                  x:Name="Seven"
+                                  IsChecked="{Binding SevenChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="seven" Path="Content"/>
-                                    <Binding ElementName="seven" Path="IsChecked"/>
+                                    <Binding ElementName="Seven" Path="Content"/>
+                                    <Binding ElementName="Seven" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="8"
                                   Grid.Column="7"
                                   Command="{Binding Command}"
-                                  x:Name="eight">
+                                  x:Name="Eight"
+                                  IsChecked="{Binding EightChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="eight" Path="Content"/>
-                                    <Binding ElementName="eight" Path="IsChecked"/>
+                                    <Binding ElementName="Eight" Path="Content"/>
+                                    <Binding ElementName="Eight" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="9"
                                   Grid.Column="8"
                                   Command="{Binding Command}"
-                                  x:Name="nine">
+                                  x:Name="Nine"
+                                  IsChecked="{Binding NineChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="nine" Path="Content"/>
-                                    <Binding ElementName="nine" Path="IsChecked"/>
+                                    <Binding ElementName="Nine" Path="Content"/>
+                                    <Binding ElementName="Nine" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="10"
                                   Grid.Column="9"
                                   Command="{Binding Command}"
-                                  x:Name="ten">
+                                  x:Name="Ten"
+                                  IsChecked="{Binding TenChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="ten" Path="Content"/>
-                                    <Binding ElementName="ten" Path="IsChecked"/>
+                                    <Binding ElementName="Ten" Path="Content"/>
+                                    <Binding ElementName="Ten" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="11"
                                   Grid.Column="10"
                                   Command="{Binding Command}"
-                                  x:Name="eleven">
+                                  x:Name="Eleven"
+                                  IsChecked="{Binding ElevenChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="eleven" Path="Content"/>
-                                    <Binding ElementName="eleven" Path="IsChecked"/>
+                                    <Binding ElementName="Eleven" Path="Content"/>
+                                    <Binding ElementName="Eleven" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
                         <CheckBox Content="12"
                                   Grid.Column="11"
                                   Command="{Binding Command}"
-                                  x:Name="twelve">
+                                  x:Name="Twelve"
+                                  IsChecked="{Binding TwelveChecked}">
                             <CheckBox.CommandParameter>
                                 <MultiBinding Converter="{StaticResource cv}">
-                                    <Binding ElementName="twelve" Path="Content"/>
-                                    <Binding ElementName="twelve" Path="IsChecked"/>
+                                    <Binding ElementName="Twelve" Path="Content"/>
+                                    <Binding ElementName="Twelve" Path="IsChecked"/>
                                 </MultiBinding>
                             </CheckBox.CommandParameter>
                         </CheckBox>
@@ -488,7 +503,8 @@
                     </Grid.ColumnDefinitions>
                     <TextBox x:Name="Lessons"
                              Grid.Column="1"
-                             IsEnabled="False"/>
+                             IsEnabled="False"
+                             Padding="2"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>

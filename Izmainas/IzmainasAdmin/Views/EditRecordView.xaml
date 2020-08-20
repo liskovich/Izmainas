@@ -78,7 +78,8 @@
                                Grid.Column="0"
                                VerticalAlignment="Center"/>
                     <TextBox Grid.Column="1"
-                             x:Name="Teacher"/>
+                             x:Name="Teacher"
+                             Padding="2"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -91,7 +92,8 @@
                                VerticalAlignment="Center"/>
                     <TextBox Grid.Column="1"
                              x:Name="Room"
-                             TextWrapping="Wrap"/>
+                             TextWrapping="Wrap"
+                             Padding="2"/>
                 </Grid>
             </StackPanel>
             <Grid Grid.Row="1">
@@ -103,7 +105,8 @@
                            Grid.Row="0"/>
                 <TextBox Grid.Row="1"
                          x:Name="Note"
-                         Margin="0 5"/>
+                         Margin="0 5"
+                         Padding="2"/>
             </Grid>
             <StackPanel Grid.Row="2">
                 <Grid Margin="0 15 0 7">
@@ -147,7 +150,8 @@
                                VerticalAlignment="Center"/>
                     
                     <TextBox Grid.Column="1"
-                             x:Name="Lessons"/>
+                             x:Name="Lessons"
+                             Padding="2"/>
                     
                     <!--
                     <Grid Grid.Column="1"

@@ -23,7 +23,7 @@
                         <Border Name="Border" 
                                 Padding="5" 
                                 SnapsToDevicePixels="True" 
-                                CornerRadius="5" 
+                                CornerRadius="0" 
                                 BorderThickness="1"
                                 Background="#f5f5fa"
                                 Margin="15"

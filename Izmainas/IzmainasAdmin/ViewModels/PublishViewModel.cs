@@ -20,7 +20,7 @@ namespace IzmainasAdmin.ViewModels
         private Record _selectedRecord;
         private readonly NewRecordViewModel _newRecordView;
 
-        public PublishViewModel(IRecordTempService recordTempService, IWindowManager windowManager, NewRecordViewModel newRecordView)
+        public PublishViewModel(IRecordTempService recordTempService, IWindowManager windowManager, NewRecordViewModel newRecordView) //, NewRecordViewModel newRecordView
         {
             _recordTempService = recordTempService;
             _windowManager = windowManager;
@@ -77,7 +77,7 @@ namespace IzmainasAdmin.ViewModels
                 settings.ResizeMode = ResizeMode.NoResize;
                 settings.Title = "Jauns";
 
-                await _windowManager.ShowDialogAsync(_newRecordView, null, settings);
+                await _windowManager.ShowDialogAsync(_newRecordView, null, settings); //_newRecordView
                 await LoadTempRecords();
             }
             catch (Exception ex)
