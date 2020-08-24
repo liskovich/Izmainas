@@ -9,42 +9,72 @@ namespace Izmainas.Data.DataAccess
     public class RecordTempData : IRecordTempData
     {
         private readonly ISqlDataAccess _sql;
+        private readonly IMySqlDataAccess _mySql;
 
-        public RecordTempData(ISqlDataAccess sql)
+        public RecordTempData(ISqlDataAccess sql, IMySqlDataAccess mySql)
         {
             _sql = sql;
+            _mySql = mySql;
         }
 
-        public List<DbRecord> GetTempRecords()
+        public async Task<List<DbRecord>> GetTempRecords()
         {
+            /*
             var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecordsTemp_GetAll", new { }, "IzmainasDB");
             return output;
-        }
+            */
 
-        public List<DbRecord> GetTempRecordById(string Id)
-        {
-            var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecordsTemp_GetById", new { Id }, "IzmainasDB");
+            var output = await _mySql.LoadData<DbRecord, dynamic>("spRecordsTemp_GetAll", new { }, "Default");
             return output;
         }
 
-        public void SaveTempRecord(DbRecord record)
+        public async Task<List<DbRecord>> GetTempRecordById(string recordId)
         {
-            _sql.SaveData("dbo.spRecordsTemp_Insert", record, "IzmainasDB");
+            /*
+            var output = _sql.LoadData<DbRecord, dynamic>("dbo.spRecordsTemp_GetById", new { Id }, "IzmainasDB");
+            return output;
+            */
+
+            var output = await _mySql.LoadData<DbRecord, dynamic>("spRecordsTemp_GetById", new { recordId }, "Default");
+            return output;
         }
 
-        public void EditTempRecord(DbRecord record)
+        public async Task SaveTempRecord(DbRecord record)
         {
-            _sql.SaveData("dbo.spRecordsTemp_Edit", record, "IzmainasDB");
+            string recordId = record.Id;
+            string recordTeacher = record.Teacher;
+            string recordRoom = record.Room;
+            string recordNote = record.Note;
+            string recordClassNumber = record.ClassNumber;
+            string recordClassLetter = record.ClassLetter;
+            string recordLessons = record.Lessons;
+            DateTime recordDate = record.Date;
+
+            await _mySql.SaveData("spRecordsTemp_Insert", new { recordId, recordTeacher, recordRoom, recordNote, recordClassNumber, recordClassLetter, recordLessons, recordDate }, "Default");
         }
 
-        public void DeleteTempRecord(string Id)
+        public async Task EditTempRecord(DbRecord record)
         {
-            _sql.SaveData("dbo.spRecordsTemp_Delete", new { Id }, "IzmainasDB");
+            string recordId = record.Id;
+            string recordTeacher = record.Teacher;
+            string recordRoom = record.Room;
+            string recordNote = record.Note;
+            string recordClassNumber = record.ClassNumber;
+            string recordClassLetter = record.ClassLetter;
+            string recordLessons = record.Lessons;
+            DateTime recordDate = record.Date;
+
+            await _mySql.SaveData("spRecordsTemp_Edit", new { recordId, recordTeacher, recordRoom, recordNote, recordClassNumber, recordClassLetter, recordLessons, recordDate }, "Default");
         }
 
-        public void PublishTempRecords()
+        public async Task DeleteTempRecord(string recordId)
         {
-            _sql.SaveData("dbo.trRecordsTemp_TransferToRecords", new { }, "IzmainasDB");
+            await _mySql.SaveData("spRecordsTemp_Delete", new { recordId }, "Default");
+        }
+
+        public async Task PublishTempRecords()
+        {
+            await _mySql.SaveData("trRecordsTemp_TransferToRecords", new { }, "Default");
         }
     }
 }

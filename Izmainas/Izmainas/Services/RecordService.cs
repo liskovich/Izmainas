@@ -16,7 +16,7 @@ namespace Izmainas.Services
             _recordData = recordData;
         }
 
-        public bool CreateRecord(Record record)
+        public async Task<bool> CreateRecord(Record record)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Izmainas.Services
                     Date = record.Date
                 };
 
-                _recordData.SaveRecord(saveRecord);
+                await _recordData.SaveRecord(saveRecord);
                 return true;
             }
             catch
@@ -41,18 +41,19 @@ namespace Izmainas.Services
             }
         }
 
-        public bool DeleteRecord(Guid recordId)
+        public async Task<bool> DeleteRecord(Guid recordId)
         {
             try
             {
                 var deleteId = recordId.ToString();
-                var existing = _recordData.GetRecordById(deleteId).FirstOrDefault();
-                if (existing == null)
+                var existing = await _recordData.GetRecordById(deleteId);
+                var item = existing.FirstOrDefault();
+                if (item == null)
                 {
                     return false;
                 }
 
-                _recordData.DeleteRecord(deleteId);
+                await _recordData.DeleteRecord(deleteId);
                 return true;
             }
             catch
@@ -61,11 +62,11 @@ namespace Izmainas.Services
             }
         }
 
-        public List<Record> GetRecordByDate(DateTime recordDate)
+        public async Task<List<Record>> GetRecordByDate(DateTime recordDate)
         {
             try
             {
-                var found = _recordData.GetRecordByDate(recordDate);
+                var found = await _recordData.GetRecordByDate(recordDate);
                 if (found == null)
                 {
                     return null;
@@ -95,13 +96,14 @@ namespace Izmainas.Services
             }
         }
 
-        public Record GetRecordById(Guid recordId)
+        public async Task<Record> GetRecordById(Guid recordId)
         {
             try
             {
                 var findId = recordId.ToString();
-                var found = _recordData.GetRecordById(findId).FirstOrDefault();
-                if(found == null)
+                var found = await _recordData.GetRecordById(findId);
+                var item = found.FirstOrDefault();
+                if(item == null)
                 {
                     return null;
                 }
@@ -109,13 +111,13 @@ namespace Izmainas.Services
                 var record = new Record
                 {
                     Id = recordId,
-                    Teacher = found.Teacher,
-                    Room = found.Room,
-                    Note = found.Note,
-                    ClassNumber = found.ClassNumber,
-                    ClassLetter = found.ClassLetter,
-                    Lessons = found.Lessons,
-                    Date = found.Date
+                    Teacher = item.Teacher,
+                    Room = item.Room,
+                    Note = item.Note,
+                    ClassNumber = item.ClassNumber,
+                    ClassLetter = item.ClassLetter,
+                    Lessons = item.Lessons,
+                    Date = item.Date
                 };
                 return record;
             }
@@ -125,11 +127,11 @@ namespace Izmainas.Services
             }
         }
 
-        public List<Record> GetRecords()
+        public async Task<List<Record>> GetRecords()
         {
             try
             {
-                var found = _recordData.GetRecords();
+                var found = await _recordData.GetRecords();
                 if(found == null)
                 {
                     return null;
@@ -159,13 +161,14 @@ namespace Izmainas.Services
             }
         }
 
-        public bool UpdateRecord(Record record)
+        public async Task<bool> UpdateRecord(Record record)
         {
             try
             {
                 var updateId = record.Id.ToString();
-                var existing = _recordData.GetRecordById(updateId).FirstOrDefault();
-                if (existing == null)
+                var existing = await _recordData.GetRecordById(updateId);
+                var item = existing.FirstOrDefault();
+                if (item == null)
                 {
                     return false;
                 }
@@ -182,7 +185,7 @@ namespace Izmainas.Services
                     Date = record.Date
                 };
 
-                _recordData.EditRecord(editRecord);
+                await _recordData.EditRecord(editRecord);
                 return true;
             }
             catch

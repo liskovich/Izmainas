@@ -9,38 +9,54 @@ namespace Izmainas.Data.DataAccess
     public class EmailData : IEmailData
     {
         private readonly ISqlDataAccess _sql;
+        private readonly IMySqlDataAccess _mySql;
 
-        public EmailData(ISqlDataAccess sql)
+        public EmailData(ISqlDataAccess sql, IMySqlDataAccess mySql)
         {
             _sql = sql;
+            _mySql = mySql;
         }
 
-        public List<DbEmailModel> GetEmails()
+        public async Task<List<DbEmailModel>> GetEmails()
         {
+            /*
             var output = _sql.LoadData<DbEmailModel, dynamic>("dbo.spEmails_GetAll", new { }, "IzmainasDB");
             return output;
+            */
+
+            var output = await _mySql.LoadData<DbEmailModel, dynamic>("spEmails_GetAll", new { }, "Default");
+            return output;
         }
 
-        public List<DbEmailModel> GetEmailById(string Id)
+        public async Task<List<DbEmailModel>> GetEmailById(string emailId)
         {
+            /*
             var output = _sql.LoadData<DbEmailModel, dynamic>("dbo.spEmails_GetById", new { Id }, "IzmainasDB");
             return output;
-        }
+            */
 
-        public List<DbEmailModel> GetEmailByEmail(string Email)
-        {
-            var output = _sql.LoadData<DbEmailModel, dynamic>("dbo.spEmails_GetByEmail", new { Email }, "IzmainasDB");
+            var output = await _mySql.LoadData<DbEmailModel, dynamic>("spEmails_GetById", new { emailId }, "Default");
             return output;
         }
 
-        public void SaveEmail(DbEmailModel emailModel)
+        public async Task<List<DbEmailModel>> GetEmailByEmail(string emailText)
         {
-            _sql.SaveData("dbo.spEmails_Insert", emailModel, "IzmainasDB");
+            var output = await _mySql.LoadData<DbEmailModel, dynamic>("spEmails_GetByEmail", new { emailText }, "Default");
+            return output;
         }
 
-        public void DeleteEmail(string Email)
+        public async Task SaveEmail(DbEmailModel emailModel)
         {
-            _sql.SaveData("dbo.spEmails_Delete", new { Email }, "IzmainasDB");
+            string emailId = emailModel.Id;
+            string emailText = emailModel.Email;
+            DateTime emailCratedDate = emailModel.CreatedDate;
+
+            await _mySql.SaveData("spEmails_Insert", new { emailId, emailText, emailCratedDate }, "Default");
+        }
+
+        public async Task DeleteEmail(string emailText)
+        {
+            await _mySql.SaveData("spEmails_Delete", new { emailText }, "Default");
         }
     }
 }

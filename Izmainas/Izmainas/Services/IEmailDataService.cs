@@ -1,15 +1,16 @@
 ﻿using Izmainas.Domain;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Izmainas.Services
 {
     public interface IEmailDataService
     {
-        bool CreateEmailModel(EmailModel emailModel);
-        bool DeleteEmailModel(string email);
-        EmailModel GetEmailModelByEmail(string email);
-        EmailModel GetEmailModelById(Guid modelId);
-        List<EmailModel> GetEmailModels();
+        Task<bool> CreateEmailModel(EmailModel emailModel);
+        Task<bool> DeleteEmailModel(string email);
+        Task<EmailModel> GetEmailModelByEmail(string email);
+        Task<EmailModel> GetEmailModelById(Guid modelId);
+        Task<List<EmailModel>> GetEmailModels();
     }
 }

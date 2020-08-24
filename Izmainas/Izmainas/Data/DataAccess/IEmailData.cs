@@ -1,14 +1,15 @@
 ﻿using Izmainas.Domain;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Izmainas.Data.DataAccess
 {
     public interface IEmailData
     {
-        void DeleteEmail(string Email);
-        List<DbEmailModel> GetEmailByEmail(string Email);
-        List<DbEmailModel> GetEmailById(string Id);
-        List<DbEmailModel> GetEmails();
-        void SaveEmail(DbEmailModel emailModel);
+        Task DeleteEmail(string emailText);
+        Task<List<DbEmailModel>> GetEmailByEmail(string emailText);
+        Task<List<DbEmailModel>> GetEmailById(string emailId);
+        Task<List<DbEmailModel>> GetEmails();
+        Task SaveEmail(DbEmailModel emailModel);
     }
 }

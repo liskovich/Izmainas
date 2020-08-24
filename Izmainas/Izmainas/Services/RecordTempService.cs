@@ -16,7 +16,7 @@ namespace Izmainas.Services
             _recordTempData = recordTempData;
         }
 
-        public bool CreateTempRecord(Record record)
+        public async Task<bool> CreateTempRecord(Record record)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Izmainas.Services
                     Date = record.Date
                 };
 
-                _recordTempData.SaveTempRecord(saveRecord);
+                await _recordTempData.SaveTempRecord(saveRecord);
                 return true;
             }
             catch
@@ -41,18 +41,19 @@ namespace Izmainas.Services
             }
         }
 
-        public bool DeleteTempRecord(Guid recordId)
+        public async Task<bool> DeleteTempRecord(Guid recordId)
         {
             try
             {
                 var deleteId = recordId.ToString();
-                var existing = _recordTempData.GetTempRecordById(deleteId).FirstOrDefault();
-                if (existing == null)
+                var existing = await _recordTempData.GetTempRecordById(deleteId);
+                var item = existing.FirstOrDefault();
+                if (item == null)
                 {
                     return false;
                 }
 
-                _recordTempData.DeleteTempRecord(deleteId);
+                await _recordTempData.DeleteTempRecord(deleteId);
                 return true;
             }
             catch
@@ -61,13 +62,14 @@ namespace Izmainas.Services
             }
         }
 
-        public Record GetTempRecordById(Guid recordId)
+        public async Task<Record> GetTempRecordById(Guid recordId)
         {
             try
             {
                 var findId = recordId.ToString();
-                var found = _recordTempData.GetTempRecordById(findId).FirstOrDefault();
-                if (found == null)
+                var found = await _recordTempData.GetTempRecordById(findId);
+                var item = found.FirstOrDefault();
+                if (item == null)
                 {
                     return null;
                 }
@@ -75,13 +77,13 @@ namespace Izmainas.Services
                 var record = new Record
                 {
                     Id = recordId,
-                    Teacher = found.Teacher,
-                    Room = found.Room,
-                    Note = found.Note,
-                    ClassNumber = found.ClassNumber,
-                    ClassLetter = found.ClassLetter,
-                    Lessons = found.Lessons,
-                    Date = found.Date
+                    Teacher = item.Teacher,
+                    Room = item.Room,
+                    Note = item.Note,
+                    ClassNumber = item.ClassNumber,
+                    ClassLetter = item.ClassLetter,
+                    Lessons = item.Lessons,
+                    Date = item.Date
                 };
                 return record;
             }
@@ -91,11 +93,11 @@ namespace Izmainas.Services
             }
         }
 
-        public List<Record> GetTempRecords()
+        public async Task<List<Record>> GetTempRecords()
         {
             try
             {
-                var found = _recordTempData.GetTempRecords();
+                var found = await _recordTempData.GetTempRecords();
                 if (found == null)
                 {
                     return null;
@@ -125,13 +127,14 @@ namespace Izmainas.Services
             }
         }
 
-        public bool UpdateTempRecord(Record record)
+        public async Task<bool> UpdateTempRecord(Record record)
         {
             try
             {
                 var updateId = record.Id.ToString();
-                var existing = _recordTempData.GetTempRecordById(updateId).FirstOrDefault();
-                if (existing == null)
+                var existing = await _recordTempData.GetTempRecordById(updateId);
+                var item = existing.FirstOrDefault();
+                if (item == null)
                 {
                     return false;
                 }
@@ -148,7 +151,7 @@ namespace Izmainas.Services
                     Date = record.Date
                 };
 
-                _recordTempData.EditTempRecord(editRecord);
+                await _recordTempData.EditTempRecord(editRecord);
                 return true;
             }
             catch
@@ -157,11 +160,11 @@ namespace Izmainas.Services
             }
         }
 
-        public bool TransferChanges()
+        public async Task<bool> TransferChanges()
         {
             try
             {
-                _recordTempData.PublishTempRecords();
+                await _recordTempData.PublishTempRecords();
                 return true;
             }
             catch

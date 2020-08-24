@@ -20,6 +20,8 @@ namespace Izmainas.Installers
             services.AddScoped<IEmailSendingService, EmailSendingService>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+            services.AddTransient<IMySqlDataAccess, MySqlDataAccess>();
+
             services.AddTransient<IRecordData, RecordData>();
             services.AddTransient<IRecordTempData, RecordTempData>();
             services.AddTransient<IEmailData, EmailData>();

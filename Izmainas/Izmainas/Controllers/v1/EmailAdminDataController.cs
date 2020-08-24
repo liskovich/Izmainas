@@ -11,27 +11,27 @@ using System.Threading.Tasks;
 
 namespace Izmainas.Controllers.v1
 {
-    public class EmailDataController : Controller
+    public class EmailAdminDataController : Controller
     {
         private readonly IEmailDataService _emailDataService;
 
-        public EmailDataController(IEmailDataService emailDataService)
+        public EmailAdminDataController(IEmailDataService emailDataService)
         {
             _emailDataService = emailDataService;
         }
 
         #region Production Actions
 
-        [HttpGet(ApiRoutes.EmailData.GetAll)]
-        public IActionResult GetAll()
+        [HttpGet(ApiRoutes.EmailAdminData.GetAll)]
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_emailDataService.GetEmailModels());
+            return Ok(await _emailDataService.GetEmailModels());
         }
 
-        [HttpGet(ApiRoutes.EmailData.Get)]
-        public IActionResult Get([FromRoute] Guid modelId)
+        [HttpGet(ApiRoutes.EmailAdminData.Get)]
+        public async Task<IActionResult> Get([FromRoute] Guid modelId)
         {
-            var emailModel = _emailDataService.GetEmailModelById(modelId);
+            var emailModel = await _emailDataService.GetEmailModelById(modelId);
             if(emailModel == null)
             {
                 return NotFound();
@@ -40,9 +40,10 @@ namespace Izmainas.Controllers.v1
             return Ok(emailModel);
         }
 
-        [HttpPost(ApiRoutes.EmailData.Create)]
-        public IActionResult Create([FromBody] CreateEmailModelRequest request)
+        [HttpPost(ApiRoutes.EmailAdminData.Create)]
+        public async Task<IActionResult> Create([FromBody] CreateEmailModelRequest request)
         {
+            // TODO - fix issue, when trying to imput an email that already exists in the database, it throws an exception
             var emailModel = new EmailModel
             {
                 Id = Guid.NewGuid(),
@@ -50,23 +51,23 @@ namespace Izmainas.Controllers.v1
                 CreatedDate = request.CreatedDate
             };
 
-            var created = _emailDataService.CreateEmailModel(emailModel);
+            var created = await _emailDataService.CreateEmailModel(emailModel);
             if(created == false)
             {
                 return NotFound();
             }
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
-            var locationUri = baseUrl + "/" + ApiRoutes.EmailData.Get.Replace("{modelId}", emailModel.Id.ToString());
+            var locationUri = baseUrl + "/" + ApiRoutes.EmailAdminData.Get.Replace("{modelId}", emailModel.Id.ToString());
 
             var response = new EmailModelResponse { Id = emailModel.Id };
             return Created(locationUri, response);
         }
 
-        [HttpDelete(ApiRoutes.EmailData.Delete)]
-        public IActionResult Delete([FromRoute] string email)
+        [HttpDelete(ApiRoutes.EmailAdminData.Delete)]
+        public async Task<IActionResult> Delete([FromRoute] string email)
         {
-            var deleted = _emailDataService.DeleteEmailModel(email);
+            var deleted = await _emailDataService.DeleteEmailModel(email);
             if(deleted == false)
             {
                 return NotFound();
@@ -75,10 +76,10 @@ namespace Izmainas.Controllers.v1
             return NoContent();
         }
 
-        [HttpGet(ApiRoutes.EmailData.Email)]
-        public IActionResult GetByEmail([FromRoute] string email)
+        [HttpGet(ApiRoutes.EmailAdminData.Email)]
+        public async Task<IActionResult> GetByEmail([FromRoute] string email)
         {
-            var emailModel = _emailDataService.GetEmailModelByEmail(email);
+            var emailModel = await _emailDataService.GetEmailModelByEmail(email);
             if(emailModel == null)
             {
                 return NotFound();

@@ -27,15 +27,15 @@ namespace Izmainas.Controllers.v1
         #region Production Actions
 
         [HttpGet(ApiRoutes.TempRecords.GetAll)]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_recordTempService.GetTempRecords());
+            return Ok(await _recordTempService.GetTempRecords());
         }
 
         [HttpGet(ApiRoutes.TempRecords.Get)]
-        public IActionResult Get([FromRoute] Guid recordId)
+        public async Task<IActionResult> Get([FromRoute] Guid recordId)
         {
-            var record = _recordTempService.GetTempRecordById(recordId);
+            var record = await _recordTempService.GetTempRecordById(recordId);
             if (record == null)
             {
                 return NotFound();
@@ -44,7 +44,7 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpPost(ApiRoutes.TempRecords.Create)]
-        public IActionResult Create([FromBody] CreateRecordRequest request)
+        public async Task<IActionResult> Create([FromBody] CreateRecordRequest request)
         {
             var record = new Record
             {
@@ -58,7 +58,7 @@ namespace Izmainas.Controllers.v1
                 Date = request.Date
             };
 
-            var created = _recordTempService.CreateTempRecord(record);
+            var created = await _recordTempService.CreateTempRecord(record);
             if (created == false)
             {
                 return NotFound();
@@ -72,9 +72,9 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpPut(ApiRoutes.TempRecords.Update)]
-        public IActionResult Update([FromRoute] Guid recordId, [FromBody] UpdateRecordRequest request)
+        public async Task<IActionResult> Update([FromRoute] Guid recordId, [FromBody] UpdateRecordRequest request)
         {
-            var record = _recordTempService.GetTempRecordById(recordId);
+            var record = await _recordTempService.GetTempRecordById(recordId);
             if (record == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace Izmainas.Controllers.v1
             record.Lessons = request.Lessons;
             record.Date = request.Date;
 
-            var updated = _recordTempService.UpdateTempRecord(record);
+            var updated = await _recordTempService.UpdateTempRecord(record);
             if (updated == false)
             {
                 return NotFound();
@@ -98,9 +98,9 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpDelete(ApiRoutes.TempRecords.Delete)]
-        public IActionResult Delete([FromRoute] Guid recordId)
+        public async Task<IActionResult> Delete([FromRoute] Guid recordId)
         {
-            var deleted = _recordTempService.DeleteTempRecord(recordId);
+            var deleted = await _recordTempService.DeleteTempRecord(recordId);
             if (deleted == false)
             {
                 return NotFound();
@@ -110,15 +110,15 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpPost(ApiRoutes.TempRecords.Transfer)]
-        public IActionResult PublishTransfer()
+        public async Task<IActionResult> PublishTransfer()
         {
-            var emails = _emailDataService.GetEmailModels();
+            var emails = await _emailDataService.GetEmailModels();
             if(emails == null)
             {
                 return NotFound();
             }
 
-            var records = _recordTempService.GetTempRecords();
+            var records = await _recordTempService.GetTempRecords();
             if(records == null)
             {
                 return NotFound();
@@ -127,7 +127,7 @@ namespace Izmainas.Controllers.v1
             var htmlEmailMessage = _emailSendingService.GenerateHTMLEmail(records);
             _emailSendingService.SendMail(htmlEmailMessage, "Jaunas stundu izmaiņas", true, emails);
 
-            var transfered = _recordTempService.TransferChanges();
+            var transfered = await _recordTempService.TransferChanges();
             if (transfered == false)
             {
                 return NotFound();

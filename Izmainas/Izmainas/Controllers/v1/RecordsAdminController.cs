@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using System.Web.Http;
 
 namespace Izmainas.Controllers.v1
 {
@@ -24,15 +23,15 @@ namespace Izmainas.Controllers.v1
         #region Production Actions
 
         [HttpGet(ApiRoutes.AdminRecords.GetAll)]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_recordService.GetRecords());
+            return Ok(await _recordService.GetRecords());
         }
 
         [HttpGet(ApiRoutes.AdminRecords.Get)]
-        public IActionResult Get([FromRoute] Guid recordId)
+        public async Task<IActionResult> Get([FromRoute] Guid recordId)
         {
-            var record = _recordService.GetRecordById(recordId);
+            var record = await _recordService.GetRecordById(recordId);
             if (record == null)
             {
                 return NotFound();
@@ -41,7 +40,7 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpPost(ApiRoutes.AdminRecords.Create)]
-        public IActionResult Create([FromBody] CreateRecordRequest request)
+        public async Task<IActionResult> Create([FromBody] CreateRecordRequest request)
         {
             var record = new Record
             {
@@ -55,7 +54,7 @@ namespace Izmainas.Controllers.v1
                 Date = request.Date
             };
 
-            var created = _recordService.CreateRecord(record);
+            var created = await _recordService.CreateRecord(record);
             if (created == false)
             {
                 return NotFound();
@@ -69,9 +68,9 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpPut(ApiRoutes.AdminRecords.Update)]
-        public IActionResult Update([FromRoute] Guid recordId, [FromBody] UpdateRecordRequest request)
+        public async Task<IActionResult> Update([FromRoute] Guid recordId, [FromBody] UpdateRecordRequest request)
         {
-            var record = _recordService.GetRecordById(recordId);
+            var record = await _recordService.GetRecordById(recordId);
             if (record == null)
             {
                 return NotFound();
@@ -85,7 +84,7 @@ namespace Izmainas.Controllers.v1
             record.Lessons = request.Lessons;
             record.Date = request.Date;
 
-            var updated = _recordService.UpdateRecord(record);
+            var updated = await _recordService.UpdateRecord(record);
             if (updated == false)
             {
                 return NotFound();
@@ -95,9 +94,9 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpDelete(ApiRoutes.AdminRecords.Delete)]
-        public IActionResult Delete([FromRoute] Guid recordId)
+        public async Task<IActionResult> Delete([FromRoute] Guid recordId)
         {
-            var deleted = _recordService.DeleteRecord(recordId);
+            var deleted = await _recordService.DeleteRecord(recordId);
             if (deleted == false)
             {
                 return NotFound();
@@ -107,9 +106,9 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpGet(ApiRoutes.AdminRecords.Date)]
-        public IActionResult GetByDate([FromRoute] DateTime recordDate)
+        public async Task<IActionResult> GetByDate([FromRoute] DateTime recordDate)
         {
-            return Ok(_recordService.GetRecordByDate(recordDate));
+            return Ok(await _recordService.GetRecordByDate(recordDate));
         }
 
         /*
@@ -130,18 +129,18 @@ namespace Izmainas.Controllers.v1
         #region Test/Development Actions
 
         [HttpGet(ApiRoutes.AdminRecords.Today)]
-        public IActionResult GetToday()
+        public async Task<IActionResult> GetToday()
         {
             var today = DateTime.Today;
-            var test = _recordService.GetRecordByDate(today);
+            var test = await _recordService.GetRecordByDate(today);
             return Ok(test);
         }
 
         [HttpGet(ApiRoutes.AdminRecords.Tomorrow)]
-        public IActionResult GetTomorrow()
+        public async Task<IActionResult> GetTomorrow()
         {
             var tomorrow = DateTime.Today.AddDays(1);
-            return Ok(_recordService.GetRecordByDate(tomorrow));
+            return Ok(await _recordService.GetRecordByDate(tomorrow));
         }
 
         #endregion

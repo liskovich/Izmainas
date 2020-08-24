@@ -44,13 +44,19 @@ namespace Izmainas.Contracts.v1
             public const string Transfer = Base + "/temprecords/transfer";
         }
 
-        public static class EmailData
+        public static class EmailAdminData
         {
-            public const string GetAll = Base + "/emailmodels";
-            public const string Get = Base + "/emailmodels/{modelId}";
-            public const string Email = Base + "/emailmodels/emails/{email}";
-            public const string Create = Base + "/emailmodels";
-            public const string Delete = Base + "/emailmodels/emails/{email}";
+            public const string GetAll = Base + "/admin/emailmodels";
+            public const string Get = Base + "/admin/emailmodels/{modelId}";
+            public const string Email = Base + "/admin/emailmodels/emails/{email}";
+            public const string Create = Base + "/admin/emailmodels";
+            public const string Delete = Base + "/admin/emailmodels/emails/{email}";
+        }
+
+        public static class EmailClientData
+        {
+            public const string Create = Base + "/client/emailmodels";
+            public const string Delete = Base + "/client/emailmodels/emails/{email}";
         }
     }
 }

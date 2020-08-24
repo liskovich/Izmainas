@@ -16,12 +16,13 @@ namespace Izmainas.Services
             _emailData = emailData;
         }
 
-        public bool CreateEmailModel(EmailModel emailModel)
+        public async Task<bool> CreateEmailModel(EmailModel emailModel)
         {
             try
             {
-                var existing = _emailData.GetEmailByEmail(emailModel.Email).FirstOrDefault();
-                if (existing != null)
+                var existing = await _emailData.GetEmailByEmail(emailModel.Email);
+                var item = existing.FirstOrDefault();
+                if (item != null)
                 {
                     return false;
                 }
@@ -33,7 +34,7 @@ namespace Izmainas.Services
                     CreatedDate = emailModel.CreatedDate
                 };
 
-                _emailData.SaveEmail(saveEmailModel);
+                await _emailData.SaveEmail(saveEmailModel);
                 return true;
             }
             catch
@@ -42,17 +43,18 @@ namespace Izmainas.Services
             }
         }
 
-        public bool DeleteEmailModel(string email)
+        public async Task<bool> DeleteEmailModel(string email)
         {
             try
             {
-                var existing = _emailData.GetEmailByEmail(email).FirstOrDefault();
-                if (existing == null)
+                var existing = await _emailData.GetEmailByEmail(email);
+                var item = existing.FirstOrDefault();
+                if (item == null)
                 {
                     return false;
                 }
 
-                _emailData.DeleteEmail(email);
+                await _emailData.DeleteEmail(email);
                 return true;
             }
             catch
@@ -61,13 +63,14 @@ namespace Izmainas.Services
             }
         }
 
-        public EmailModel GetEmailModelById(Guid modelId)
+        public async Task<EmailModel> GetEmailModelById(Guid modelId)
         {
             try
             {
                 var findId = modelId.ToString();
-                var found = _emailData.GetEmailById(findId).FirstOrDefault();
-                if (found == null)
+                var found = await _emailData.GetEmailById(findId);
+                var item = found.FirstOrDefault();
+                if (item == null)
                 {
                     return null;
                 }
@@ -75,8 +78,8 @@ namespace Izmainas.Services
                 var emailModel = new EmailModel
                 {
                     Id = modelId,
-                    Email = found.Email,
-                    CreatedDate = found.CreatedDate
+                    Email = item.Email,
+                    CreatedDate = item.CreatedDate
                 };
                 return emailModel;
             }
@@ -86,11 +89,11 @@ namespace Izmainas.Services
             }
         }
 
-        public List<EmailModel> GetEmailModels()
+        public async Task<List<EmailModel>> GetEmailModels()
         {
             try
             {
-                var found = _emailData.GetEmails();
+                var found = await _emailData.GetEmails();
                 if (found == null)
                 {
                     return null;
@@ -115,21 +118,22 @@ namespace Izmainas.Services
             }
         }
 
-        public EmailModel GetEmailModelByEmail(string email)
+        public async Task<EmailModel> GetEmailModelByEmail(string email)
         {
             try
             {
-                var found = _emailData.GetEmailByEmail(email).FirstOrDefault();
-                if (found == null)
+                var found = await _emailData.GetEmailByEmail(email);
+                var item = found.FirstOrDefault();
+                if (item == null)
                 {
                     return null;
                 }
 
                 var emailModel = new EmailModel
                 {
-                    Id = Guid.Parse(found.Id),
+                    Id = Guid.Parse(item.Id),
                     Email = email,
-                    CreatedDate = found.CreatedDate
+                    CreatedDate = item.CreatedDate
                 };
                 return emailModel;
             }

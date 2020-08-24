@@ -1,17 +1,18 @@
 ﻿using Izmainas.Domain;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Izmainas.Data.DataAccess
 {
     public interface IRecordData
     {
-        void DeleteRecord(string Id);
-        void EditRecord(DbRecord record);
-        List<DbRecord> GetRecordByDate(DateTime Date);
-        List<DbRecord> GetRecordById(string Id);
-        List<DbRecord> GetRecords();
-        void SaveRecord(DbRecord record);
+        Task DeleteRecord(string recordId);
+        Task EditRecord(DbRecord record);
+        Task<List<DbRecord>> GetRecordByDate(DateTime recordDate);
+        Task<List<DbRecord>> GetRecordById(string recordId);
+        Task<List<DbRecord>> GetRecords(); // Task<>
+        Task SaveRecord(DbRecord record);
         //void PublishRecords();
     }
 }

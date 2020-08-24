@@ -20,9 +20,9 @@ namespace Izmainas.Controllers.v1
         #region Production Actions
 
         [HttpGet(ApiRoutes.ClientRecords.Date)]
-        public IActionResult GetByDate([FromRoute] DateTime recordDate)
+        public async Task<IActionResult> GetByDate([FromRoute] DateTime recordDate)
         {
-            return Ok(_recordService.GetRecordByDate(recordDate));
+            return Ok(await _recordService.GetRecordByDate(recordDate));
         }
 
         #endregion
@@ -30,30 +30,30 @@ namespace Izmainas.Controllers.v1
         #region Test/Development Actions
 
         [HttpGet(ApiRoutes.ClientRecords.Today)]
-        public IActionResult GetToday()
+        public async Task<IActionResult> GetToday()
         {
             var today = DateTime.Today;
-            var test = _recordService.GetRecordByDate(today);
+            var test = await _recordService.GetRecordByDate(today);
             return Ok(test);
         }
 
         [HttpGet(ApiRoutes.ClientRecords.Tomorrow)]
-        public IActionResult GetTomorrow()
+        public async Task<IActionResult> GetTomorrow()
         {
             var tomorrow = DateTime.Today.AddDays(1);
-            return Ok(_recordService.GetRecordByDate(tomorrow));
+            return Ok(await _recordService.GetRecordByDate(tomorrow));
         }
 
         [HttpGet(ApiRoutes.ClientRecords.GetAll)]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_recordService.GetRecords());
+            return Ok(await _recordService.GetRecords());
         }
 
         [HttpGet(ApiRoutes.ClientRecords.Get)]
-        public IActionResult Get([FromRoute] Guid recordId)
+        public async Task<IActionResult> Get([FromRoute] Guid recordId)
         {
-            var record = _recordService.GetRecordById(recordId);
+            var record = await _recordService.GetRecordById(recordId);
             if (record == null)
             {
                 return NotFound();
