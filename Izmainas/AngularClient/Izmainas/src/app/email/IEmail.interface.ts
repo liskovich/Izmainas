@@ -1,5 +1,4 @@
-export interface IEmail {
-  id: string;
+export class IEmail { //interface
   email: string;
   createdDate: Date;
 }

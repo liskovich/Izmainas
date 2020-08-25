@@ -49,7 +49,7 @@ namespace Izmainas.Services
             {
                 var existing = await _emailData.GetEmailByEmail(email);
                 var item = existing.FirstOrDefault();
-                if (item == null)
+                if (item != null)
                 {
                     return false;
                 }

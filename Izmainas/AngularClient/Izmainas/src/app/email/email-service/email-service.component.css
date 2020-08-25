@@ -1,0 +1,21 @@
+.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.error-block {
+  color: red;
+}
+
+.card:hover {
+  transform: scale(1.03, 1.03);
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 100ms;
+}
+
+.card {
+  transition: all .2s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

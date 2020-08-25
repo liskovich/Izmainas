@@ -57,6 +57,8 @@ namespace Izmainas.Contracts.v1
         {
             public const string Create = Base + "/client/emailmodels";
             public const string Delete = Base + "/client/emailmodels/emails/{email}";
+            public const string GetAll = Base + "/client/emailmodels";
+            public const string Get = Base + "/client/emailmodels/{modelId}";
         }
     }
 }

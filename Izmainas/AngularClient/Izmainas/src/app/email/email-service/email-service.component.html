@@ -1,3 +1,50 @@
-<p>
-  email-service works!
-</p>
+<div class="container-fluid content-row">
+<div class="row">
+  <div class="col-lg-6 col-sm-12 mb-4"> <!--col-6 m-auto-->
+    <div class="card h-100 shadow">
+      <div class="card-header">
+        <h4 class="card-title mt-3">Pieteikties ziņojumiem</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-12">
+            <label for="email" class="form-label">Jūsu e-pasts</label>
+            <input type="text" class="form-control" formControlName="emailAddress">
+            <span class="error-block" *ngIf="!emailForm.get('emailAddress').valid && emailForm.get('emailAddress').touched">Lūdzu, ievadiet derīgu e-pasta adresi</span>
+          </div>
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-primary">Pieteikties</button>
+          </div>
+        </form>
+        <div class="col-12">
+          <p>Saņemiet ziņas par jaunākajām stundu izmaiņām tieši e-pastā! Lai pieteiktos e-pasta ziņojumiem, ievadiet savu e-pasta adresi šajā laukā. Jums vienmēr būs iespēja atteikties no ziņojumiem.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-lg-6 col-sm-12 mb-4"> <!--col-6 m-auto-->
+    <div class="card h-100 shadow">
+      <div class="card-header">
+        <h4 class="card-title mt-3">Atteikties no ziņojumiem</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="emailDeleteForm" (ngSubmit)="onDeleteSubmit()">
+          <div class="form-group col-12">
+            <label for="email" class="form-label">Jūsu e-pasts</label>
+            <input type="text" class="form-control" formControlName="emailDeleteAddress">
+            <span class="error-block" *ngIf="!emailDeleteForm.get('emailDeleteAddress').valid && emailDeleteForm.get('emailDeleteAddress').touched">Lūdzu, ievadiet derīgu e-pasta adresi</span>
+          </div>
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-danger">Atteikties</button>
+          </div>
+        </form>
+        <div class="col-12">
+          <p>Ja vēlaties atteikties no e-pasta ziņojumiem, ievadiet savu e-pasta adresi šajā laukā un nospiediet pogu "Atteikties".</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
