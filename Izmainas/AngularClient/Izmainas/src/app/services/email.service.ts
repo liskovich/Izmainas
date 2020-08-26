@@ -11,7 +11,7 @@ import { InjectableCompiler } from '@angular/compiler/src/injectable_compiler';
 })
 export class EmailService {
 
-  private createEndpoint = `client/emailmodels`;
+  private createEndpoint = `tempemailmodels`; //client/emailmodels
   private deleteEndpoint = `client/emailmodels/emails/`; //{email}
 
   constructor(private http: HttpClient) { }

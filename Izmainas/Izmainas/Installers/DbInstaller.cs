@@ -18,6 +18,7 @@ namespace Izmainas.Installers
             services.AddScoped<IRecordTempService, RecordTempService>();
             services.AddScoped<IEmailDataService, EmailDataService>();
             services.AddScoped<IEmailSendingService, EmailSendingService>();
+            services.AddScoped<IEmailTempDataService, EmailTempDataService>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IMySqlDataAccess, MySqlDataAccess>();
@@ -25,6 +26,7 @@ namespace Izmainas.Installers
             services.AddTransient<IRecordData, RecordData>();
             services.AddTransient<IRecordTempData, RecordTempData>();
             services.AddTransient<IEmailData, EmailData>();
+            services.AddTransient<IEmailTempData, EmailTempData>();
         }
     }
 }

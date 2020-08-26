@@ -22,6 +22,22 @@ namespace Izmainas.Controllers.v1
 
         #region Production Actions
 
+        [HttpDelete(ApiRoutes.EmailClientData.Delete)]
+        public async Task<IActionResult> Delete([FromRoute] string email)
+        {
+            var deleted = await _emailDataService.DeleteEmailModel(email);
+            if (deleted == false)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
+        }
+
+        #endregion
+
+        #region Test/Development Actions
+
         [HttpPost(ApiRoutes.EmailClientData.Create)]
         public async Task<IActionResult> Create([FromBody] CreateEmailModelRequest request)
         {
@@ -44,22 +60,6 @@ namespace Izmainas.Controllers.v1
             var response = new EmailModelResponse { Id = emailModel.Id };
             return Created(locationUri, response);
         }
-
-        [HttpDelete(ApiRoutes.EmailClientData.Delete)]
-        public async Task<IActionResult> Delete([FromRoute] string email)
-        {
-            var deleted = await _emailDataService.DeleteEmailModel(email);
-            if (deleted == false)
-            {
-                return NotFound();
-            }
-
-            return NoContent();
-        }
-
-        #endregion
-
-        #region Test/Development Actions
 
         [HttpGet(ApiRoutes.EmailClientData.GetAll)]
         public async Task<IActionResult> GetAll()

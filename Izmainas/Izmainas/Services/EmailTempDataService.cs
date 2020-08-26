@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace Izmainas.Services
 {
-    public class EmailDataService : IEmailDataService
+    public class EmailTempDataService : IEmailTempDataService
     {
-        private readonly IEmailData _emailData;
+        private readonly IEmailTempData _emailTempData;
 
-        public EmailDataService(IEmailData emailData)
+        public EmailTempDataService(IEmailTempData emailTempData)
         {
-            _emailData = emailData;
+            _emailTempData = emailTempData;
         }
 
-        public async Task<bool> CreateEmailModel(EmailModel emailModel)
+        public async Task<bool> CreateTempEmailModel(EmailModel emailModel)
         {
             try
             {
-                var existing = await _emailData.GetEmailByEmail(emailModel.Email);
+                var existing = await _emailTempData.GetTempEmailByEmail(emailModel.Email);
                 var item = existing.FirstOrDefault();
                 if (item != null)
                 {
@@ -34,7 +34,7 @@ namespace Izmainas.Services
                     CreatedDate = emailModel.CreatedDate
                 };
 
-                await _emailData.SaveEmail(saveEmailModel);
+                await _emailTempData.SaveTempEmail(saveEmailModel);
                 return true;
             }
             catch
@@ -43,18 +43,11 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<bool> DeleteEmailModel(string email)
+        public async Task<bool> DeleteTempEmailModels()
         {
             try
             {
-                var existing = await _emailData.GetEmailByEmail(email);
-                var item = existing.FirstOrDefault();
-                if (item == null)
-                {
-                    return false;
-                }
-
-                await _emailData.DeleteEmail(email);
+                await _emailTempData.DeleteTempEmails();
                 return true;
             }
             catch
@@ -63,12 +56,12 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<EmailModel> GetEmailModelById(Guid modelId)
+        public async Task<EmailModel> GetTempEmailModelById(Guid modelId)
         {
             try
             {
                 var findId = modelId.ToString();
-                var found = await _emailData.GetEmailById(findId);
+                var found = await _emailTempData.GetTempEmailById(findId);
                 var item = found.FirstOrDefault();
                 if (item == null)
                 {
@@ -89,11 +82,11 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<List<EmailModel>> GetEmailModels()
+        public async Task<List<EmailModel>> GetTempEmailModels()
         {
             try
             {
-                var found = await _emailData.GetEmails();
+                var found = await _emailTempData.GetTempEmails();
                 if (found == null)
                 {
                     return null;
@@ -118,11 +111,11 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<EmailModel> GetEmailModelByEmail(string email)
+        public async Task<EmailModel> GetTempEmailModelByEmail(string email)
         {
             try
             {
-                var found = await _emailData.GetEmailByEmail(email);
+                var found = await _emailTempData.GetTempEmailByEmail(email);
                 var item = found.FirstOrDefault();
                 if (item == null)
                 {
@@ -140,6 +133,26 @@ namespace Izmainas.Services
             catch
             {
                 return null;
+            }
+        }
+
+        public async Task<bool> VerifyTempEmailModel(string email)
+        {
+            try
+            {
+                var found = await _emailTempData.GetTempEmailByEmail(email);
+                var item = found.FirstOrDefault();
+                if(item == null)
+                {
+                    return false;
+                }
+
+                await _emailTempData.VerifyTempEmails(email);
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

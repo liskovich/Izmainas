@@ -55,10 +55,22 @@ namespace Izmainas.Contracts.v1
 
         public static class EmailClientData
         {
-            public const string Create = Base + "/client/emailmodels";
             public const string Delete = Base + "/client/emailmodels/emails/{email}";
+
+            public const string Create = Base + "/client/emailmodels";
             public const string GetAll = Base + "/client/emailmodels";
             public const string Get = Base + "/client/emailmodels/{modelId}";
+        }
+
+        public static class VerificationEmailClientData
+        {
+            public const string Create = Base + "/tempemailmodels";
+            public const string DeleteAll = Base + "/tempemailmodels"; // /emails/{email}
+            public const string Verify = Base + "/tempemailmodels/verify/{email}";
+
+            public const string GetAll = Base + "/tempemailmodels";
+            public const string Get = Base + "/tempemailmodels/{modelId}";
+            public const string Email = Base + "/tempemailmodels/emails/{email}";
         }
     }
 }
