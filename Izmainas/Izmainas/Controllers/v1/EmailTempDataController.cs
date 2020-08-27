@@ -36,7 +36,7 @@ namespace Izmainas.Controllers.v1
             var created = await _emailTempDataService.CreateTempEmailModel(emailModel);
             if (created == false)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             // TODO - here the server should send a confirmation email
@@ -52,12 +52,12 @@ namespace Izmainas.Controllers.v1
         public async Task<IActionResult> Delete() //[FromRoute] string email
         {
             var deleted = await _emailTempDataService.DeleteTempEmailModels();
-            if (deleted == false)
+            if (deleted)
             {
-                return NotFound();
+                return NoContent();
             }
 
-            return NoContent();
+            return NotFound();
         }
 
         [HttpPost(ApiRoutes.VerificationEmailClientData.Verify)]
@@ -66,7 +66,7 @@ namespace Izmainas.Controllers.v1
             var verified = await _emailTempDataService.VerifyTempEmailModel(email);
             if(verified == false)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             return Ok();

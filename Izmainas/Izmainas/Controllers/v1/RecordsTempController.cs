@@ -61,7 +61,7 @@ namespace Izmainas.Controllers.v1
             var created = await _recordTempService.CreateTempRecord(record);
             if (created == false)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
@@ -91,7 +91,7 @@ namespace Izmainas.Controllers.v1
             var updated = await _recordTempService.UpdateTempRecord(record);
             if (updated == false)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             return Ok(record);
@@ -101,12 +101,12 @@ namespace Izmainas.Controllers.v1
         public async Task<IActionResult> Delete([FromRoute] Guid recordId)
         {
             var deleted = await _recordTempService.DeleteTempRecord(recordId);
-            if (deleted == false)
+            if (deleted)
             {
-                return NotFound();
+                return NoContent();
             }
 
-            return NoContent();
+            return NotFound();
         }
 
         [HttpPost(ApiRoutes.TempRecords.Transfer)]
@@ -130,7 +130,7 @@ namespace Izmainas.Controllers.v1
             var transfered = await _recordTempService.TransferChanges();
             if (transfered == false)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             return Ok();

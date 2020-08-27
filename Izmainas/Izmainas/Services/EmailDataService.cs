@@ -10,10 +10,12 @@ namespace Izmainas.Services
     public class EmailDataService : IEmailDataService
     {
         private readonly IEmailData _emailData;
+        private readonly IEmailTempData _emailTempData;
 
-        public EmailDataService(IEmailData emailData)
+        public EmailDataService(IEmailData emailData, IEmailTempData emailTempData)
         {
             _emailData = emailData;
+            _emailTempData = emailTempData;
         }
 
         public async Task<bool> CreateEmailModel(EmailModel emailModel)
@@ -23,6 +25,13 @@ namespace Izmainas.Services
                 var existing = await _emailData.GetEmailByEmail(emailModel.Email);
                 var item = existing.FirstOrDefault();
                 if (item != null)
+                {
+                    return false;
+                }
+
+                var existingtemp = await _emailTempData.GetTempEmailByEmail(emailModel.Email);
+                var itemtemp = existing.FirstOrDefault();
+                if (itemtemp != null)
                 {
                     return false;
                 }

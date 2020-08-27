@@ -54,7 +54,7 @@ namespace Izmainas.Controllers.v1
             var created = await _emailDataService.CreateEmailModel(emailModel);
             if(created == false)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
@@ -68,12 +68,12 @@ namespace Izmainas.Controllers.v1
         public async Task<IActionResult> Delete([FromRoute] string email)
         {
             var deleted = await _emailDataService.DeleteEmailModel(email);
-            if(deleted == false)
+            if(deleted)
             {
-                return NotFound();
+                return NoContent();
             }
 
-            return NoContent();
+            return NotFound();
         }
 
         [HttpGet(ApiRoutes.EmailAdminData.Email)]
