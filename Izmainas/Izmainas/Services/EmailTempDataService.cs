@@ -18,7 +18,7 @@ namespace Izmainas.Services
             _emailData = emailData;
         }
 
-        public async Task<bool> CreateTempEmailModel(EmailModel emailModel)
+        public async Task<bool> CreateTempEmailModel(EmailTempModel emailModel)
         {
             try
             {
@@ -36,11 +36,12 @@ namespace Izmainas.Services
                     return false;
                 }
 
-                var saveEmailModel = new DbEmailModel
+                var saveEmailModel = new DbEmailTempModel
                 {
                     Id = emailModel.Id.ToString(),
                     Email = emailModel.Email,
-                    CreatedDate = emailModel.CreatedDate
+                    CreatedDate = emailModel.CreatedDate,
+                    VerificationKey = emailModel.VerificationKey
                 };
 
                 await _emailTempData.SaveTempEmail(saveEmailModel);
@@ -65,7 +66,7 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<EmailModel> GetTempEmailModelById(Guid modelId)
+        public async Task<EmailTempModel> GetTempEmailModelById(Guid modelId)
         {
             try
             {
@@ -77,11 +78,12 @@ namespace Izmainas.Services
                     return null;
                 }
 
-                var emailModel = new EmailModel
+                var emailModel = new EmailTempModel
                 {
                     Id = modelId,
                     Email = item.Email,
-                    CreatedDate = item.CreatedDate
+                    CreatedDate = item.CreatedDate,
+                    VerificationKey = item.VerificationKey
                 };
                 return emailModel;
             }
@@ -91,7 +93,7 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<List<EmailModel>> GetTempEmailModels()
+        public async Task<List<EmailTempModel>> GetTempEmailModels()
         {
             try
             {
@@ -101,14 +103,15 @@ namespace Izmainas.Services
                     return null;
                 }
 
-                var emails = new List<EmailModel>();
+                var emails = new List<EmailTempModel>();
                 foreach (var e in found)
                 {
-                    var email = new EmailModel
+                    var email = new EmailTempModel
                     {
                         Id = Guid.Parse(e.Id),
                         Email = e.Email,
-                        CreatedDate = e.CreatedDate
+                        CreatedDate = e.CreatedDate,
+                        VerificationKey = e.VerificationKey
                     };
                     emails.Add(email);
                 }
@@ -120,7 +123,7 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<EmailModel> GetTempEmailModelByEmail(string email)
+        public async Task<EmailTempModel> GetTempEmailModelByEmail(string email)
         {
             try
             {
@@ -131,11 +134,12 @@ namespace Izmainas.Services
                     return null;
                 }
 
-                var emailModel = new EmailModel
+                var emailModel = new EmailTempModel
                 {
                     Id = Guid.Parse(item.Id),
                     Email = email,
-                    CreatedDate = item.CreatedDate
+                    CreatedDate = item.CreatedDate,
+                    VerificationKey = item.VerificationKey
                 };
                 return emailModel;
             }
@@ -145,7 +149,7 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<bool> VerifyTempEmailModel(string email)
+        public async Task<bool> VerifyTempEmailModel(string email, string vkey)
         {
             try
             {
@@ -156,7 +160,7 @@ namespace Izmainas.Services
                     return false;
                 }
 
-                await _emailTempData.VerifyTempEmails(email);
+                await _emailTempData.VerifyTempEmails(vkey);
                 return true;
             }
             catch

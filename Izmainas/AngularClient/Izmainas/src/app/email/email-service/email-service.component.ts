@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailService } from 'src/app/services/email.service';
-import { IEmail } from '../IEmail.interface';
+//import { IEmail } from '../IEmail.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -42,13 +42,13 @@ export class EmailServiceComponent implements OnInit {
     console.log(this.emailForm);
 
     this.emailService.createNewEmail(this.getCreateEmailAddress()).subscribe();
-    this.emailForm.get('emailAddress').setValue(null);
+    //this.emailForm.get('emailAddress').setValue(null);
   }
 
   onDeleteSubmit() {
     console.log(this.emailDeleteForm);
 
     this.emailService.deleteEmail(this.getDeleteEmailAddress()).subscribe();
-    this.emailDeleteForm.get('emailDeleteAddress').setValue(null);
+    //this.emailDeleteForm.get('emailDeleteAddress').setValue(null);
   }
 }

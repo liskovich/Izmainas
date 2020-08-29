@@ -66,7 +66,7 @@ namespace Izmainas.Contracts.v1
         {
             public const string Create = Base + "/tempemailmodels";
             public const string DeleteAll = Base + "/tempemailmodels"; // /emails/{email}
-            public const string Verify = Base + "/tempemailmodels/verify/{email}";
+            public const string Verify = Base + "/tempemailmodels/verify"; // /{email}
 
             public const string GetAll = Base + "/tempemailmodels";
             public const string Get = Base + "/tempemailmodels/{modelId}";

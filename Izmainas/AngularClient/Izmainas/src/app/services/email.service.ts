@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { IEmail } from '../email/IEmail.interface';
+import { IVerificationEmail } from '../email/IVerificationEmail.interface';
 import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { InjectableCompiler } from '@angular/compiler/src/injectable_compiler';
@@ -13,6 +14,7 @@ export class EmailService {
 
   private createEndpoint = `tempemailmodels`; //client/emailmodels
   private deleteEndpoint = `client/emailmodels/emails/`; //{email}
+  private verifyEndpoint = `tempemailmodels/verify`;
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +31,7 @@ export class EmailService {
     }
     // Return an observable with a user-facing error message.
     return throwError(
-      'Failed to save email.');
+      'Failed to complete the operation.');
   }
 
   // API endpoints
@@ -50,5 +52,17 @@ export class EmailService {
     .pipe(
       catchError(this.handleError)
     )
+  }
+
+  verifyEmail(emailText: string, vkey: string): Observable<{}> {
+
+    var vem = new IVerificationEmail();
+    vem.email = emailText;
+    vem.verificationKey = vkey;
+
+    return this.http.post<IVerificationEmail>(`${environment.endpoint}${this.verifyEndpoint}`, vem)
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 }

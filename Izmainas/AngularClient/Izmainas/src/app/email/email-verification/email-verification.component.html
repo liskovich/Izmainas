@@ -1,0 +1,11 @@
+<div class="alert alert-success" [hidden]="hidden"> <!--[hidden]="success"-->
+  <b>Jūsu e-pasts ir verificēts.</b>
+</div>
+
+<div class="alert alert-danger" [hidden]="!hidden"> <!--[hidden]="success"-->
+  <b>Neizdevās verificēt e-pastu.</b> <br> Iespējamie iemesli:
+  <ul>
+    <li>E-pasts jau ir verificēts;</li>
+    <li>Kļūda savienojumā ar serveri;</li>
+  </ul>
+</div>

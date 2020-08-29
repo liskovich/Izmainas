@@ -14,10 +14,12 @@ namespace Izmainas.Controllers.v1
     public class EmailTempDataController : Controller
     {
         private readonly IEmailTempDataService _emailTempDataService;
+        private readonly IEmailSendingService _emailSendingService;
 
-        public EmailTempDataController(IEmailTempDataService emailTempDataService)
+        public EmailTempDataController(IEmailTempDataService emailTempDataService, IEmailSendingService emailSendingService)
         {
             _emailTempDataService = emailTempDataService;
+            _emailSendingService = emailSendingService;
         }
 
         #region Production Actions
@@ -26,11 +28,12 @@ namespace Izmainas.Controllers.v1
         public async Task<IActionResult> Create([FromBody] CreateEmailModelRequest request)
         {
             // TODO - fix issue, when trying to imput an email that already exists in the database, it throws an exception
-            var emailModel = new EmailModel
+            var emailModel = new EmailTempModel
             {
                 Id = Guid.NewGuid(),
                 Email = request.Email,
-                CreatedDate = request.CreatedDate
+                CreatedDate = request.CreatedDate,
+                VerificationKey = Guid.NewGuid().ToString() //Convert.ToBase64String(Guid.NewGuid().ToByteArray())
             };
 
             var created = await _emailTempDataService.CreateTempEmailModel(emailModel);
@@ -40,6 +43,19 @@ namespace Izmainas.Controllers.v1
             }
 
             // TODO - here the server should send a confirmation email
+            var verificationMessage = _emailSendingService.GenerateVerificationEmail(emailModel.Email, emailModel.VerificationKey);
+            var recipients = new List<EmailModel>
+            {
+                new EmailModel
+                {
+                    Id = emailModel.Id,
+                    Email = emailModel.Email,
+                    CreatedDate = emailModel.CreatedDate
+                }
+            };
+
+            _emailSendingService.SendMail(verificationMessage, "E-pasta verifikācija", true, recipients);
+            // end of send
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.VerificationEmailClientData.Get.Replace("{modelId}", emailModel.Id.ToString());
@@ -61,9 +77,9 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpPost(ApiRoutes.VerificationEmailClientData.Verify)]
-        public async Task<IActionResult> Verify([FromRoute] string email)
+        public async Task<IActionResult> Verify([FromBody] VerifyEmailModelRequest request) //[FromRoute] string email, [FromRoute] string vkey
         {
-            var verified = await _emailTempDataService.VerifyTempEmailModel(email);
+            var verified = await _emailTempDataService.VerifyTempEmailModel(request.Email, request.VerificationKey);
             if(verified == false)
             {
                 return BadRequest();

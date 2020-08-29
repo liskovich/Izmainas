@@ -90,7 +90,7 @@ namespace Izmainas.Services
 
             rawHtml += @"<div style='text-align:center'>";
             rawHtml += @"<p style='font-weight:normal; margin:40px auto 20px auto; max-width:500px;'>Plašāka informācija <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapā</a> vai mobīlajā aplikācijā.</p>"; //https://www.google.com
-            rawHtml += @"<p style='font-weight:normal; margin:20px auto; max-width:500px;'>Lai atteiktos no e-pasta ziņojumiem, dodieties uz <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapu</a> un sadaļā <b>Noderīgi</b> nospiediet <b>Atteikties no e-pastu ziņojumiem</b></p>";
+            rawHtml += @"<p style='font-weight:normal; margin:20px auto; max-width:500px;'>Lai atteiktos no e-pasta ziņojumiem, dodieties uz <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapu</a> un sadaļā <b>Noderīgi</b> nospiediet <b>Atteikties no ziņojumiem</b></p>";
             rawHtml += @"</div>";
             
             rawHtml += @"</body>";
@@ -120,6 +120,25 @@ namespace Izmainas.Services
             rawHtml += "<p>" + record.Lessons + "</p>";
             rawHtml += "</div></div></div>";
             rawHtml += "</body></html>";
+            return rawHtml;
+        }
+
+        public string GenerateVerificationEmail(string email, string vkey)
+        {
+            string url = _appOptions.Value.WebsiteURL + "verification?email=" + email + "&vkey=" + vkey;
+
+            string rawHtml = "";
+
+            rawHtml += "<!DOCTYPE html><html><head><meta charset='utf-8'/>";
+            rawHtml += "<title>E-pasta verifikācija - stundu izmaiņas RV1Ģ</title></head><body>";
+            rawHtml += "<div style='max-width: 500px;display: block;margin: auto;'>";
+
+            rawHtml += "<h3 style='text-align: center;'>E-pasta verifikācija - stundu izmaiņas RV1Ģ</h3>";
+            rawHtml += "<p style='text-align: center;'>Lai verificētu savu e-pastu, nospiediet uz zemāk dotās saites:</p>";
+            rawHtml += "<p style='text-align: center; margin-bottom: 40px;'><a href='" + url + "'> Verifikācijas saite</a></p>";
+            rawHtml += "<p style='text-align: center;'>Ja jūs neesat pieteikušies e-pasta ziņojumiem no RV1Ģ stundu izmaiņu mājaslapas, tad varat ignorēt šo ziņojumu - jūs to esat saņēmuši kļūdas dēļ.</p>";
+
+            rawHtml += "</div></body></html>";
             return rawHtml;
         }
     }

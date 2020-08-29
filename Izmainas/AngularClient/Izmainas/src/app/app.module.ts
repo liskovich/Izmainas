@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { CommonModule } from '@angular/common';
+
 //import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecordCardComponent } from './record/record-card/record-card.component';
@@ -13,11 +15,13 @@ import { RecordService } from './services/record.service';
 import { EmailService } from './services/email.service';
 import { NextRecordListComponent } from './record/next-record-list/next-record-list.component';
 import { EmailServiceComponent } from './email/email-service/email-service.component';
+import { EmailVerificationComponent } from './email/email-verification/email-verification.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecordListComponent },
   { path: 'rit', component: NextRecordListComponent }, //next-record-list
-  { path: 'noderigi', component: EmailServiceComponent }
+  { path: 'noderigi', component: EmailServiceComponent },
+  { path: 'verification', component: EmailVerificationComponent }
 ]
 
 @NgModule({
@@ -33,7 +37,8 @@ const appRoutes: Routes = [
       BrowserModule,
       HttpClientModule,
       ReactiveFormsModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      CommonModule
       //AppRoutingModule
    ],
    providers: [

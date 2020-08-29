@@ -7,5 +7,6 @@ namespace Izmainas.Services
     {
         bool SendMail(string message, string subject, bool htmlBody, List<EmailModel> recipients);
         string GenerateHTMLEmail(List<Record> records);
+        string GenerateVerificationEmail(string email, string vkey);
     }
 }

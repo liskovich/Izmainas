@@ -7,10 +7,10 @@ namespace Izmainas.Data.DataAccess
     public interface IEmailTempData
     {
         Task DeleteTempEmails();
-        Task<List<DbEmailModel>> GetTempEmailByEmail(string emailText);
-        Task<List<DbEmailModel>> GetTempEmailById(string emailId);
-        Task<List<DbEmailModel>> GetTempEmails();
-        Task SaveTempEmail(DbEmailModel emailModel);
-        Task VerifyTempEmails(string emailText);
+        Task<List<DbEmailTempModel>> GetTempEmailByEmail(string emailText);
+        Task<List<DbEmailTempModel>> GetTempEmailById(string emailId);
+        Task<List<DbEmailTempModel>> GetTempEmails();
+        Task SaveTempEmail(DbEmailTempModel emailModel);
+        Task VerifyTempEmails(string emailVerificationToken);
     }
 }

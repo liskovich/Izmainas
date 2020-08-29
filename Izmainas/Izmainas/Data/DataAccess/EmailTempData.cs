@@ -15,31 +15,32 @@ namespace Izmainas.Data.DataAccess
             _mySql = mySql;
         }
 
-        public async Task<List<DbEmailModel>> GetTempEmails()
+        public async Task<List<DbEmailTempModel>> GetTempEmails()
         {
-            var output = await _mySql.LoadData<DbEmailModel, dynamic>("spEmailsTemp_GetAll", new { }, "Default");
+            var output = await _mySql.LoadData<DbEmailTempModel, dynamic>("spEmailsTemp_GetAll", new { }, "Default");
             return output;
         }
 
-        public async Task<List<DbEmailModel>> GetTempEmailById(string emailId)
+        public async Task<List<DbEmailTempModel>> GetTempEmailById(string emailId)
         {
-            var output = await _mySql.LoadData<DbEmailModel, dynamic>("spEmailsTemp_GetById", new { emailId }, "Default");
+            var output = await _mySql.LoadData<DbEmailTempModel, dynamic>("spEmailsTemp_GetById", new { emailId }, "Default");
             return output;
         }
 
-        public async Task<List<DbEmailModel>> GetTempEmailByEmail(string emailText)
+        public async Task<List<DbEmailTempModel>> GetTempEmailByEmail(string emailText)
         {
-            var output = await _mySql.LoadData<DbEmailModel, dynamic>("spEmailsTemp_GetByEmail", new { emailText }, "Default");
+            var output = await _mySql.LoadData<DbEmailTempModel, dynamic>("spEmailsTemp_GetByEmail", new { emailText }, "Default");
             return output;
         }
 
-        public async Task SaveTempEmail(DbEmailModel emailModel)
+        public async Task SaveTempEmail(DbEmailTempModel emailModel)
         {
             string emailId = emailModel.Id;
             string emailText = emailModel.Email;
             DateTime emailCratedDate = emailModel.CreatedDate;
+            string emailVerificationToken = emailModel.VerificationKey;
 
-            await _mySql.SaveData("spEmailsTemp_Insert", new { emailId, emailText, emailCratedDate }, "Default");
+            await _mySql.SaveData("spEmailsTemp_Insert", new { emailId, emailText, emailCratedDate, emailVerificationToken }, "Default");
         }
 
         public async Task DeleteTempEmails()
@@ -47,9 +48,9 @@ namespace Izmainas.Data.DataAccess
             await _mySql.SaveData("spEmailsTemp_DeleteAll", new { }, "Default");
         }
 
-        public async Task VerifyTempEmails(string emailText)
+        public async Task VerifyTempEmails(string emailVerificationToken)
         {
-            await _mySql.SaveData("trEmailsTemp_VerifyEmail", new { emailText }, "Default");
+            await _mySql.SaveData("trEmailsTemp_VerifyEmail", new { emailVerificationToken }, "Default");
         }
     }
 }
