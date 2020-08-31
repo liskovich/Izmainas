@@ -1,4 +1,5 @@
-﻿using Izmainas.Contracts.v1;
+﻿using Izmainas.Cache;
+using Izmainas.Contracts.v1;
 using Izmainas.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,6 +21,7 @@ namespace Izmainas.Controllers.v1
         #region Production Actions
 
         [HttpGet(ApiRoutes.ClientRecords.Date)]
+        //[Cached(600)]
         public async Task<IActionResult> GetByDate([FromRoute] DateTime recordDate)
         {
             return Ok(await _recordService.GetRecordByDate(recordDate));
@@ -45,12 +47,14 @@ namespace Izmainas.Controllers.v1
         }
 
         [HttpGet(ApiRoutes.ClientRecords.GetAll)]
+        //[Cached(600)]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _recordService.GetRecords());
         }
 
         [HttpGet(ApiRoutes.ClientRecords.Get)]
+        //[Cached(600)]
         public async Task<IActionResult> Get([FromRoute] Guid recordId)
         {
             var record = await _recordService.GetRecordById(recordId);

@@ -32,8 +32,11 @@ export class NextRecordListComponent implements OnInit {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    var tomorrow = new Date();
-    var date = tomorrow.getFullYear()+'-'+(tomorrow.getMonth()+1)+'-'+(tomorrow.getDate()+1);
+    var today = new Date();
+    var tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate()+1);
+
+    var date = tomorrow.getFullYear()+'-'+(tomorrow.getMonth()+1)+'-'+(tomorrow.getDate());
     var rawPresentDate = new Date(date);
 
     const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };

@@ -85,7 +85,16 @@ C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\ne
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.csprojAssemblyReference.cache
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\Pipelines.Sockets.Unofficial.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
+C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\Documents\VS_Projects_Rico\Izmainas\Izmainas\Izmainas\obj\Debug\netcoreapp3.1\Izmainas.csprojAssemblyReference.cache

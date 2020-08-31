@@ -1,4 +1,5 @@
-﻿using Izmainas.Contracts.v1;
+﻿using Izmainas.Cache;
+using Izmainas.Contracts.v1;
 using Izmainas.Contracts.v1.Requests;
 using Izmainas.Contracts.v1.Responses;
 using Izmainas.Domain;
@@ -23,12 +24,14 @@ namespace Izmainas.Controllers.v1
         #region Production Actions
 
         [HttpGet(ApiRoutes.AdminRecords.GetAll)]
+        //[Cached(600)]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _recordService.GetRecords());
         }
 
         [HttpGet(ApiRoutes.AdminRecords.Get)]
+        //[Cached(600)]
         public async Task<IActionResult> Get([FromRoute] Guid recordId)
         {
             var record = await _recordService.GetRecordById(recordId);

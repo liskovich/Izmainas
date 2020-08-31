@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
+//import {  } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,8 @@ import { EmailService } from './services/email.service';
 import { NextRecordListComponent } from './record/next-record-list/next-record-list.component';
 import { EmailServiceComponent } from './email/email-service/email-service.component';
 import { EmailVerificationComponent } from './email/email-verification/email-verification.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageDialogComponent } from './dialog/message-dialog/message-dialog.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecordListComponent },
@@ -31,14 +35,17 @@ const appRoutes: Routes = [
       RecordListComponent,
       NavBarComponent,
       NextRecordListComponent,
-      EmailServiceComponent
+      EmailServiceComponent,
+      MessageDialogComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       ReactiveFormsModule,
       RouterModule.forRoot(appRoutes),
-      CommonModule
+      CommonModule,
+      BrowserAnimationsModule,
+      MatDialogModule
       //AppRoutingModule
    ],
    providers: [
@@ -47,6 +54,9 @@ const appRoutes: Routes = [
    ],
    bootstrap: [
       AppComponent
+   ],
+   entryComponents: [
+      MessageDialogComponent
    ]
 })
 export class AppModule { }

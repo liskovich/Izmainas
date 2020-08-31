@@ -1,0 +1,10 @@
+.btn {
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
+  /*
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  */
+}
