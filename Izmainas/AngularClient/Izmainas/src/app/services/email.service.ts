@@ -3,9 +3,10 @@ import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/htt
 import { catchError, map } from 'rxjs/operators';
 import { IEmail } from '../email/IEmail.interface';
 import { IVerificationEmail } from '../email/IVerificationEmail.interface';
+import { IDeleteEmail } from '../email/IDeleteEmail.interface';
 import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { InjectableCompiler } from '@angular/compiler/src/injectable_compiler';
+//import { InjectableCompiler } from '@angular/compiler/src/injectable_compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -58,13 +59,15 @@ export class EmailService {
     */
   }
 
-  deleteEmail(emailText: string, date: Date): Observable<{}> {
+  deleteEmail(emailText: string) { //, date: string //: Observable<{}>
 
-    var dem = new IEmail();
+    /*
+    var dem = new IDeleteEmail();
     dem.email = emailText;
     dem.createdDate = date;
+    */
 
-    return this.http.delete<IEmail>(`${environment.endpoint}${this.deleteEndpoint}`, { observe: 'response' }); //${emailText}
+    return this.http.delete(`${environment.endpoint}${this.deleteEndpoint}${emailText}`, { observe: 'response' }); //${emailText} //<IDeleteEmail>
     /*
     .pipe(
       catchError(this.handleError)
@@ -72,7 +75,7 @@ export class EmailService {
     */
   }
 
-  verifyEmail(emailText: string, vkey: string): Observable<{}> {
+  verifyEmail(emailText: string, vkey: string) { //: Observable<{}>
 
     var vem = new IVerificationEmail();
     vem.email = emailText;

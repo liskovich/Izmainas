@@ -20,12 +20,14 @@ import { EmailServiceComponent } from './email/email-service/email-service.compo
 import { EmailVerificationComponent } from './email/email-verification/email-verification.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageDialogComponent } from './dialog/message-dialog/message-dialog.component';
+import { EmailDeleteComponent } from './email/email-delete/email-delete.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecordListComponent },
   { path: 'rit', component: NextRecordListComponent }, //next-record-list
   { path: 'noderigi', component: EmailServiceComponent },
-  { path: 'verification', component: EmailVerificationComponent }
+  { path: 'verification', component: EmailVerificationComponent },
+  { path: 'delete', component: EmailDeleteComponent }
 ]
 
 @NgModule({
@@ -36,7 +38,9 @@ const appRoutes: Routes = [
       NavBarComponent,
       NextRecordListComponent,
       EmailServiceComponent,
-      MessageDialogComponent
+      MessageDialogComponent,
+      EmailVerificationComponent,
+      EmailDeleteComponent
    ],
    imports: [
       BrowserModule,

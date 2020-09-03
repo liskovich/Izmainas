@@ -33,13 +33,13 @@ export class EmailVerificationComponent implements OnInit {
       this.email = this.route.snapshot.queryParamMap.get('email');
       this.vkey = this.route.snapshot.queryParamMap.get('vkey');
 
-      console.log(this.email, this.vkey);
+      //console.log(this.email, this.vkey);
       try {
         var result = this.verify(this.email, this.vkey);
-        console.log(result);
-        this.hidden = false;
+        //console.log(result);
+        //this.hidden = false;
       } catch {
-        this.hidden = true;
+        //this.hidden = true;
       }
     }
     else{
@@ -49,6 +49,19 @@ export class EmailVerificationComponent implements OnInit {
   }
 
   private verify(emailText: string, verificationKey: string) {
-    this.emailService.verifyEmail(emailText, verificationKey).subscribe();
+    this.emailService.verifyEmail(emailText, verificationKey).subscribe(
+      (res) => {
+        if(res.status === 200){
+          this.hidden = false;
+        }
+      },
+      (error) => {
+        if(error.status === 400){
+          this.hidden = true;
+        }else{
+          this.hidden = true;
+        }
+      }
+    );
   }
 }

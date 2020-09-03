@@ -11,6 +11,7 @@ export class NextRecordListComponent implements OnInit {
 
   records: Array<IRecord>;
   presentDate: string;
+  hidden: boolean;
 
   constructor(private recordService: RecordService) { }
 
@@ -47,10 +48,17 @@ export class NextRecordListComponent implements OnInit {
       data => {
         this.records = data;
         console.log(data);
+
+        if(this.records.length == 0 || this.records === undefined){
+          this.hidden = true;
+        }else{
+          this.hidden = false;
+        }
       },
       error => {
         console.log('httperror:');
         console.log(error);
+        this.hidden = true;
       }
     )
   }

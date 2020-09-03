@@ -12,6 +12,7 @@ export class RecordListComponent implements OnInit {
 
   records: Array<IRecord>;
   presentDate: string;
+  hidden: boolean;
 
   constructor(private recordService: RecordService) { }
 
@@ -43,12 +44,23 @@ export class RecordListComponent implements OnInit {
       data => {
         this.records = data;
         console.log(data);
+        if(this.records.length == 0 || this.records === undefined){
+          this.hidden = true;
+        }else{
+          this.hidden = false;
+        }
       },
       error => {
         console.log('httperror:');
         console.log(error);
+        this.hidden = true;
       }
     )
+
+    /*
+    if(this.records == null){
+      this.hidden = true;
+    }*/
 
     /*
     this.recordService.getToday().subscribe(

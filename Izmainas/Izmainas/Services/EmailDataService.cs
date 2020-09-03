@@ -52,10 +52,11 @@ namespace Izmainas.Services
             }
         }
 
-        public async Task<bool> DeleteEmailModel(string email)
+        public async Task<bool> DeleteEmailModel(DeleteEmailModel emailModel) //string email
         {
             try
             {
+                var email = emailModel.Email;
                 var existing = await _emailData.GetEmailByEmail(email);
                 var item = existing.FirstOrDefault();
                 if (item == null)

@@ -65,7 +65,7 @@ export class EmailServiceComponent implements OnInit {
           //let dialogRef = dialog
           this.openDialog("Kļūda", "Šis e-pasts jau ir aizņemts");
         }else{
-          this.openDialog("Kļūda", "Tehnisku iemeslu dēļ nav iespējams piereģistrēties");
+          this.openDialog("Kļūda", "Tehnisku iemeslu dēļ nav iespējams pieteikties ziņojumiem");
         }
       }
     );

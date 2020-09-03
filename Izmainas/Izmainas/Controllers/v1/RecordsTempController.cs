@@ -127,8 +127,20 @@ namespace Izmainas.Controllers.v1
                 return NotFound();
             }
 
+            /*
             var htmlEmailMessage = _emailSendingService.GenerateHTMLEmail(records);
             _emailSendingService.SendMail(htmlEmailMessage, "Jaunas stundu izmaiņas", true, emails);
+            */
+            foreach (var e in emails)
+            {
+                var em = new DeleteEmailModel
+                {
+                    Email = e.Email,
+                    CreatedDate = e.CreatedDate
+                };
+                var htmlEmailMessage = _emailSendingService.GenerateHTMLEmail(records, em);
+                _emailSendingService.SendMail(htmlEmailMessage, "Jaunas stundu izmaiņas", true, em.Email);
+            }
 
             var transfered = await _recordTempService.TransferChanges();
             if (transfered == false)

@@ -67,7 +67,18 @@ namespace Izmainas.Controllers.v1
         [HttpDelete(ApiRoutes.EmailAdminData.Delete)]
         public async Task<IActionResult> Delete([FromRoute] string email)
         {
-            var deleted = await _emailDataService.DeleteEmailModel(email);
+            var toDelete = await _emailDataService.GetEmailModelByEmail(email);
+            if(toDelete == null)
+            {
+                return NotFound();
+            }
+
+            var emailModel = new DeleteEmailModel
+            {
+                Email = email,
+                CreatedDate = toDelete.CreatedDate
+            };
+            var deleted = await _emailDataService.DeleteEmailModel(emailModel);
             if(deleted)
             {
                 return NoContent();

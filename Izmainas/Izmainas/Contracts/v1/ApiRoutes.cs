@@ -55,7 +55,7 @@ namespace Izmainas.Contracts.v1
 
         public static class EmailClientData
         {
-            public const string Delete = Base + "/client/emailmodels/emails/{email}";
+            public const string Delete = Base + "/client/emailmodels/emails/{email}"; // /{email}
 
             public const string Create = Base + "/client/emailmodels";
             public const string GetAll = Base + "/client/emailmodels";

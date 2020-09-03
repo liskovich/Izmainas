@@ -39,7 +39,7 @@ namespace Izmainas.Services
             _smtpClient.Credentials = new NetworkCredential(_emailOptions.Value.SenderEmail, _emailOptions.Value.SenderPassword);
         }
 
-        public bool SendMail(string message, string subject, bool htmlBody, List<EmailModel> recipients)
+        public bool SendMail(string message, string subject, bool htmlBody, string recipient) //, List<EmailModel> recipients
         {
             try
             {
@@ -47,12 +47,15 @@ namespace Izmainas.Services
 
                 var mailMessage = new MailMessage();
                 mailMessage.From = new MailAddress(_emailOptions.Value.SenderEmail);
-                
+
+                /*
                 foreach (var r in recipients)
                 {
                     mailMessage.To.Add(r.Email);
                 }
-                
+                */
+                mailMessage.To.Add(recipient);
+
                 mailMessage.Subject = subject;
                 mailMessage.IsBodyHtml = htmlBody;
                 mailMessage.Body = message;
@@ -67,8 +70,9 @@ namespace Izmainas.Services
             }
         }
 
-        public string GenerateHTMLEmail(List<Record> records)
+        public string GenerateHTMLEmail(List<Record> records, DeleteEmailModel emailModel)
         {
+            string url = _appOptions.Value.WebsiteURL + "delete?email=" + emailModel.Email + "&cdate=" + emailModel.CreatedDate.ToString();
             string rawHtml = "";
 
             rawHtml += @"<!DOCTYPE html>";
@@ -90,7 +94,7 @@ namespace Izmainas.Services
 
             rawHtml += @"<div style='text-align:center'>";
             rawHtml += @"<p style='font-weight:normal; margin:40px auto 20px auto; max-width:500px;'>Plašāka informācija <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapā</a> vai mobīlajā aplikācijā.</p>"; //https://www.google.com
-            rawHtml += @"<p style='font-weight:normal; margin:20px auto; max-width:500px;'>Lai atteiktos no e-pasta ziņojumiem, dodieties uz <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapu</a> un sadaļā <b>Noderīgi</b> nospiediet <b>Atteikties no ziņojumiem</b></p>";
+            rawHtml += @"<p style='font-weight:normal; margin:20px auto; max-width:500px;'>Lai atteiktos no e-pasta ziņojumiem, spiediet <a href='" + url + "'>šeit</a></p>"; // Lai atteiktos no e-pasta ziņojumiem, dodieties uz <a href='" + _appOptions.Value.WebsiteURL + "'>Stundu izmaiņu mājaslapu</a> un sadaļā <b>Noderīgi</b> nospiediet <b>Atteikties no ziņojumiem</b>
             rawHtml += @"</div>";
             
             rawHtml += @"</body>";

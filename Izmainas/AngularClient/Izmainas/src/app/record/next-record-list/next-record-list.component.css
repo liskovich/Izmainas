@@ -11,3 +11,7 @@
   transition-timing-function: ease-in-out;
   transition-delay: 100ms;
 }
+
+.alert {
+  background-color: #e9e9f0;
+}

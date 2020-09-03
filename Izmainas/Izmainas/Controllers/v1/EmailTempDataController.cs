@@ -44,6 +44,7 @@ namespace Izmainas.Controllers.v1
 
             // TODO - here the server should send a confirmation email
             var verificationMessage = _emailSendingService.GenerateVerificationEmail(emailModel.Email, emailModel.VerificationKey);
+            /*
             var recipients = new List<EmailModel>
             {
                 new EmailModel
@@ -53,8 +54,9 @@ namespace Izmainas.Controllers.v1
                     CreatedDate = emailModel.CreatedDate
                 }
             };
+            */
 
-            _emailSendingService.SendMail(verificationMessage, "E-pasta verifikācija", true, recipients);
+            _emailSendingService.SendMail(verificationMessage, "E-pasta verifikācija", true, emailModel.Email); //recipients
             // end of send
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
