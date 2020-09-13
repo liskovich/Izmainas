@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint: `https://localhost:5001/api/v1/`
+  endpoint: `http://alpha.izmainasrv1g.com/api/v1/` //https://localhost:5001/api/v1/
 };
 
 /*
